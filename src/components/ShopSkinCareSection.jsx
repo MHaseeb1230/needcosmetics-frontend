@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import productService from '../services/productService';
 import SkinCareProductCard from './SkinCareProductCard';
+import mockData from '../data/mockData';
 
 const ShopSkinCareSection = () => {
     const [skincareProducts, setSkincareProducts] = useState([]);
@@ -17,16 +18,28 @@ const ShopSkinCareSection = () => {
                 const allProducts = productsResponse.success ? productsResponse.data.products : [];
                 
                 // Filter skincare and makeup products
-                setSkincareProducts(
-                    allProducts.filter(p => 
-                        p.category?.slug === 'skincare' || 
-                        p.category?.slug === 'makeup' ||
-                        p.category?.name?.toLowerCase() === 'skincare' ||
-                        p.category?.name?.toLowerCase() === 'makeup'
-                    ).slice(0, 10)
+                let filteredProducts = allProducts.filter(p => 
+                    p.category?.slug === 'skincare' || 
+                    p.category?.slug === 'makeup' ||
+                    p.category?.name?.toLowerCase() === 'skincare' ||
+                    p.category?.name?.toLowerCase() === 'makeup'
                 );
+                
+                // If no products from backend, use mockData as fallback
+                if (filteredProducts.length === 0) {
+                    filteredProducts = mockData.products.filter(p => 
+                        p.category === 'skincare' || p.category === 'makeup'
+                    );
+                }
+                
+                setSkincareProducts(filteredProducts.slice(0, 10));
             } catch (error) {
                 console.error('Error fetching skincare products:', error);
+                // Use mockData as fallback when backend fails
+                const mockSkincareProducts = mockData.products.filter(p => 
+                    p.category === 'skincare' || p.category === 'makeup'
+                );
+                setSkincareProducts(mockSkincareProducts.slice(0, 10));
             } finally {
                 setLoading(false);
             }
@@ -42,10 +55,6 @@ const ShopSkinCareSection = () => {
     };
 
     if (loading) {
-        return null;
-    }
-
-    if (skincareProducts.length === 0) {
         return null;
     }
 

@@ -14,6 +14,7 @@ import IngredientsGlossarySection from '../components/IngredientsGlossarySection
 import WhatsNewSection from '../components/WhatsNewSection';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import mockData from '../data/mockData';
 
 // Import hero images
 import hero1 from '../assets/hero/hero1.jpg';
@@ -61,11 +62,20 @@ const Home = () => {
                 // Flash sale products (discount >= 50%)
                 setFlashSaleProducts(allProducts.filter(p => p.discount >= 50));
                 
-                // Most loved products (first 18)
-                setMostLovedProducts(allProducts.slice(0, 18));
+                // Most loved products (first 18) - use backend if available, otherwise use mockData
+                if (allProducts.length > 0) {
+                    setMostLovedProducts(allProducts.slice(0, 18));
+                } else {
+                    // Use mockData as fallback
+                    const mockProducts = mockData.products.slice(0, 18);
+                    setMostLovedProducts(mockProducts);
+                }
                 
             } catch (error) {
                 console.error('Error fetching products:', error);
+                // Use mockData as fallback when backend fails
+                const mockProducts = mockData.products.slice(0, 18);
+                setMostLovedProducts(mockProducts);
             } finally {
                 setLoading(false);
             }
@@ -135,15 +145,13 @@ const Home = () => {
             </section>
 
             {/* Needs Most Loved Section */}
-            {mostLovedProducts.length > 0 && (
-                <ProductSlider 
-                    title="NEEDS Most Loved" 
-                    products={mostLovedProducts}
-                    variant="card"
-                    showViewAll={true}
-                    viewAllLink="/category/makeup"
-                />
-            )}
+            <ProductSlider 
+                title="NEEDS Most Loved" 
+                products={mostLovedProducts}
+                variant="card"
+                showViewAll={true}
+                viewAllLink="/category/makeup"
+            />
 
             {/* Categories */}
             {/* {categories.length > 0 && (
