@@ -68,20 +68,102 @@ const Home = () => {
                 // Flash sale products (discount >= 50%)
                 setFlashSaleProducts(allProducts.filter(p => p.discount >= 50));
                 
-                // Most loved products (first 18) - use backend if available, otherwise use mockData
+                // Most loved products - sorted by subcategory order: sunscreen, toner, cream, cleanser, serum
+                // Define subcategory order
+                const subcategoryOrder = ['suncare', 'toner', 'moisturizer', 'cleansing', 'serum'];
+                
+                const sortProductsBySubcategory = (products) => {
+                    return products.sort((a, b) => {
+                        const getSubcategoryPriority = (product) => {
+                            // Check if subcategory matches order
+                            const subcategory = (product.subcategory || '').toLowerCase();
+                            const name = (product.name || '').toLowerCase();
+                            
+                            // Check for sunscreen first (can be in subcategory or name)
+                            if (subcategory.includes('suncare') || name.includes('sunscreen') || name.includes('sun screen')) {
+                                return 0;
+                            }
+                            // Check for toner
+                            if (subcategory.includes('toner') || name.includes('toner')) {
+                                return 1;
+                            }
+                            // Check for cream/moisturizer
+                            if (subcategory.includes('moisturizer') || name.includes('cream') || name.includes('moisturizer')) {
+                                return 2;
+                            }
+                            // Check for cleanser/cleansing
+                            if (subcategory.includes('cleansing') || name.includes('cleanser') || name.includes('cleansing')) {
+                                return 3;
+                            }
+                            // Check for serum
+                            if (subcategory.includes('serum') || name.includes('serum')) {
+                                return 4;
+                            }
+                            // Everything else goes after
+                            return 5;
+                        };
+                        
+                        const priorityA = getSubcategoryPriority(a);
+                        const priorityB = getSubcategoryPriority(b);
+                        
+                        if (priorityA !== priorityB) {
+                            return priorityA - priorityB;
+                        }
+                        
+                        // If same priority, maintain original order
+                        return 0;
+                    });
+                };
+                
                 if (allProducts.length > 0) {
-                    setMostLovedProducts(allProducts.slice(0, 18));
+                    const sortedProducts = sortProductsBySubcategory([...allProducts]);
+                    setMostLovedProducts(sortedProducts.slice(0, 18));
                 } else {
                     // Use mockData as fallback
-                    const mockProducts = mockData.products.slice(0, 18);
-                    setMostLovedProducts(mockProducts);
+                    const mockProducts = sortProductsBySubcategory([...mockData.products]);
+                    setMostLovedProducts(mockProducts.slice(0, 18));
                 }
                 
             } catch (error) {
                 console.error('Error fetching products:', error);
                 // Use mockData as fallback when backend fails
-                const mockProducts = mockData.products.slice(0, 18);
-                setMostLovedProducts(mockProducts);
+                // Define subcategory order sorting function
+                const sortProductsBySubcategory = (products) => {
+                    return products.sort((a, b) => {
+                        const getSubcategoryPriority = (product) => {
+                            const subcategory = (product.subcategory || '').toLowerCase();
+                            const name = (product.name || '').toLowerCase();
+                            
+                            if (subcategory.includes('suncare') || name.includes('sunscreen') || name.includes('sun screen')) {
+                                return 0;
+                            }
+                            if (subcategory.includes('toner') || name.includes('toner')) {
+                                return 1;
+                            }
+                            if (subcategory.includes('moisturizer') || name.includes('cream') || name.includes('moisturizer')) {
+                                return 2;
+                            }
+                            if (subcategory.includes('cleansing') || name.includes('cleanser') || name.includes('cleansing')) {
+                                return 3;
+                            }
+                            if (subcategory.includes('serum') || name.includes('serum')) {
+                                return 4;
+                            }
+                            return 5;
+                        };
+                        
+                        const priorityA = getSubcategoryPriority(a);
+                        const priorityB = getSubcategoryPriority(b);
+                        
+                        if (priorityA !== priorityB) {
+                            return priorityA - priorityB;
+                        }
+                        return 0;
+                    });
+                };
+                
+                const mockProducts = sortProductsBySubcategory([...mockData.products]);
+                setMostLovedProducts(mockProducts.slice(0, 18));
             } finally {
                 setLoading(false);
             }
@@ -198,10 +280,10 @@ const Home = () => {
             )}
 
             {/* Top Categories and Shop Skin Care Section */}
-            <div className="bg-primary">
+            {/* <div className="bg-primary">
                 <TopCategoriesSection />
 
-                </div>
+                </div> */}
                 <ShopSkinCareSection />
            
 

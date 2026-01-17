@@ -8,6 +8,12 @@ import acneSerum from '../assets/NEEDS/02_white.jpg';
 import whiteningSerum from '../assets/NEEDS/02_green.jpg';
 import nightCream from '../assets/NEEDS/Picture7.jpg';
 import dayCream from '../assets/NEEDS/Picture8.jpg';
+import faceWashGrey from '../assets/NEEDS/01_grey.jpg';
+import faceWashBlue from '../assets/NEEDS/01_blue.jpg';
+import faceWashGreen from '../assets/NEEDS/01_green.jpg';
+import faceWashOrange from '../assets/NEEDS/01_orange.jpg';
+
+
 
 const mockData = {
     "categories": [
@@ -453,8 +459,156 @@ const mockData = {
             "swatches": ["#FFF3E0", "#FFE0B2", "#FFCC80", "#FFB74D", "#FFA726"],
             "volume": "50ml"
         },
+        {
+            "id": 10,
+            "name": "Need's Multi-Action Face Wash 100ml",
+            "price": 3490,
+            "originalPrice": 3990,
+            "discount": 13,
+            "category": "skincare",
+            "subcategory": "cleansing",
+            "image": faceWashGrey,
+            "description": "Need's Multi-Action Face Wash deeply cleanses and purifies the skin while maintaining its natural moisture balance. Formulated with natural extracts and gentle cleansing agents for a refreshed, smooth complexion.",
+            "features": [
+                {
+                    "title": "Deep Cleansing & Purifying",
+                    "description": "Effectively removes dirt, oil, and impurities from the skin's surface, leaving it clean and refreshed without over-drying."
+                },
+                {
+                    "title": "Maintains Natural Moisture Balance",
+                    "description": "Gentle formula preserves the skin's natural moisture barrier, preventing dryness and maintaining soft, supple skin."
+                },
+                {
+                    "title": "Natural Extracts & Soothing Agents",
+                    "description": "Enriched with natural botanical extracts to soothe and calm the skin while providing antioxidant benefits."
+                },
+                {
+                    "title": "Suitable for All Skin Types",
+                    "description": "Lightweight, non-irritating formula suitable for daily use on all skin types, including sensitive skin."
+                },
+                {
+                    "title": "Refreshing & Energizing",
+                    "description": "Invigorating formula leaves the skin feeling refreshed and energized, ready for your skincare routine."
+                }
+            ],
+            "keyIngredients": [
+                "Natural Cleansing Agents",
+                "Botanical Extracts",
+                "Glycerin",
+                "Vitamin E",
+                "Aloe Vera Extract",
+                "Chamomile Extract",
+                "Green Tea Extract"
+            ],
+            "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
+            "volume": "100ml",
+            "slug": "needs-multi-action-face-wash-100ml"
+        },
+        {
+            "id": 11,
+            "name": "Need's Multi-Action Face Wash 100ml",
+            "price": 3490,
+            "originalPrice": 3990,
+            "discount": 13,
+            "category": "skincare",
+            "subcategory": "cleansing",
+            "image": faceWashGrey,
+            "description": "Need's Multi-Action Face Wash deeply cleanses and purifies the skin while maintaining its natural moisture balance. Formulated with natural extracts and gentle cleansing agents for a refreshed, smooth complexion.",
+            "features": [
+                {
+                    "title": "Deep Cleansing & Purifying",
+                    "description": "Effectively removes dirt, oil, and impurities from the skin's surface, leaving it clean and refreshed without over-drying."
+                },
+                {
+                    "title": "Maintains Natural Moisture Balance",
+                    "description": "Gentle formula preserves the skin's natural moisture barrier, preventing dryness and maintaining soft, supple skin."
+                },
+                {
+                    "title": "Natural Extracts & Soothing Agents",
+                    "description": "Enriched with natural botanical extracts to soothe and calm the skin while providing antioxidant benefits."
+                },
+                {
+                    "title": "Suitable for All Skin Types",
+                    "description": "Lightweight, non-irritating formula suitable for daily use on all skin types, including sensitive skin."
+                },
+                {
+                    "title": "Refreshing & Energizing",
+                    "description": "Invigorating formula leaves the skin feeling refreshed and energized, ready for your skincare routine."
+                }
+            ],
+            "keyIngredients": [
+                "Natural Cleansing Agents",
+                "Botanical Extracts",
+                "Glycerin",
+                "Vitamin E",
+                "Aloe Vera Extract",
+                "Chamomile Extract",
+                "Green Tea Extract"
+            ],
+            "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
+            "volume": "100ml",
+            "slug": "needs-multi-action-face-wash-100ml"
+        },
+        {
+            "id": 12,
+            "name": "Need's Multi-Action Face Wash 100ml",
+            "price": 3490,
+            "originalPrice": 3990,
+            "discount": 13,
+            "category": "skincare",
+            "subcategory": "cleansing",
+            "image": faceWashGrey,
+            "description": "Need's Multi-Action Face Wash deeply cleanses and purifies the skin while maintaining its natural moisture balance. Formulated with natural extracts and gentle cleansing agents for a refreshed, smooth complexion.",
+            "features": [
+                {
+                    "title": "Deep Cleansing & Purifying",
+                    "description": "Effectively removes dirt, oil, and impurities from the skin's surface, leaving it clean and refreshed without over-drying."
+                },
+            ],
+            "keyIngredients": [
+                "Natural Cleansing Agents",
+                "Botanical Extracts",
+                "Glycerin",
+                "Vitamin E",
+                "Aloe Vera Extract",
+                "Chamomile Extract",
+                "Green Tea Extract"
+            ],
+            "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
+            "volume": "100ml",
+            "slug": "needs-multi-action-face-wash-100ml"
+        },  
+        {
+            "id": 13,
+            "name": "Need's Multi-Action Face Wash 100ml",
+            "price": 3490,
+            "originalPrice": 3990,
+            "discount": 13,
+            "category": "skincare",
+            "subcategory": "cleansing",
+            "image": faceWashGrey,
+            "description": "Need's Multi-Action Face Wash deeply cleanses and purifies the skin while maintaining its natural moisture balance. Formulated with natural extracts and gentle cleansing agents for a refreshed, smooth complexion.",
+            "features": [
+                {
+                    "title": "Deep Cleansing & Purifying",
+                    "description": "Effectively removes dirt, oil, and impurities from the skin's surface, leaving it clean and refreshed without over-drying."
+                },
+            ],
+            "keyIngredients": [
+                "Natural Cleansing Agents",
+                "Botanical Extracts",
+                "Glycerin",
+                "Vitamin E",
+                "Aloe Vera Extract",
+                "Chamomile Extract",
+                "Green Tea Extract"
+            ],
+            "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
+            "volume": "100ml",
+            "slug": "needs-multi-action-face-wash-100ml"
+        },
         // {
-        //     "id": 10,
+        //     "id": 11,
         //     "name": "Smart Fusion Lip Pencil",
         //     "price": 1715,
         //     "originalPrice": 2450,

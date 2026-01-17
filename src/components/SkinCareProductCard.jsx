@@ -56,7 +56,7 @@ const SkinCareProductCard = ({ product }) => {
                 </div>
 
                 {/* Color Swatches */}
-                {product.swatches && product.swatches.length > 0 && (
+                {/* {product.swatches && product.swatches.length > 0 && (
                     <div className="flex items-center justify-center gap-1.5 mb-4">
                         {product.swatches.slice(0, 4).map((color, idx) => (
                             <div
@@ -71,7 +71,7 @@ const SkinCareProductCard = ({ product }) => {
                             <span className="text-[10px] text-gray-500">+{product.swatches.length - 4}</span>
                         )}
                     </div>
-                )}
+                )} */}
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-2 mt-auto w-full justify-center">

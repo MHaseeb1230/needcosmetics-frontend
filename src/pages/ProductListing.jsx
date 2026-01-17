@@ -18,6 +18,7 @@ const ProductListing = () => {
         'serums': { category: 'skincare', subcategory: 'serum' }, // Serums
         'sunscreens': { category: 'skincare', subcategory: 'suncare', nameFilter: 'sunscreen' }, // SunScreens
         'suncare': { category: 'skincare', subcategory: 'suncare' }, // Lotions (general suncare)
+        'face-wash': { category: 'skincare', subcategory: 'cleansing', nameFilter: 'face wash' }, // Face Wash
         // Fallback for other categories
         'makeup': { category: 'makeup', subcategory: null },
         'skincare': { category: 'skincare', subcategory: null },
@@ -116,7 +117,8 @@ const ProductListing = () => {
             'creams': 'Creams',
             'serums': 'Serums',
             'sunscreens': 'Sunscreens',
-            'suncare': 'Lotions'
+            'suncare': 'Lotions',
+            'face-wash': 'Face Wash'
         };
         return titleMap[slug] || category?.name || slug?.charAt(0).toUpperCase() + slug?.slice(1);
     };
