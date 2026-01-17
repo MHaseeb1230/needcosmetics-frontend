@@ -31,7 +31,7 @@ const IngredientsGlossarySection = () => {
 
                         {/* Description */}
                         <p className="text-sm md:text-base text-gray-700 mb-8 max-w-md leading-relaxed w-full">
-                            Check out the KIKO Ingredients Glossary: learn about the active ingredients we use and choose what's right for you.
+                            Check out the NEEDS Ingredients Glossary: learn about the active ingredients we use and choose what's right for you.
                         </p>
 
                         {/* Button */}

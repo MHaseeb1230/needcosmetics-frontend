@@ -5,7 +5,7 @@ const OurServicesSection = () => {
     const services = [
         {
             id: 1,
-            image: '/images/service/service1.webp',
+            image: '/images/service/service1.png',
             title: 'INSTANT MAKEUP TRY-ON',
             description: 'Try our products on for yourself and unlock your creativity',
             buttonText: 'UNLOCK YOUR CREATIVITY',
@@ -13,28 +13,28 @@ const OurServicesSection = () => {
         },
         {
             id: 2,
-            image: '/images/service/service2.webp',
-            title: 'KIKO MILANO BEAUTY SERVICES',
+            image: '/images/service/service2.png',
+            title: 'NEEDS BEAUTY SERVICES',
             description: 'Meet our beauty experts and treat yourself to a personalized make-up session',
             buttonText: 'DISCOVER OUR SERVICES',
             link: '/beauty-services'
         },
         {
             id: 3,
-            image: '/images/service/service3.webp',
+            image: '/images/service/service3.png',
             title: 'FOUNDATION FINDER',
             description: 'Find the perfect match for your unique skin\'s tone in just a few clicks',
             buttonText: 'FIND MY SHADE PRECISELY',
             link: '/foundation-finder'
         },
-        {
-            id: 4,
-            image: '/images/service/service4.webp',
-            title: 'SKINCARE PRO ADVISOR',
-            description: 'Build your skincare routine with our cutting-edge AI-powered app',
-            buttonText: 'DEFINE YOUR ROUTINE',
-            link: '/skincare-advisor'
-        }
+        // {
+        //     id: 4,
+        //     image: '/images/service/service4.webp',
+        //     title: 'SKINCARE PRO ADVISOR',
+        //     description: 'Build your skincare routine with our cutting-edge AI-powered app',
+        //     buttonText: 'DEFINE YOUR ROUTINE',
+        //     link: '/skincare-advisor'
+        // }
     ];
 
     return (
@@ -50,25 +50,25 @@ const OurServicesSection = () => {
                 </div>
 
                 {/* Service Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-16">
                     {services.map((service) => (
                         <div
                             key={service.id}
                             className="group relative flex flex-col rounded-lg overflow-hidden transition-shadow duration-300 h-full"
                         >
                             {/* Image */}
-                            <div className="relative overflow-hidden">
+                            <div className="relative overflow-hidden flex justify-center">
                                 <img
                                     src={service.image}
                                     alt={service.title}
-                                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                                    className="w-50 h-50 object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
 
                             {/* Content */}
-                            <div className="flex flex-col flex-grow p-6 md:p-8">
+                            <div className="flex flex-col flex-grow p-6 md:p-8 items-center text-center">
                                 {/* Title */}
-                                <h3 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-gray-900 mb-4">
+                                <h3 className="text-xl md:text-2xl font-semibold uppercase tracking-wide text-gray-900 mb-4">
                                     {service.title}
                                 </h3>
 
@@ -78,7 +78,7 @@ const OurServicesSection = () => {
                                 </p>
 
                                 {/* Button - pushed to bottom */}
-                                <div className="mt-auto">
+                                <div className="mt-auto flex justify-center">
                                     <Link
                                         to={service.link}
                                         className="button-slide w-max inline-block border-2 border-gray-900 bg-white text-gray-900 px-6 py-3 uppercase text-xs font-bold tracking-wider rounded relative overflow-hidden transition-all duration-300 hover:border-transparent hover:shadow-lg hover:shadow-gray-400/50"

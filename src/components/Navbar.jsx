@@ -157,7 +157,7 @@ const Navbar = () => {
                     <Link to="/">
                         <img
                             src={logo}
-                            alt="Kiko Milano"
+                            alt="NEEDS Milano"
                             className="h-7 w-18"
                         />
                     </Link>
@@ -453,7 +453,7 @@ const Navbar = () => {
                     <div className="p-4 border-b flex justify-between items-center">
                         <img
                             src={logoMobile}
-                            alt="Kiko Milano"
+                            alt="NEEDS Milano"
                             className="h-8"
                         />
                         <button onClick={() => setIsMenuOpen(false)}>

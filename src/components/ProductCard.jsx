@@ -109,11 +109,11 @@ const ProductCard = ({ product }) => {
                 </div>
 
                 {/* Shades Available */}
-                {numShades > 0 && (
+                {/* {numShades > 0 && (
                     <p className="text-xs text-gray-600 mb-4 text-center border-1 border-gray-200 px-2  p-[2px] rounded-full">
                         {numShades} {numShades === 1 ? 'shade' : 'shades'} available
                     </p>
-                )}
+                )} */}
 
                 {/* Action Buttons */}
                 <div className="flex items-center gap-2 mt-auto w-full justify-center">

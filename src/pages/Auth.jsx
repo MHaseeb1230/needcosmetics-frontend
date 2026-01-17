@@ -7,7 +7,7 @@ const Auth = () => {
         <div className="container mx-auto px-4 py-20 flex justify-center">
             <div className="w-full max-w-md bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
                 <div className="flex justify-center mb-8">
-                    <img src="/src/assets/logos/Logo.webp" alt="Kiko Milano" className="h-12" />
+                    <img src="/src/assets/logos/Logo.webp" alt="NEEDS Milano" className="h-12" />
                 </div>
                 <div className="flex gap-8 mb-12 border-b border-gray-100 pb-4">
                     <button

@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12 pb-12 border-b border-[var(--color-border)]">
                     {/* Left Side - Newsletter */}
                     <div className="lg:col-span-1">
-                        <h3 className="text-lg md:text-xl font-normal text-secondary mb-2">KIKO Events!</h3>
+                        <h3 className="text-lg md:text-xl font-normal text-secondary mb-2">NEEDS Events!</h3>
                         <p className="text-xl md:text-2xl font-bold text-secondary mb-6">Stay in the loop!</p>
                         <p className="text-xs text-[var(--color-text-secondary)] mb-6 leading-relaxed">
                             Having read the information note pursuant to art. 13 of the GDPR, I declare I am 16 or over, I am asking to receive the newsletter and I give you my consent to send me e-mails with marketing communications as specified in the information note
@@ -50,7 +50,7 @@ const Footer = () => {
 
                         {/* ABOUT KIKO Column */}
                         <div>
-                            <h3 className="text-sm font-bold mb-6 uppercase tracking-widest text-secondary">ABOUT KIKO</h3>
+                            <h3 className="text-sm font-bold mb-6 uppercase tracking-widest text-secondary">ABOUT NEEDS</h3>
                             <ul className="text-sm text-secondary flex flex-col gap-3">
                                 <li><Link to="/about" className="hover:text-primary transition-colors">Our Brand</Link></li>
                                 <li><Link to="/press" className="hover:text-primary transition-colors">Press Releases</Link></li>
@@ -65,7 +65,7 @@ const Footer = () => {
                     <h3 className="text-sm font-bold uppercase tracking-widest text-secondary">FOLLOW US ON</h3>
                     <div className="flex gap-8">
                         <a 
-                            href="https://instagram.com/kikomilano" 
+                            href="https://instagram.com/needsmilano" 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="w-10 h-10 bg-secondary text-white flex items-center justify-center hover:bg-primary hover:text-secondary transition-colors"
@@ -74,7 +74,7 @@ const Footer = () => {
                             <Instagram size={20} />
                         </a>
                         <a 
-                            href="https://facebook.com/kikomilano" 
+                            href="https://facebook.com/needsmilano" 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="w-10 h-10 bg-secondary text-white flex items-center justify-center hover:bg-primary hover:text-secondary transition-colors"

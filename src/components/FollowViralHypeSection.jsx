@@ -11,32 +11,42 @@ const FollowViralHypeSection = () => {
     const carouselImages = [
         {
             id: 1,
-            image: '/images/whatsnew/whatsnew_1.webp',
+            image: '/images/whatsnew/01.png',
             alt: 'Woman applying product'
         },
         {
             id: 2,
-            image: '/images/whatsnew/whatsnew_2.webp',
+            image: '/images/whatsnew/02.png',
             alt: 'Makeup products in red box'
         },
         {
             id: 3,
-            image: '/images/whatsnew/whatsnew_main.webp',
+            image: '/images/whatsnew/03.png',
             alt: 'Hand with red primer'
         },
         {
             id: 4,
-            image: '/images/whatsnew/whatsnew_1.webp',
+            image: '/images/whatsnew/04.png',
             alt: 'Woman applying eyeliner'
         },
         {
             id: 5,
-            image: '/images/whatsnew/whatsnew_2.webp',
+            image: '/images/whatsnew/05.png',
             alt: 'Arm swatches of lipstick'
         },
         {
             id: 6,
-            image: '/images/whatsnew/whatsnew_main.webp',
+            image: '/images/whatsnew/06.png',
+            alt: 'Product packaging'
+        },
+        {
+            id: 7,
+            image: '/images/whatsnew/07.png',
+            alt: 'Product packaging'
+        },
+        {
+            id: 8,
+            image: '/images/whatsnew/08.png',
             alt: 'Product packaging'
         }
     ];
@@ -71,16 +81,16 @@ const FollowViralHypeSection = () => {
                     {/* Social Media Links */}
                     <div className="flex items-center justify-center gap-6 mb-8">
                         <a
-                            href="https://www.instagram.com/kikomilano"
+                            href="https://www.instagram.com/needsmilano"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"
                         >
                             <Instagram size={20} />
-                            <span className="text-sm font-medium">@kikomilano</span>
+                            <span className="text-sm font-medium">@needsmilano</span>
                         </a>
                         <a
-                            href="https://www.tiktok.com/@kikomilano"
+                            href="https://www.tiktok.com/@needsmilano"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"

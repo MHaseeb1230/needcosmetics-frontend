@@ -56,7 +56,7 @@ const SeasonSection = () => {
                             <p className="text-sm md:text-base font-light uppercase tracking-widest text-[var(--color-text-secondary)] mb-2">
                                 YOUR SEASON
                             </p>
-                            <h2 style={{fontFamily: 'KIKO Pro Arabic_V01 Medium !important'}} className="text-4xl md:text-6xl font-semibold text-secondary">
+                            <h2 style={{fontFamily: 'NEEDS Pro Arabic_V01 Medium !important'}} className="text-4xl md:text-6xl font-semibold text-secondary">
                                 {selectedSeason}
                             </h2>
                         </div>

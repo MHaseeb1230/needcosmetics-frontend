@@ -34,7 +34,7 @@ const OurBrandSection = () => {
 
                         {/* Description */}
                         <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-lg">
-                            KIKO MILANO is a brand built for self-expression. We capture global trends and infuse them with our own distinctive style drawn from our Italian perspective before sharing them with our audience across the world.
+                            NEEDS is a brand built for self-expression. We capture global trends and infuse them with our own distinctive style drawn from our Italian perspective before sharing them with our audience across the world.
                         </p>
                     </div>
                 </div>

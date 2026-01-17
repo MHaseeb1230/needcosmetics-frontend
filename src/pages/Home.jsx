@@ -34,10 +34,10 @@ import accessoriesImg from '../assets/topcategories/accessories.webp';
 
 const heroImages = [
     // hero1,
-    hero7,
     hero6,
-    hero5,
-    hero3,
+    hero7,
+    // hero5,
+    // hero3,
     hero4,
    
 ];
