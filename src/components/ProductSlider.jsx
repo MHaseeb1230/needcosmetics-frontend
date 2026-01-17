@@ -25,7 +25,7 @@ const ProductSlider = ({ products, title, showViewAll = false, variant = 'defaul
     // Card slider variant (like Needs Most Loved)
     if (variant === 'card') {
         return (
-            <section className="bg-brand-primary py-12 md:py-16">
+            <section className=" py-12 md:py-16">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl md:text-4xl font-light uppercase tracking-widest text-secondary mb-8 text-center">
                         <strong className="font-bold">{title.split(' ')[0]}</strong> {title.split(' ').slice(1).join(' ').toUpperCase()}

@@ -1,13 +1,13 @@
 // Import product images
-import sunkiss from '../assets/NEEDS/01_sunkiss.png';
-import cleanser from '../assets/NEEDS/01_cleanser.png';
-import toner from '../assets/NEEDS/01_cream_white.png';
-import hyaluronicSerum from '../assets/NEEDS/01_spray.png';
-import vitaminCSerum from '../assets/NEEDS/02_blue.png';
-import acneSerum from '../assets/NEEDS/02_white.png';
-import whiteningSerum from '../assets/NEEDS/02_green.png';
-import nightCream from '../assets/NEEDS/Picture7.png';
-import dayCream from '../assets/NEEDS/Picture8.png';
+import sunkiss from '../assets/NEEDS/01_sunkiss.jpg';
+import cleanser from '../assets/NEEDS/01_cleanser.jpg';
+import toner from '../assets/NEEDS/01_cream_white.jpg';
+import hyaluronicSerum from '../assets/NEEDS/01_spray.jpg';
+import vitaminCSerum from '../assets/NEEDS/02_blue.jpg';
+import acneSerum from '../assets/NEEDS/02_white.jpg';
+import whiteningSerum from '../assets/NEEDS/02_green.jpg';
+import nightCream from '../assets/NEEDS/Picture7.jpg';
+import dayCream from '../assets/NEEDS/Picture8.jpg';
 
 const mockData = {
     "categories": [

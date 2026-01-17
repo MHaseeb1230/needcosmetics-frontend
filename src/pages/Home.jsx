@@ -12,6 +12,7 @@ import TopCategoriesSection from '../components/TopCategoriesSection';
 import ShopSkinCareSection from '../components/ShopSkinCareSection';
 import IngredientsGlossarySection from '../components/IngredientsGlossarySection';
 import WhatsNewSection from '../components/WhatsNewSection';
+import CreateStyleSection from '../components/CreateStyleSection';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import mockData from '../data/mockData';
@@ -21,6 +22,8 @@ import hero1 from '../assets/hero/hero1.jpg';
 import hero3 from '../assets/hero/hero3.jpg';
 import hero4 from '../assets/hero/hero4.jpg';
 import hero5 from '../assets/hero/hero5.jpg';
+import hero6 from '../assets/hero/Hero Image-1.jpg';
+import hero7 from '../assets/hero/Hero Image.jpg';
 
 // Import top categories images
 import lipsImg from '../assets/topcategories/lips.avif';
@@ -30,10 +33,13 @@ import skincareImg from '../assets/topcategories/skincare.avif';
 import accessoriesImg from '../assets/topcategories/accessories.webp';
 
 const heroImages = [
-    hero1,
+    // hero1,
+    hero7,
+    hero6,
     hero5,
     hero3,
     hero4,
+   
 ];
 
 const Home = () => {
@@ -111,7 +117,7 @@ const Home = () => {
     return (
         <div className="flex flex-col">
             {/* Hero Section Carousel */}
-            <section className="relative h-[80vh] overflow-hidden">
+            <section className="relative h-[70vh] md:h-[80vh] lg:h-[95vh] overflow-hidden w-full">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={currentSlide}
@@ -119,12 +125,12 @@ const Home = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.7 }}
-                        className="absolute inset-0"
+                        className="absolute inset-0 w-full"
                     >
                         <img 
                             src={heroImages[currentSlide]} 
                             alt={`Hero ${currentSlide + 1}`}
-                            className=" object-cover"
+                            className="w-full h-full object-cover object-center"
                         />
                     </motion.div>
                 </AnimatePresence>
@@ -146,12 +152,15 @@ const Home = () => {
 
             {/* Needs Most Loved Section */}
             <ProductSlider 
-                title="NEEDS Most Loved" 
+                title="POPULAR & TRENDING" 
                 products={mostLovedProducts}
                 variant="card"
                 showViewAll={true}
                 viewAllLink="/category/makeup"
             />
+
+            {/* Create Your Style Section */}
+            <CreateStyleSection />
 
             {/* Categories */}
             {/* {categories.length > 0 && (

@@ -123,7 +123,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="sticky top-0 z-50 bg-white shadow-sm">
+        <nav className="sticky top-0 z-50 bg-gray-500 shadow-sm">
             {/* Top Bar */}
             <div className="bg-secondary text-white text-[10px] py-2 px-4 flex justify-between items-center uppercase tracking-wider">
                 <div className="flex items-center gap-4">
