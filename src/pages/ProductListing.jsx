@@ -1,37 +1,156 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import productService from '../services/productService';
 import mockData from '../data/mockData.js';
 import ProductCard from '../components/ProductCard';
 import { SlidersHorizontal, ChevronDown } from 'lucide-react';
 
 const ProductListing = () => {
-    const { id } = useParams();
+    const { slug } = useParams();
     const [sortBy, setSortBy] = useState('featured');
     const [priceRange, setPriceRange] = useState(10000);
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const category = mockData.categories.find(c => c.id === id);
+    // Category to subcategory mapping for navbar items
+    const categoryMappings = {
+        'creams': { category: 'skincare', subcategory: null, nameFilter: 'cream' }, // Creams - filter by name containing "cream"
+        'serums': { category: 'skincare', subcategory: 'serum' }, // Serums
+        'sunscreens': { category: 'skincare', subcategory: 'suncare', nameFilter: 'sunscreen' }, // SunScreens
+        'suncare': { category: 'skincare', subcategory: 'suncare' }, // Lotions (general suncare)
+        // Fallback for other categories
+        'makeup': { category: 'makeup', subcategory: null },
+        'skincare': { category: 'skincare', subcategory: null },
+        'accessories': { category: 'accessories', subcategory: null }
+    };
 
     // Scroll to top when component mounts or category changes
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [id]);
+    }, [slug]);
+
+    // Fetch products from backend or use mockData
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                setLoading(true);
+                const mapping = categoryMappings[slug];
+                
+                // Try to fetch from backend
+                const response = await productService.getProducts({ 
+                    category: mapping?.category || slug,
+                    limit: 100 
+                });
+                
+                let fetchedProducts = response.success ? response.data.products : [];
+                
+                // Apply subcategory filter if needed
+                if (mapping?.subcategory) {
+                    fetchedProducts = fetchedProducts.filter(p => 
+                        p.subcategory?.slug === mapping.subcategory ||
+                        p.subcategory?.name?.toLowerCase() === mapping.subcategory.toLowerCase() ||
+                        p.subcategory === mapping.subcategory
+                    );
+                }
+                
+                // Special filter for name-based filters (Creams, SunScreens)
+                if (mapping?.nameFilter) {
+                    fetchedProducts = fetchedProducts.filter(p => 
+                        p.name?.toLowerCase().includes(mapping.nameFilter) ||
+                        p.subcategory?.toLowerCase().includes(mapping.nameFilter) ||
+                        p.description?.toLowerCase().includes(mapping.nameFilter)
+                    );
+                }
+                
+                if (fetchedProducts.length > 0) {
+                    setProducts(fetchedProducts);
+                } else {
+                    // Use mockData as fallback
+                    throw new Error('No products from backend');
+                }
+            } catch (error) {
+                console.error('Error fetching products:', error);
+                // Use mockData as fallback
+                const mapping = categoryMappings[slug];
+                let filteredProducts = mockData.products;
+                
+                // Filter by category
+                if (mapping?.category) {
+                    filteredProducts = filteredProducts.filter(p => p.category === mapping.category);
+                } else {
+                    filteredProducts = filteredProducts.filter(p => p.category === slug);
+                }
+                
+                // Filter by subcategory if specified
+                if (mapping?.subcategory) {
+                    filteredProducts = filteredProducts.filter(p => 
+                        p.subcategory === mapping.subcategory
+                    );
+                }
+                
+                // Special filter for name-based filters (Creams, SunScreens)
+                if (mapping?.nameFilter) {
+                    filteredProducts = filteredProducts.filter(p => 
+                        p.name?.toLowerCase().includes(mapping.nameFilter) ||
+                        p.subcategory?.toLowerCase().includes(mapping.nameFilter) ||
+                        p.description?.toLowerCase().includes(mapping.nameFilter)
+                    );
+                }
+                
+                setProducts(filteredProducts);
+            } finally {
+                setLoading(false);
+            }
+        };
+        
+        if (slug) {
+            fetchProducts();
+        }
+    }, [slug]);
+
+    const category = mockData.categories.find(c => c.id === slug || c.slug === slug);
+    
+    // Determine category title based on slug
+    const getCategoryTitle = () => {
+        const titleMap = {
+            'creams': 'Creams',
+            'serums': 'Serums',
+            'sunscreens': 'Sunscreens',
+            'suncare': 'Lotions'
+        };
+        return titleMap[slug] || category?.name || slug?.charAt(0).toUpperCase() + slug?.slice(1);
+    };
+    
+    const categoryTitle = getCategoryTitle();
 
     const filteredProducts = useMemo(() => {
-        let products = mockData.products.filter(p => p.category === id);
+        let filtered = [...products];
 
+        // Price filter
+        filtered = filtered.filter(p => p.price <= priceRange);
+
+        // Sort
         if (sortBy === 'price-low') {
-            products.sort((a, b) => a.price - b.price);
+            filtered.sort((a, b) => a.price - b.price);
         } else if (sortBy === 'price-high') {
-            products.sort((a, b) => b.price - a.price);
+            filtered.sort((a, b) => b.price - a.price);
         }
 
-        return products.filter(p => p.price <= priceRange);
-    }, [id, sortBy, priceRange]);
+        return filtered;
+    }, [products, sortBy, priceRange]);
+
+    if (loading) {
+        return (
+            <div className="container mx-auto px-4 py-20 text-center">
+                <p>Loading...</p>
+            </div>
+        );
+    }
 
     return (
         <div className="container mx-auto px-4 py-12">
             <div className="mb-12 text-center">
-                <h1 className="text-4xl font-bold uppercase tracking-widest mb-4">{category?.name || 'Products'}</h1>
+                <h1 className="text-4xl font-bold uppercase tracking-widest mb-4">{categoryTitle}</h1>
                 <p className="text-gray-500">Showing {filteredProducts.length} products</p>
             </div>
 

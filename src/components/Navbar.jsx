@@ -189,7 +189,7 @@ const Navbar = () => {
                         onMouseEnter={() => handleMouseEnter('makeup')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <Link to="/category/makeup" className=" transition-colors">
+                        <Link to="/category/creams" className=" transition-colors">
                             Creams
                         </Link>
                         {activeDropdown === 'makeup' && (
@@ -253,7 +253,7 @@ const Navbar = () => {
                         onMouseEnter={() => handleMouseEnter('skincare')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <Link to="/category/skincare" className=" transition-colors">
+                        <Link to="/category/serums" className=" transition-colors">
                             Serums
                         </Link>
                         {/* {activeDropdown === 'skincare' && (
@@ -317,7 +317,7 @@ const Navbar = () => {
                         onMouseEnter={() => handleMouseEnter('accessories')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <Link to="/category/accessories" className=" transition-colors">
+                        <Link to="/category/sunscreens" className=" transition-colors">
                            SunScreens
                         </Link>
                         {/* {activeDropdown === 'accessories' && (
