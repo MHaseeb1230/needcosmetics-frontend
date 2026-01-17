@@ -81,7 +81,15 @@ const OurServicesSection = () => {
                                 <div className="mt-auto">
                                     <Link
                                         to={service.link}
-                                        className="button-slide inline-block border-2 border-gray-900 bg-white text-gray-900 px-6 py-3 uppercase text-xs font-bold tracking-wider rounded relative overflow-hidden transition-all duration-300 hover:border-transparent hover:shadow-lg hover:shadow-gray-400/50 [&_.button-text]:hover:text-white [&_.button-slide-bg]:hover:translate-y-0"
+                                        className="button-slide w-max inline-block border-2 border-gray-900 bg-white text-gray-900 px-6 py-3 uppercase text-xs font-bold tracking-wider rounded relative overflow-hidden transition-all duration-300 hover:border-transparent hover:shadow-lg hover:shadow-gray-400/50"
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.querySelector('.button-slide-bg')?.classList.remove('translate-y-full');
+                                            e.currentTarget.querySelector('.button-text')?.classList.add('text-white');
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.querySelector('.button-slide-bg')?.classList.add('translate-y-full');
+                                            e.currentTarget.querySelector('.button-text')?.classList.remove('text-white');
+                                        }}
                                     >
                                         <span className="button-text relative z-10 transition-colors duration-300">{service.buttonText}</span>
                                         <span className="button-slide-bg absolute inset-0 bg-gray-900 transform translate-y-full transition-transform duration-300 ease-in-out z-0"></span>

@@ -200,8 +200,10 @@ const Home = () => {
             {/* Top Categories and Shop Skin Care Section */}
             <div className="bg-primary">
                 <TopCategoriesSection />
+
+                </div>
                 <ShopSkinCareSection />
-            </div>
+           
 
             {/* Our Brand Section - Above Footer */}
             <OurBrandSection />

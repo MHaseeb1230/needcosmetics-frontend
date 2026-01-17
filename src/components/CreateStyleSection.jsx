@@ -92,7 +92,7 @@ const CreateStyleSection = () => {
                     <div className="order-2 lg:order-1 flex flex-col justify-center items-center text-center">
                         {/* Main Title */}
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light uppercase tracking-widest text-gray-900 mb-6 leading-tight">
-                            CREATE YOUR STYLE WITH KIKO'S TOP PRODUCTS!
+                            CREATE YOUR STYLE WITH NEED'S TOP PRODUCTS!
                         </h2>
 
                           {/* Thumbnail Slider */}
@@ -174,7 +174,15 @@ const CreateStyleSection = () => {
                         {/* Shop Now Button */}
                         <Link
                             to={selectedProduct.link}
-                            className="button-slide inline-block bg-white rounded-lg border-2 border-gray-900 text-gray-900 px-4 py-2 text-xs md:text-sm font-bold uppercase tracking-wider w-fit relative overflow-hidden transition-all duration-300 hover:border-transparent hover:shadow-lg hover:shadow-gray-400/50 [&_.button-text]:hover:text-white [&_.button-slide-bg]:hover:translate-y-0"
+                            className="button-slide inline-block bg-white rounded-lg border-2 border-gray-900 text-gray-900 px-4 py-2 text-xs md:text-sm font-bold uppercase tracking-wider w-fit relative overflow-hidden transition-all duration-300 hover:border-transparent hover:shadow-lg hover:shadow-gray-400/50"
+                            onMouseEnter={(e) => {
+                                e.currentTarget.querySelector('.button-slide-bg')?.classList.remove('translate-y-full');
+                                e.currentTarget.querySelector('.button-text')?.classList.add('text-white');
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.querySelector('.button-slide-bg')?.classList.add('translate-y-full');
+                                e.currentTarget.querySelector('.button-text')?.classList.remove('text-white');
+                            }}
                         >
                             <span className="button-text relative z-10 transition-colors duration-300">SHOP NOW</span>
                             <span className="button-slide-bg absolute inset-0 bg-gray-900 transform translate-y-full transition-transform duration-300 ease-in-out z-0"></span>

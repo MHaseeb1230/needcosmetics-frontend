@@ -214,13 +214,28 @@ const ProductSlider = ({ products, title, showViewAll = false, variant = 'defaul
                                                 <button
                                                     onClick={() => addToCart(product, 1)}
                                                     disabled={product.isSoldOut}
-                                                    className={`flex-1 py-2.5 text-xs font-bold uppercase tracking-wider transition-all ${
+                                                    className={`flex-1 py-2.5 text-xs font-bold uppercase tracking-wider text-center relative overflow-hidden border-2 transition-all duration-300 ${
                                                         product.isSoldOut
-                                                            ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                                                            : 'bg-black text-white hover:bg-gray-800'
+                                                            ? 'bg-gray-200 text-gray-400 border-gray-300 cursor-not-allowed'
+                                                            : 'bg-gray-800 text-white border-gray-800 hover:border-transparent hover:shadow-lg hover:shadow-gray-400/50'
                                                     }`}
+                                                    onMouseEnter={(e) => {
+                                                        if (!product.isSoldOut) {
+                                                            e.currentTarget.querySelector('.button-slide-bg')?.classList.remove('translate-y-full');
+                                                            e.currentTarget.querySelector('.button-text')?.classList.add('text-black');
+                                                        }
+                                                    }}
+                                                    onMouseLeave={(e) => {
+                                                        if (!product.isSoldOut) {
+                                                            e.currentTarget.querySelector('.button-slide-bg')?.classList.add('translate-y-full');
+                                                            e.currentTarget.querySelector('.button-text')?.classList.remove('text-black');
+                                                        }
+                                                    }}
                                                 >
-                                                    ADD TO BAG
+                                                    <span className="button-text relative z-10 transition-colors duration-300">{product.isSoldOut ? 'OUT OF STOCK' : 'ADD TO BAG'}</span>
+                                                    {!product.isSoldOut && (
+                                                        <span className="button-slide-bg absolute inset-0 bg-white transform translate-y-full transition-transform duration-300 ease-in-out z-0"></span>
+                                                    )}
                                                 </button>
                                                 <button className="w-10 h-10 border-2 border-gray-300 rounded flex items-center justify-center hover:border-[#FF6B9D] transition-colors">
                                                     <Heart size={16} className="text-gray-600" />

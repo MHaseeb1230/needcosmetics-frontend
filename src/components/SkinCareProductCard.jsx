@@ -28,25 +28,25 @@ const SkinCareProductCard = ({ product }) => {
             </div>
 
             {/* Product Info */}
-            <div className="flex flex-col flex-grow px-2">
+            <div className="flex flex-col flex-grow px-2 items-center text-center">
                 {/* Description */}
                 {product.description && (
-                    <p className="text-xs text-gray-500 mb-2 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-gray-500 mb-2 line-clamp-2 leading-relaxed text-center">
                         {product.description}
                     </p>
                 )}
 
                 {/* Product Name */}
-                <Link to={`/product/${product.slug || product.id}`}>
+                <Link to={`/product/${product.slug || product.id}`} className="text-center">
                     <h3 className="text-sm font-bold uppercase text-[#1C1B1B] mb-3 line-clamp-2 hover:text-primary transition-colors leading-tight">
                         {product.name}
                     </h3>
                 </Link>
 
                 {/* Price */}
-                <div className="mb-3">
+                <div className="mb-3 text-center">
                     {product.originalPrice && product.originalPrice > product.price ? (
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center justify-center gap-2">
                             <span className="text-sm font-bold text-[#1C1B1B]">PKR {product.price.toLocaleString()}</span>
                             <span className="text-xs text-gray-400 line-through">PKR {product.originalPrice.toLocaleString()}</span>
                         </div>
@@ -57,7 +57,7 @@ const SkinCareProductCard = ({ product }) => {
 
                 {/* Color Swatches */}
                 {product.swatches && product.swatches.length > 0 && (
-                    <div className="flex items-center gap-1.5 mb-4">
+                    <div className="flex items-center justify-center gap-1.5 mb-4">
                         {product.swatches.slice(0, 4).map((color, idx) => (
                             <div
                                 key={idx}
@@ -74,20 +74,56 @@ const SkinCareProductCard = ({ product }) => {
                 )}
 
                 {/* Action Buttons */}
-                <div className="flex items-center gap-2 mt-auto">
+                <div className="flex items-center gap-2 mt-auto w-full justify-center">
                     <button
                         onClick={() => !product.isSoldOut && addToCart(product)}
                         disabled={product.isSoldOut}
-                        className={`flex-1 py-2.5 rounded text-[10px] font-bold uppercase tracking-widest transition-all ${
+                        className={`flex-1 py-2.5 rounded-lg text-[10px] font-bold uppercase tracking-widest text-center relative overflow-hidden border-2 transition-all duration-300 ${
                             product.isSoldOut
-                                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                : 'bg-[#1C1B1B] text-white hover:bg-opacity-90'
+                                ? 'bg-gray-200 text-gray-400 border-gray-300 cursor-not-allowed'
+                                : 'bg-[#1C1B1B] text-white border-[#1C1B1B] hover:border-transparent hover:shadow-lg hover:shadow-gray-400/50'
                         }`}
+                        onMouseEnter={(e) => {
+                            if (!product.isSoldOut) {
+                                e.currentTarget.querySelector('.button-slide-bg')?.classList.remove('translate-y-full');
+                                e.currentTarget.querySelector('.button-text')?.classList.add('text-black');
+                            }
+                        }}
+                        onMouseLeave={(e) => {
+                            if (!product.isSoldOut) {
+                                e.currentTarget.querySelector('.button-slide-bg')?.classList.add('translate-y-full');
+                                e.currentTarget.querySelector('.button-text')?.classList.remove('text-black');
+                            }
+                        }}
                     >
-                        ADD TO BAG
+                        <span className="button-text relative z-10 transition-colors duration-300">{product.isSoldOut ? 'OUT OF STOCK' : 'ADD TO BAG'}</span>
+                        {!product.isSoldOut && (
+                            <span className="button-slide-bg absolute inset-0 bg-white transform translate-y-full transition-transform duration-300 ease-in-out z-0"></span>
+                        )}
                     </button>
-                    <button className="p-2.5 border border-gray-300 rounded hover:bg-gray-50 transition-colors">
-                        <Heart size={16} className="text-gray-600" />
+                    <button 
+                        className="w-9 h-9 bg-white border border-gray-300 rounded flex items-center justify-center flex-shrink-0 relative overflow-hidden"
+                        aria-label="Add to wishlist"
+                        onMouseEnter={(e) => {
+                            const heartContainer = e.currentTarget.querySelector('.heart-container');
+                            const heartFill = e.currentTarget.querySelector('.heart-fill');
+                            if (heartContainer && heartFill) {
+                                heartFill.classList.remove('translate-y-full');
+                            }
+                        }}
+                        onMouseLeave={(e) => {
+                            const heartFill = e.currentTarget.querySelector('.heart-fill');
+                            if (heartFill) {
+                                heartFill.classList.add('translate-y-full');
+                            }
+                        }}
+                    >
+                        <div className="heart-container relative w-[18px] h-[18px] flex items-center justify-center overflow-hidden">
+                            <Heart size={18} className="text-gray-600 absolute z-0" />
+                            <div className="heart-fill absolute inset-0 translate-y-full transition-transform duration-300 ease-in-out z-10">
+                                <Heart size={18} className="text-black fill-black" />
+                            </div>
+                        </div>
                     </button>
                 </div>
             </div>

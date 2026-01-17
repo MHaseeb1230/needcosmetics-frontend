@@ -5,6 +5,7 @@ import { useCart } from '../context/CartContext';
 import QuantitySelector from '../components/QuantitySelector';
 import ProductCard from '../components/ProductCard';
 import { Heart, Share2, ShieldCheck, Truck, RotateCcw, Package, MapPin, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
+import mockData from '../data/mockData';
 
 const ProductDetail = () => {
     const { slug } = useParams();
@@ -39,9 +40,36 @@ const ProductDetail = () => {
                                 .slice(0, 4)
                         );
                     }
+                } else {
+                    // Fallback to mockData
+                    throw new Error('Backend response not successful');
                 }
             } catch (error) {
                 console.error('Error fetching product:', error);
+                // Use mockData as fallback
+                if (slug) {
+                    // Try to find product in mockData by slug or id
+                    const mockProduct = mockData.products.find(p => 
+                        p.slug === slug || 
+                        p.id === parseInt(slug) || 
+                        p.id.toString() === slug
+                    );
+                    
+                    if (mockProduct) {
+                        setProduct(mockProduct);
+                        setSelectedSwatch(mockProduct.swatches?.[0]);
+                        
+                        // Set related products from mockData (same category)
+                        const related = mockData.products
+                            .filter(p => 
+                                (p.category === mockProduct.category || 
+                                 p.category?.slug === mockProduct.category?.slug) &&
+                                p.id !== mockProduct.id
+                            )
+                            .slice(0, 4);
+                        setRelatedProducts(related);
+                    }
+                }
             } finally {
                 setLoading(false);
             }
@@ -157,9 +185,18 @@ const ProductDetail = () => {
                         <div className='flex justify-between items-center gap-5'>
                         <button
                             onClick={() => addToCart(product, quantity)}
-                            className="w-full bg-secondary text-white py-[13px] rounded-lg font-bold uppercase tracking-wider hover:bg-primary hover:text-secondary transition-all"
+                            className="w-full bg-secondary text-white py-[13px] rounded-lg font-bold uppercase tracking-wider relative overflow-hidden border-2 border-secondary transition-all duration-300 hover:border-transparent hover:shadow-lg hover:shadow-gray-400/50"
+                            onMouseEnter={(e) => {
+                                e.currentTarget.querySelector('.button-slide-bg')?.classList.remove('translate-y-full');
+                                e.currentTarget.querySelector('.button-text')?.classList.add('text-black');
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.querySelector('.button-slide-bg')?.classList.add('translate-y-full');
+                                e.currentTarget.querySelector('.button-text')?.classList.remove('text-black');
+                            }}
                         >
-                            ADD TO BAG
+                            <span className="button-text relative z-10 transition-colors duration-300">ADD TO BAG</span>
+                            <span className="button-slide-bg absolute inset-0 bg-white transform translate-y-full transition-transform duration-300 ease-in-out z-0"></span>
                         </button>
 
                         {/* Wishlist Button */}
