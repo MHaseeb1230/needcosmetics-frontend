@@ -60,7 +60,7 @@ const ShopSkinCareSection = () => {
 
     return (
         <section className="py-12 md:py-16">
-            <div className="container mx-auto px-4">
+            <div className=" px-4">
                 <h2 className="text-2xl md:text-3xl font-light uppercase tracking-widest text-secondary mb-8 text-center">
                     Shop <strong className="font-bold">Skin Care</strong>
                 </h2>

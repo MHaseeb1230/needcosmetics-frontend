@@ -1,13 +1,13 @@
 // Import product images
 import sunkiss from '../assets/NEEDS/01_sunkiss.jpg';
-import cleanser from '../assets/NEEDS/01_cleanser.jpg';
-import toner from '../assets/NEEDS/01_cream_white.jpg';
+import cleanser from '../assets/NEEDS/01_spray.jpg';
 import hyaluronicSerum from '../assets/NEEDS/01_spray.jpg';
-import vitaminCSerum from '../assets/NEEDS/02_blue.jpg';
-import acneSerum from '../assets/NEEDS/02_white.jpg';
-import whiteningSerum from '../assets/NEEDS/02_green.jpg';
-import nightCream from '../assets/NEEDS/Picture7.jpg';
-import dayCream from '../assets/NEEDS/Picture8.jpg';
+import vitaminCSerum from '../assets/NEEDS/02_orange.jpg';
+import acneSerum from '../assets/NEEDS/02_green.jpg';
+import whiteningSerum from '../assets/NEEDS/02_white.jpg';
+import blueberrySerum from '../assets/NEEDS/02_blue.jpg';
+import nightCream from '../assets/NEEDS/01_black_cream.jpg';
+import dayCream from '../assets/NEEDS/01_cream_white.jpg';
 import faceWashGrey from '../assets/NEEDS/01_grey.jpg';
 import faceWashBlue from '../assets/NEEDS/01_blue.jpg';
 import faceWashGreen from '../assets/NEEDS/01_green.jpg';
@@ -67,17 +67,19 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "3-O-Ethyl Ascorbic Acid",
-                "Niacinamide",
+                "Octocrylene",
                 "Ethylhexyl Salicylate",
-                "Butylene Glycol",
-                "Stephania Tetrandra Extract",
-                "1-2-Hexanediol",
                 "Phenylbenzimidazole Sulfonic Acid",
-                "Zinc Oxide",
-                "Sodium Hyaluronate",
-                "Sorbitan Isostearate",
-                "Aminomethyl Propanol"
+                "Polysilicone-11",
+                "Cyclohexasiloxane",
+                "Niacinamide",
+                "Cetyl Phosphate",
+                "Arachidyl Glucoside",
+                "Hyaluronic Acid (Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer)",
+                "3-O-Ethyl Ascorbic Acid",
+                "Taraxacum Officinale (Dandelion) Leaf Extract",
+                "Stephania Tetrandra Extract",
+                "Saururus Chinensis Leaf/Root Extract"
             ],
             "swatches": [
                 "#FFB6C1",
@@ -86,53 +88,55 @@ const mockData = {
                 "#B22222"
             ],
             "spf": "SPF 60+++",
-            "volume": "50ml"
+            "volume": "50ml",
+            "slug": "needs-sunkiss-sunscreen-50ml"
         },
-        {
-            "id": 2,
-            "name": "Need's Rice And Coconut Facial Cleanser 200ml",
-            "price": 2990,
-            "originalPrice": 3490,
-            "discount": 14,
-            "category": "skincare",
-            "subcategory": "cleansing",
-            "image": cleanser,
-            "description": "Need's Rice And Coconut Facial Cleanser effectively brightens the skin and reduces dark spots with dual whitening technology. Enriched with hydrating and soothing ingredients for balanced, radiant skin.",
-            "features": [
-                {
-                    "title": "Dual Whitening Technology",
-                    "description": "Powered by Alpha-Arbutin and Glutathione, this cleanser effectively brightens the skin and reduces the appearance of dark spots and pigmentation."
-                },
-                {
-                    "title": "Hydrating & Soothing Formula",
-                    "description": "Deeply hydrate and calm the skin, leaving it soft and balanced."
-                },
-                {
-                    "title": "Vitamin-Infused Radiance",
-                    "description": "Enhanced Brightening, anti-inflammatory properties, and improved skin texture."
-                },
-                {
-                    "title": "Antioxidant Protection",
-                    "description": "Shields the skin from environmental damage and promotes a youthful glow."
-                },
-                {
-                    "title": "Gentle Exfoliation with Microbeads",
-                    "description": "Infused with jojoba esters and colored microbeads, it provides gentle exfoliation to remove dead skin cells for a smoother complexion without irritation."
-                }
-            ],
-            "keyIngredients": [
-                "Alpha-Arbutin",
-                "Glutathione",
-                "Rice Extract",
-                "Panthenol (pro-vitamin Bs)",
-                "Niacinamide (Vitamin B3)",
-                "Jojoba Esters",
-                "Coconut Extract",
-                "Vaccinium Angustifolium (Blueberry Fruit Extracts)"
-            ],
-            "swatches": ["#FFF5E1", "#FFE4C4", "#F5DEB3", "#DEB887", "#D2B48C"],
-            "volume": "200ml"
-        },
+        // {
+        //     "id": 2,
+        //     "name": "Need's Rice And Coconut Facial Cleanser 200ml",
+        //     "price": 2990,
+        //     "originalPrice": 3490,
+        //     "discount": 14,
+        //     "category": "skincare",
+        //     "subcategory": "cleansing",
+        //     "image": toner,
+        //     "description": "Need's Rice And Coconut Facial Cleanser effectively brightens the skin and reduces dark spots with dual whitening technology. Enriched with hydrating and soothing ingredients for balanced, radiant skin.",
+        //     "features": [
+        //         {
+        //             "title": "Dual Whitening Technology",
+        //             "description": "Powered by Alpha-Arbutin and Glutathione, this cleanser effectively brightens the skin and reduces the appearance of dark spots and pigmentation."
+        //         },
+        //         {
+        //             "title": "Hydrating & Soothing Formula",
+        //             "description": "Deeply hydrate and calm the skin, leaving it soft and balanced."
+        //         },
+        //         {
+        //             "title": "Vitamin-Infused Radiance",
+        //             "description": "Enhanced Brightening, anti-inflammatory properties, and improved skin texture."
+        //         },
+        //         {
+        //             "title": "Antioxidant Protection",
+        //             "description": "Shields the skin from environmental damage and promotes a youthful glow."
+        //         },
+        //         {
+        //             "title": "Gentle Exfoliation with Microbeads",
+        //             "description": "Infused with jojoba esters and colored microbeads, it provides gentle exfoliation to remove dead skin cells for a smoother complexion without irritation."
+        //         }
+        //     ],
+        //     "keyIngredients": [
+        //         "Alpha-Arbutin",
+        //         "Glutathione",
+        //         "Rice Extract",
+        //         "Panthenol (pro-vitamin Bs)",
+        //         "Niacinamide (Vitamin B3)",
+        //         "Jojoba Esters",
+        //         "Coconut Extract",
+        //         "Vaccinium Angustifolium (Blueberry Fruit Extracts)"
+        //     ],
+        //     "swatches": ["#FFF5E1", "#FFE4C4", "#F5DEB3", "#DEB887", "#D2B48C"],
+        //     "volume": "200ml",
+        //     "slug": "needs-rice-and-coconut-facial-cleanser-200ml"
+        // },
         {
             "id": 3,
             "name": "Need's Hydrating Glass Skin Toner 200ml",
@@ -141,7 +145,7 @@ const mockData = {
             "discount": 11,
             "category": "skincare",
             "subcategory": "toner",
-            "image": toner,
+            "image": cleanser,
             "description": "Need's Hydrating Glass Skin Toner delivers multi-level hydration with powerful soothing agents. Infused with hyaluronic acid and antioxidant-rich ingredients for radiant, balanced skin.",
             "features": [
                 {
@@ -177,17 +181,18 @@ const mockData = {
                 "Allantion"
             ],
             "swatches": ["#E0F7FA", "#B2EBF2", "#80DEEA", "#4DD0E1", "#26C6DA"],
-            "volume": "200ml"
+            "volume": "200ml",
+            "slug": "needs-hydrating-glass-skin-toner-200ml"
         },
         {
             "id": 4,
-            "name": "Need's Hyaluronic Acid Face Serum 30ml",
+            "name": "Hyaluronic Face Serum (Blueberry Dual-Phase)",
             "price": 4790,
             "originalPrice": 5290,
             "discount": 9,
             "category": "skincare",
             "subcategory": "serum",
-            "image": hyaluronicSerum,
+            "image": blueberrySerum,
             "description": "Need's Hyaluronic Acid Face Serum features a unique two-phase formula with powerful Blueberry Extract and Aloe Leaf Water for deep hydration. Age-defying peptide complex visibly reduces fine lines and wrinkles.",
             "features": [
                 {
@@ -212,35 +217,47 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Hyaluronic Acid",
-                "Copper Tripeptide",
-                "Vitamin E",
-                "Allantoin",
-                "Vaccinium Angustifolium (Blueberry) Fruit",
-                "Acetyl Hexapeptide-8",
+                "Aloe Vera Leaf Water",
                 "Mandelic Acid",
+                "Jojoba Seed Oil",
+                "Squalane",
+                "Vitamin E (Tocopherol)",
+                "1.2 - Hexanediol",
+                "Hydroxyacetophenon",
+                "Allantoin",
+                "Portulaca Oleracea Extract (Purslane Extract)",
+                "Hyaluronic Acid Sodium Hyaluronate",
                 "Centella Asiatica",
-                "Hexapeptide 1-3-9",
-                "Jojoba seed Oil",
-                "Palmitoyl"
+                "Madecassoside",
+                "Dandelion Leaf Extract",
+                "Stephania Tetrandra Extract",
+                "Saururus Leaf Root Extract",
+                "Ceramide NP Ceramide AP Ceramide EOP",
+                "Vaccinium Angustifolium (Blueberry) Fruit Extract",
+                "Acetyl Hexapeptide - 8",
+                "Copper Tripeptide - 1",
+                "Palmitoyl Tripeptide - 1",
+                "Palmitoyl Tetrapeptide - 3",
+                "Hexapeptide – 1,3,9"
             ],
             "swatches": ["#E8EAF6", "#C5CAE9", "#9FA8DA", "#7986CB", "#5C6BC0"],
-            "volume": "30ml"
+            "volume": "30ml",
+            "slug": "hyaluronic-face-serum-blueberry-dual-phase-30ml"
         },
         {
             "id": 5,
-            "name": "Need's Vitamin C Face Serum 30ml",
+            "name": "Multi-Vitamin C Serum",
             "price": 4490,
             "originalPrice": 4990,
             "discount": 10,
             "category": "skincare",
             "subcategory": "serum",
             "image": vitaminCSerum,
-            "description": "Need's Vitamin C Face Serum features a powerful Vitamin C complex with 3-O-Ethyl Ascorbic Acid to brighten complexion and reduce dark spots. Multi-vitamin blend nourishes and revitalizes for glowing, healthy skin.",
+            "description": "Multi-Vitamin C Serum formulated with 3-O-Ethyl Ascorbic Acid, a stable form of Vitamin C, brightens the complexion and reduces dark spots. Multi-vitamin blend nourishes and revitalizes for glowing, healthy skin with powerful antioxidant protection.",
             "features": [
                 {
                     "title": "Powerful Vitamin C Complex",
-                    "description": "Formulated with 3-O-Ethyl Ascorbic Asid, a stable form of Vitamin C, this serum brightens the complexion, reducing the appearance of dark spots and hyperpigmentation for a more even skin tone."
+                    "description": "Formulated with 3-O-Ethyl Ascorbic Acid, a stable form of Vitamin C, this serum brightens the complexion, reducing the appearance of dark spots and hyperpigmentation for a more even skin tone."
                 },
                 {
                     "title": "Multi-Vitamin Blend for Radiant Skin",
@@ -248,31 +265,38 @@ const mockData = {
                 },
                 {
                     "title": "Hydration & Skin Barrier Protection",
-                    "description": "Help to Restore moisture, improve the skin's hydration levels and reinforce the natural skin barrier for smoother, more resilient skin."
+                    "description": "Help to restore moisture, improve the skin's hydration levels and reinforce the natural skin barrier for smoother, more resilient skin."
                 },
                 {
-                    "title": "Soothing and Calming",
-                    "description": "Help calm irritated skin, reduce redness and promote a balanced, calm complexion."
+                    "title": "Soothing & Calming",
+                    "description": "Help calm irritated skin, reducing redness and promoting a balanced, calm complexion."
+                },
+                {
+                    "title": "Antioxidant Defense & Skin Health",
+                    "description": "Provides powerful antioxidant protection, fighting free radicals and supporting the skin's natural healing process."
                 }
             ],
             "keyIngredients": [
+                "Bifida Ferment Lysate",
+                "Acetyl Hexapeptide-8",
+                "Niacinamide (Vitamin B3)",
+                "Sodium Hyaluronate (Hyaluronic Acid)",
                 "3-O-Ethyl Ascorbic Acid (Stable Vitamin C)",
                 "Phytonadione (Vitamin K)",
-                "Tocopherol (Vitamin B5)",
-                "Sodium Hyaluronate",
-                "Trehalose",
-                "Rosa Rugosa Flower Oil",
-                "Niacinamide (Vitamin B3)",
+                "Tocopherol (Vitamin E)",
+                "Panthenol (Vitamin B5)",
+                "Peanut Acid",
+                "Zinc PCA",
                 "Cholecalciferol (Vitamin D3)",
-                "Butylene Glycol",
-                "Zinc PCA"
+                "Rosa Rugosa Flower Oil"
             ],
             "swatches": ["#FFF9E6", "#FFF3CD", "#FFECB5", "#FFE69C", "#FFD700"],
-            "volume": "30ml"
+            "volume": "30ml",
+            "slug": "multi-vitamin-c-serum-30ml"
         },
         {
             "id": 6,
-            "name": "Need's Acne Solution Face Serum 30ml",
+            "name": "Acne Solution Face Serum",
             "price": 4490,
             "originalPrice": 4990,
             "discount": 10,
@@ -304,63 +328,71 @@ const mockData = {
             ],
             "keyIngredients": [
                 "Salicylic Acid",
+                "Betaine",
                 "Sodium Lactate",
-                "Salix Alba (Willow) Bark Extract",
-                "Centella Asiatic Extract",
-                "Hyaluronic Acid",
                 "Lactobionic Acid",
                 "Pentylene Glycol",
+                "Portulaca Oleracea Extract",
+                "Sesame Amino Acids",
+                "Salix Alba (Willow) Bark Extract",
                 "Camellia Sinensis Leaf Extract",
-                "Madecassoside"
+                "Xanthan Gum",
+                "Allantoin",
+                "Dipotassium Glycyrrhizate",
+                "Zinc PCA",
+                "Asiaticoside",
+                "Centella Asiatica Extract",
+                "Madecassoside",
+                "Sodium Hyaluronate (Hyaluronic Acid)"
             ],
             "swatches": ["#E8F5E9", "#C8E6C9", "#A5D6A7", "#81C784", "#66BB6A"],
-            "volume": "30ml"
+            "volume": "30ml",
+            "slug": "acne-solution-face-serum-30ml"
         },
         {
             "id": 7,
-            "name": "Need's Whitening Face Serum 30ml",
+            "name": "Whitening Serum",
             "price": 4490,
             "originalPrice": 4990,
             "discount": 10,
             "category": "skincare",
             "subcategory": "serum",
             "image": whiteningSerum,
-            "description": "Need's Whitening Face Serum features Alpha-Arbutin and 3-O-Ethyl Ascorbic Acid to target dark spots for a visibly brighter complexion. Lightweight, fast-absorbing formula with cooling and refreshing sensation.",
+            "description": "Whitening Serum features Alpha-Arbutin and 3-O-Ethyl Ascorbic Acid which target dark spots and discoloration for a visibly brighter, more even complexion. Lightweight, fast-absorbing texture delivers an instant cooling effect, perfect for revitalizing men's skin.",
             "features": [
                 {
-                    "title": "Power Brightening Formula",
-                    "description": "Features Alpha-Arbutin and 3-O-Ethyl Ascorbic Acid which target dark spots and discoloration for a visibly brighter, more even complexion."
+                    "title": "Powerful Brightening Formula",
+                    "description": "Features Alpha-Arbutin and 3-O-Ethyl Ascorbic Acid, which target dark spots and discoloration for a visibly brighter, more even complexion."
                 },
                 {
                     "title": "Cooling & Refreshing Sensation",
-                    "description": "Lightweight fast-absorbing texture delivers an instant cooling effect, perfect for revitalizing men's skin."
+                    "description": "Lightweight, fast-absorbing texture delivers an instant cooling effect, perfect for revitalizing men's skin."
                 },
                 {
                     "title": "Hydrating & Soothing Benefits",
-                    "description": "Deeply hydrate, calm irritation and strengthen the skin barrier."
+                    "description": "Deeply hydrate, calm irritation, and strengthen the skin barrier."
                 },
                 {
                     "title": "Anti-Fatigue Complex",
-                    "description": "Combat signs of tiredness, reduce fine lines and restore energy to your skin."
+                    "description": "Combat signs of tiredness, reduce fine lines, and restore energy to your skin."
                 },
                 {
                     "title": "Non-Greasy & Easy Absorption",
-                    "description": "Specially designed for men's thicker skin, the serum leaves no residue ensuring a fresh, matte finish for all-day confidence."
+                    "description": "Specially designed for men's thicker skin, the serum leaves no residue, ensuring a fresh, matte finish for all-day confidence."
                 }
             ],
             "keyIngredients": [
                 "Bifida Ferment Lysate",
-                "1,2-Hexanediol",
-                "Sodium Hyaluronate",
-                "Glutathione",
-                "Rosa Rugosa Flower Oil",
                 "Acetyl Hexapeptide-8",
                 "Alpha-Arbutin",
+                "Sodium Hyaluronate (Hyaluronic Acid)",
                 "3-O-Ethyl Ascorbic Acid",
-                "Inositol (Vitamin B Complex)"
+                "Glutathione",
+                "Rosa Rugosa Flower Oil"
             ],
             "swatches": ["#FFF8E1", "#FFECB3", "#FFE082", "#FFD54F", "#FFCA28"],
-            "volume": "30ml"
+            "volume": "30ml",
+            "slug": "whitening-serum-30ml"
         },
         {
             "id": 8,
@@ -395,39 +427,43 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Sodium Hyaluronate",
-                "Retinol",
-                "Lecithin",
-                "Glutathione",
-                "Caprylic/Capric Triglyceride",
-                "Simmondsia Jojoba Seed",
-                "Acetyl Hexapeptide-8",
-                "1-2-Hexanediol",
-                "Allantoin",
+                "Butyrospermum Parkii (Shea Butter)",
+                "Simmondsia Jojoba Butter",
+                "Simmondsia Chinensis (Jojoba) Seed Oil",
+                "Isononyl Isononanoate",
+                "Squalane",
+                "Alumina Magnesium",
+                "Stearic Acid",
+                "Tocopherol (Vitamin E)",
+                "Silybum Marianum (Milk Thistle) Extract",
                 "Vaccinium Angustifolium (Blueberry) Fruit Extract",
-                "Alumina Magnesium"
+                "Allantoin",
+                "Hyaluronic Acid Sodium Hyaluronate",
+                "Retinol",
+                "Glutathione"
             ],
             "swatches": ["#F3E5F5", "#E1BEE7", "#CE93D8", "#BA68C8", "#AB47BC"],
-            "volume": "50ml"
+            "volume": "50ml",
+            "slug": "needs-hyaluronic-fairness-night-cream-50ml"
         },
         {
             "id": 9,
-            "name": "Need's Vitamin C Brightening Day Cream * 50ml",
+            "name": "COMPLETE Brightening Day Cream",
             "price": 6490,
             "originalPrice": 6790,
             "discount": 4,
             "category": "skincare",
             "subcategory": "moisturizer",
             "image": dayCream,
-            "description": "Need's Vitamin C Brightening Day Cream enriched with 3-O-Ethyl Ascorbic Acid and Niacinamide visibly reduces dark spots for a radiant complexion. Lightweight, non-greasy formula perfect as daily base.",
+            "description": "COMPLETE Brightening Day Cream enriched with 3-O-Ethyl Ascorbic Acid (a stable form of Vitamin C) and Niacinamide visibly reduces dark spots and evens skin tone for a radiant, luminous complexion. Lightweight and non-greasy, this cream absorbs quickly, leaving the skin soft, smooth, and perfectly prepped for makeup application or daily wear.",
             "features": [
                 {
-                    "title": "Advanced Brightening & Face Glowing",
-                    "description": "Enriched with 3-O-Ethyl Ascorbic Acid a stable form of Vitamin C and Niacinamide, this cream visibly reduces dark spots and evens skin tone for a radiant, luminous complexion."
+                    "title": "Advanced Brightening Power",
+                    "description": "Enriched with 3-O-Ethyl Ascorbic Acid (a stable form of Vitamin C) and Niacinamide, this cream visibly reduces dark spots and evens skin tone for a radiant, luminous complexion."
                 },
                 {
                     "title": "Long-Lasting Hydration & Skin Barrier Support",
-                    "description": "Deeply hydrates and nourishes the skin while fortifying the natural barrier for smoother, softer texture."
+                    "description": "Deeply hydrates and nourishes the skin, reinforcing the natural barrier for smoother, softer texture."
                 },
                 {
                     "title": "Antioxidant & Environmental Defense",
@@ -435,177 +471,247 @@ const mockData = {
                 },
                 {
                     "title": "Skin-Soothing and Restorative Formula",
-                    "description": "Calms irritated skin, reduces redness and restores balance for a comfortable, refreshed feel all day long."
+                    "description": "Calms irritated skin, reduces redness, and restores balance for a comfortable, refreshed feel all day long."
                 },
                 {
                     "title": "Perfect Daily Base",
-                    "description": "Lightweight and non-greasy, this cream absorbs quickly, leaving the skin soft, Smooth and perfectly prepped for makeup application or daily wear."
+                    "description": "Lightweight and non-greasy, this cream absorbs quickly, leaving the skin soft, smooth, and perfectly prepped for makeup application or daily wear."
                 }
             ],
             "keyIngredients": [
-                "3-O-Ethyl Ascorbic Acid",
                 "Niacinamide",
-                "Beta-Carotene",
-                "Sodium Hyaluronate",
-                "Sophora Angustifolia Root Extract",
+                "3-O-Ethyl Ascorbic Acid",
+                "Dimethicone Phenyl Vinyl Dimethicone Crosspolymer",
+                "Butyrospermum Parkii (Shea Butter)",
+                "Portulaca Oleracea Extract",
+                "Simmondsia (Jojoba) Seed Oil",
                 "Piper Methysticum Root Extract",
-                "Panthenol (Vitamin B5)",
-                "Butylene Glycol",
-                "Glutathione",
+                "Helianthus Annuus (Sunflower) Seed Oil",
                 "Tocopherol (Vitamin E)",
+                "Beta-Carotene",
+                "Panthenol",
+                "Hydroxyacetophenone",
+                "Sodium Hyaluronate (Hyaluronic Acid)",
+                "Sophora Angustifolia Root Extract",
                 "Salvia Miltiorrhiza Root Extract",
-                "1-2-Hexanediol"
+                "Thymus Vulgaris (Thyme) Leaf Extract",
+                "Coptis Chinensis Root Extract"
             ],
             "swatches": ["#FFF3E0", "#FFE0B2", "#FFCC80", "#FFB74D", "#FFA726"],
-            "volume": "50ml"
+            "volume": "50ml",
+            "slug": "complete-brightening-day-cream-50ml"
         },
         {
             "id": 10,
-            "name": "Need's Multi-Action Face Wash 100ml",
+            "name": "Men's Facial Cleanser",
             "price": 3490,
             "originalPrice": 3990,
             "discount": 13,
             "category": "skincare",
             "subcategory": "cleansing",
             "image": faceWashGrey,
-            "description": "Need's Multi-Action Face Wash deeply cleanses and purifies the skin while maintaining its natural moisture balance. Formulated with natural extracts and gentle cleansing agents for a refreshed, smooth complexion.",
+            "description": "Men's Facial Cleanser with soluble jojoba microbeads effectively removes dirt, excess oil, and impurities while being gentle on the skin. Infused with menthol for an invigorating cooling sensation, it locks in moisture and soothes irritation. Designed to tackle the unique challenges of men's skin, including thicker skin and excess oil production, delivering a balanced and matte finish.",
             "features": [
                 {
-                    "title": "Deep Cleansing & Purifying",
-                    "description": "Effectively removes dirt, oil, and impurities from the skin's surface, leaving it clean and refreshed without over-drying."
+                    "title": "Deep Clean with Gentle Exfoliation",
+                    "description": "Formulated with soluble jojoba microbeads, this cleanser effectively removes dirt, excess oil, and impurities while being gentle on the skin, preventing irritation."
                 },
                 {
-                    "title": "Maintains Natural Moisture Balance",
-                    "description": "Gentle formula preserves the skin's natural moisture barrier, preventing dryness and maintaining soft, supple skin."
+                    "title": "Cooling Menthol Freshness",
+                    "description": "Infused with menthol, it provides an invigorating cooling sensation, leaving your skin refreshed and energized."
                 },
                 {
-                    "title": "Natural Extracts & Soothing Agents",
-                    "description": "Enriched with natural botanical extracts to soothe and calm the skin while providing antioxidant benefits."
+                    "title": "Hydration & Soothing",
+                    "description": "Locks in moisture, soothes irritation, and prevents dryness after cleansing."
                 },
                 {
-                    "title": "Suitable for All Skin Types",
-                    "description": "Lightweight, non-irritating formula suitable for daily use on all skin types, including sensitive skin."
+                    "title": "Tailored for Men's Skin",
+                    "description": "Designed to tackle the unique challenges of men's skin, including thicker skin and excess oil production, delivering a balanced and matte finish."
                 },
                 {
-                    "title": "Refreshing & Energizing",
-                    "description": "Invigorating formula leaves the skin feeling refreshed and energized, ready for your skincare routine."
+                    "title": "Vibrant Blue Beads for Visual Appeal",
+                    "description": "Enhanced with Ultramarine Blue microbeads, the cleanser not only feels great but looks great too, elevating your daily grooming routine."
                 }
             ],
             "keyIngredients": [
-                "Natural Cleansing Agents",
-                "Botanical Extracts",
-                "Glycerin",
-                "Vitamin E",
-                "Aloe Vera Extract",
-                "Chamomile Extract",
-                "Green Tea Extract"
+                "Aloe Barbadensis Leaf Water",
+                "Sodium Cocoyl Glutamate",
+                "Menthol",
+                "Sodium Polyglutamate",
+                "Jojoba Esters",
+                "Allantoin",
+                "Panthenol (Pro-Vitamin B5)",
+                "Sodium Hyaluronate (Hyaluronic Acid)"
             ],
             "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
             "volume": "100ml",
-            "slug": "needs-multi-action-face-wash-100ml"
+            "slug": "mens-facial-cleanser-100ml"
         },
         {
             "id": 11,
-            "name": "Need's Multi-Action Face Wash 100ml",
+            "name": "Hyaluronic Face Wash Cleanser",
             "price": 3490,
             "originalPrice": 3990,
             "discount": 13,
             "category": "skincare",
             "subcategory": "cleansing",
-            "image": faceWashGrey,
-            "description": "Need's Multi-Action Face Wash deeply cleanses and purifies the skin while maintaining its natural moisture balance. Formulated with natural extracts and gentle cleansing agents for a refreshed, smooth complexion.",
+            "image": faceWashBlue,
+            "description": "Hyaluronic Face Wash Cleanser deeply hydrates the skin while effectively removing dirt, oil, and makeup. Packed with antioxidants that protect from environmental stress, it gently soothes irritated skin, strengthens the skin barrier, and promotes healthy, resilient skin. Ideal for all skin types, including sensitive skin, this cleanser provides a non-stripping, gentle clean.",
             "features": [
                 {
-                    "title": "Deep Cleansing & Purifying",
-                    "description": "Effectively removes dirt, oil, and impurities from the skin's surface, leaving it clean and refreshed without over-drying."
+                    "title": "Deep Hydration & Cleanse",
+                    "description": "This cleanser deeply hydrates the skin while effectively removing dirt, oil, and makeup, leaving your skin feeling soft and refreshed."
                 },
                 {
-                    "title": "Maintains Natural Moisture Balance",
-                    "description": "Gentle formula preserves the skin's natural moisture barrier, preventing dryness and maintaining soft, supple skin."
+                    "title": "Antioxidant-Rich Protection",
+                    "description": "Packed with antioxidants that protect the skin from environmental stress, helping to brighten the complexion and preserve skin's youthful radiance."
                 },
                 {
-                    "title": "Natural Extracts & Soothing Agents",
-                    "description": "Enriched with natural botanical extracts to soothe and calm the skin while providing antioxidant benefits."
+                    "title": "Soothing & Calming",
+                    "description": "Gently soothes irritated skin, reducing redness and inflammation while promoting a calm, balanced complexion."
                 },
                 {
-                    "title": "Suitable for All Skin Types",
-                    "description": "Lightweight, non-irritating formula suitable for daily use on all skin types, including sensitive skin."
+                    "title": "Nourishing & Restorative",
+                    "description": "Strengthen the skin barrier, restoring moisture and promoting healthy, resilient skin."
                 },
                 {
-                    "title": "Refreshing & Energizing",
-                    "description": "Invigorating formula leaves the skin feeling refreshed and energized, ready for your skincare routine."
+                    "title": "Gentle Formula",
+                    "description": "Ideal for all skin types, including sensitive skin, this cleanser provides a non-stripping, gentle clean that keeps your skin healthy."
                 }
             ],
             "keyIngredients": [
-                "Natural Cleansing Agents",
-                "Botanical Extracts",
-                "Glycerin",
-                "Vitamin E",
-                "Aloe Vera Extract",
-                "Chamomile Extract",
-                "Green Tea Extract"
+                "Methylpropanediol",
+                "Niacinamide",
+                "1,2-Hexanediol",
+                "Hydroxyacetophenone",
+                "Hexylene Glycol",
+                "Glycine",
+                "Betaine",
+                "Serine",
+                "Glutamic Acid",
+                "Allantoin",
+                "Adenosine",
+                "Aspartic Acid",
+                "Citrus Aurantium Bergamia (Bergamot) Fruit Oil",
+                "Ribes Nigrum (Black Currant) Seed Oil",
+                "Hyaluronic Acid (Sodium Hyaluronate)",
+                "Helianthus Annuus (Sunflower) Seed Oil",
+                "Centella Asiatica Extract",
+                "Cardiospermum Halicacabum Flower/Leaf Extract",
+                "Scutellaria Baicalensis Root Extract",
+                "Citrus Unshiu Peel Extract",
+                "Glycyrrhiza Glabra (Licorice) Root Extract",
+                "Camellia Sinensis Leaf Extract",
+                "Chamomilla Recutita (Matricaria) Flower Extract"
             ],
             "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
             "volume": "100ml",
-            "slug": "needs-multi-action-face-wash-100ml"
+            "slug": "hyaluronic-face-wash-cleanser-100ml"
         },
         {
             "id": 12,
-            "name": "Need's Multi-Action Face Wash 100ml",
+            "name": "Acne Solution Face Wash Cleanser",
             "price": 3490,
             "originalPrice": 3990,
             "discount": 13,
             "category": "skincare",
             "subcategory": "cleansing",
-            "image": faceWashGrey,
-            "description": "Need's Multi-Action Face Wash deeply cleanses and purifies the skin while maintaining its natural moisture balance. Formulated with natural extracts and gentle cleansing agents for a refreshed, smooth complexion.",
+            "image": faceWashGreen,
+            "description": "Acne Solution Face Wash Cleanser powered by Salicylic Acid and Glycolic Acid deeply cleanses pores, removes excess oil, and helps reduce breakouts. This hydrating formula maintains moisture balance, soothes redness, and protects skin from environmental stressors. With mild surfactants, it provides a deep cleanse without stripping skin, making it suitable for sensitive or acne-prone skin.",
             "features": [
                 {
-                    "title": "Deep Cleansing & Purifying",
-                    "description": "Effectively removes dirt, oil, and impurities from the skin's surface, leaving it clean and refreshed without over-drying."
+                    "title": "Effective Acne-Fighting Formula",
+                    "description": "Powered by Salicylic Acid and Glycolic Acid, this cleanser deeply cleanses pores, removes excess oil, and helps reduce breakouts while preventing new ones."
                 },
+                {
+                    "title": "Hydrating & Soothing",
+                    "description": "Maintains moisture balance and soothes redness, leaving your skin calm and refreshed."
+                },
+                {
+                    "title": "Natural Antioxidant Boost",
+                    "description": "Protect skin from environmental stressors while enhancing a radiant complexion."
+                },
+                {
+                    "title": "Gentle Yet Powerful Cleansing",
+                    "description": "Mild surfactants provide a deep cleanse without stripping skin, making it suitable for sensitive or acne-prone skin."
+                },
+                {
+                    "title": "Nourishing Plant-Based Care",
+                    "description": "Improve skin texture, balance sebum production, and promote a clearer, healthier-looking complexion."
+                }
             ],
             "keyIngredients": [
-                "Natural Cleansing Agents",
-                "Botanical Extracts",
-                "Glycerin",
-                "Vitamin E",
-                "Aloe Vera Extract",
-                "Chamomile Extract",
-                "Green Tea Extract"
+                "Aloe Barbadensis Leaf Water",
+                "Sodium Cocoyl Glycinate",
+                "Sodium Cocoyl Glutamate",
+                "Butylene Glycol",
+                "Avocado Oil PEG-8 Esters",
+                "Avocado Oil PEG-11 Esters",
+                "Persea Gratissima (Avocado) Fruit Extract",
+                "Salicylic Acid",
+                "Sodium Polyglutamate",
+                "Niacinamide",
+                "Allantoin",
+                "Camellia Sinensis Leaf Extract",
+                "Panthenol (Vitamin B5)",
+                "Glycolic Acid",
+                "Punica Granatum",
+                "Sodium Hyaluronate"
             ],
             "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
             "volume": "100ml",
-            "slug": "needs-multi-action-face-wash-100ml"
+            "slug": "acne-solution-face-wash-cleanser-100ml"
         },  
         {
             "id": 13,
-            "name": "Need's Multi-Action Face Wash 100ml",
+            "name": "Vitamin C Face Wash Cleanser",
             "price": 3490,
             "originalPrice": 3990,
             "discount": 13,
             "category": "skincare",
             "subcategory": "cleansing",
-            "image": faceWashGrey,
-            "description": "Need's Multi-Action Face Wash deeply cleanses and purifies the skin while maintaining its natural moisture balance. Formulated with natural extracts and gentle cleansing agents for a refreshed, smooth complexion.",
+            "image": faceWashOrange,
+            "description": "Vitamin C Face Wash Cleanser with Ascorbic Acid visibly brightens the complexion, reduces dullness, and promotes a more even skin tone. Delivers long-lasting hydration to keep the skin plump, smooth, and refreshed. This gentle formula soothes sensitive skin, supports natural skin repair, and is lightweight, non-drying, suitable for all skin types.",
             "features": [
                 {
-                    "title": "Deep Cleansing & Purifying",
-                    "description": "Effectively removes dirt, oil, and impurities from the skin's surface, leaving it clean and refreshed without over-drying."
+                    "title": "Vitamin C Brightening Power",
+                    "description": "Visibly brightens the complexion, reduces dullness, and helps promote a more even skin tone."
                 },
+                {
+                    "title": "Deep Hydration Boost",
+                    "description": "Delivers long-lasting hydration to keep the skin plump, smooth, and refreshed."
+                },
+                {
+                    "title": "Soothing and Restorative",
+                    "description": "Soothes sensitive skin and supports natural skin repair."
+                },
+                {
+                    "title": "Gentle Cleansing",
+                    "description": "Provides intense moisture, leaving your skin plump, refreshed, and glowing."
+                },
+                {
+                    "title": "Perfect for Daily Use",
+                    "description": "Lightweight, non-drying, and suitable for all skin types. This cleanser is the ideal first step in a hydrating and brightening skincare routine."
+                }
             ],
             "keyIngredients": [
-                "Natural Cleansing Agents",
-                "Botanical Extracts",
-                "Glycerin",
-                "Vitamin E",
-                "Aloe Vera Extract",
-                "Chamomile Extract",
-                "Green Tea Extract"
+                "Sodium Cocoyl Glycinate",
+                "Lauryl Glucoside",
+                "PEG-150 Pentaerythrityl Tetrastearate",
+                "Ascorbic Acid (Vitamin C)",
+                "Butylene Glycol",
+                "Phenoxyethanol",
+                "Sodium Polyglutamate",
+                "Honey",
+                "Touhi Ekisu (Japanese Cedar Extract)",
+                "1,2-Hexanediol",
+                "Panthenol (Pro-Vitamin B5)",
+                "Panax Ginseng Root Extract",
+                "Sodium Hyaluronate (Hyaluronic Acid)"
             ],
             "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
             "volume": "100ml",
-            "slug": "needs-multi-action-face-wash-100ml"
+            "slug": "vitamin-c-face-wash-cleanser-100ml"
         },
         // {
         //     "id": 11,

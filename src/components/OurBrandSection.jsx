@@ -11,7 +11,7 @@ const OurBrandSection = () => {
                     <div className="order-2 lg:order-1">
                         <div className="relative w-full h-full rounded-2xl overflow-hidden">
                             <img
-                                src="/images/ourbrand.webp"
+                                src="/images/artbeauty.png"
                                 alt="Our Brand"
                                 className="w-full h-full object-cover"
                             />

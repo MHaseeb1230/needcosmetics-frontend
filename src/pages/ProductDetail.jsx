@@ -140,13 +140,13 @@ const ProductDetail = () => {
                         {/* Shade Selector */}
                         {product.swatches && product.swatches.length > 0 && (
                             <div className="mb-6 pb-6 border-b border-[var(--color-border)]">
-                                <div className="flex justify-between items-center mb-4">
-                                    <p className="text-sm font-semibold">01 Warm Rose</p>
-                                    <button className="text-xs text-[var(--color-text-secondary)] hover:text-primary">
+                                {/* <div className="flex justify-between items-center mb-4"> */}
+                                    {/* <p className="text-sm font-semibold">01 Warm Rose</p> */}
+                                 { /*  <button className="text-xs text-[var(--color-text-secondary)] hover:text-primary">
                                         All Shades ({product.swatches.length})
-                                    </button>
-                                </div>
-                                <div className="flex gap-2">
+                                    </button>*/}
+                                {/* </div> */}
+                                {/* <div className="flex gap-2">
                                     {product.swatches.map((swatch, idx) => (
                                         <button
                                             key={idx}
@@ -157,7 +157,7 @@ const ProductDetail = () => {
                                             style={{ backgroundColor: swatch }}
                                         />
                                     ))}
-                                </div>
+                                </div> */}
                             </div>
                         )}
 

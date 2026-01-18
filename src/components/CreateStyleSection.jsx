@@ -86,7 +86,7 @@ const CreateStyleSection = () => {
 
     return (
         <section className="bg-white py-12 md:py-16 lg:py-20">
-            <div className="container mx-auto px-4">
+            <div className=" px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                     {/* Left Side - Text Content and Thumbnails */}
                     <div className="order-2 lg:order-1 flex flex-col justify-center items-center text-center">

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const IngredientsGlossarySection = () => {
     return (
         <section className=" py-12 md:py-20">
-            <div className="container mx-auto px-4">
+            <div className=" px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Left Side - Image */}
                     <div className="flex justify-center lg:justify-start order-2 lg:order-1">

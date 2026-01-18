@@ -6,40 +6,40 @@ const OurServicesSection = () => {
         {
             id: 1,
             image: '/images/service/service1.png',
-            title: 'INSTANT MAKEUP TRY-ON',
-            description: 'Try our products on for yourself and unlock your creativity',
+            title: 'Your Skin\'s Best Friend',
+            description: 'Protect, Nourish, and Glow Naturally with Every Sun-Kissed Moment',
             buttonText: 'UNLOCK YOUR CREATIVITY',
             link: '/try-on'
         },
         {
             id: 2,
             image: '/images/service/service2.png',
-            title: 'NEEDS BEAUTY SERVICES',
-            description: 'Meet our beauty experts and treat yourself to a personalized make-up session',
+            title: 'Radiance & Care in Every Drop',
+            description: 'Target Acne, Brighten Skin, and Reveal Your Natural Glow with Our Powerful Organic Serums',
             buttonText: 'DISCOVER OUR SERVICES',
             link: '/beauty-services'
         },
         {
             id: 3,
             image: '/images/service/service3.png',
-            title: 'FOUNDATION FINDER',
-            description: 'Find the perfect match for your unique skin\'s tone in just a few clicks',
+            title: 'Pure Hydration, Naturally',
+            description: 'Cleanse, Refresh, and Nourish Your Skin with Organic Rice & Coconut, and Reveal a Glass-Like Glow with Our Hydrating Toner',
             buttonText: 'FIND MY SHADE PRECISELY',
             link: '/foundation-finder'
         },
-        // {
-        //     id: 4,
-        //     image: '/images/service/service4.webp',
-        //     title: 'SKINCARE PRO ADVISOR',
-        //     description: 'Build your skincare routine with our cutting-edge AI-powered app',
-        //     buttonText: 'DEFINE YOUR ROUTINE',
-        //     link: '/skincare-advisor'
-        // }
+        {
+            id: 4,
+            image: '/images/service/service4.png',
+            title: 'Day & Night Care, Naturally',
+            description: 'Brighten and Protect Your Skin During the Day with Vitamin C, and Nourish & Restore Overnight with Our Fairness Night Cream',
+            buttonText: 'DEFINE YOUR ROUTINE',
+            link: '/skincare-advisor'
+        }
     ];
 
     return (
         <section className="bg-brand-primary py-12 md:py-20 ">
-            <div className="container mx-auto px-4">
+            <div className=" px-4">
                 {/* Main Title */}
                 <div className="text-center mb-12 md:mb-16">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-light uppercase tracking-tight text-gray-900">
@@ -50,7 +50,7 @@ const OurServicesSection = () => {
                 </div>
 
                 {/* Service Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     {services.map((service) => (
                         <div
                             key={service.id}
@@ -61,14 +61,14 @@ const OurServicesSection = () => {
                                 <img
                                     src={service.image}
                                     alt={service.title}
-                                    className="w-50 h-50 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    className="w-60 object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
 
                             {/* Content */}
                             <div className="flex flex-col flex-grow p-6 md:p-8 items-center text-center">
                                 {/* Title */}
-                                <h3 className="text-xl md:text-2xl font-semibold uppercase tracking-wide text-gray-900 mb-4">
+                                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4">
                                     {service.title}
                                 </h3>
 

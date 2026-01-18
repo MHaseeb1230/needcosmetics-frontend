@@ -67,7 +67,7 @@ const FollowViralHypeSection = () => {
 
     return (
         <section className="bg-white py-12 md:py-20">
-            <div className="container mx-auto px-4">
+            <div className=" px-4">
                 {/* Header */}
                 <div className="text-center mb-8 md:mb-12">
                     <div className="flex items-center justify-center gap-3 mb-6">
@@ -81,16 +81,16 @@ const FollowViralHypeSection = () => {
                     {/* Social Media Links */}
                     <div className="flex items-center justify-center gap-6 mb-8">
                         <a
-                            href="https://www.instagram.com/needsmilano"
+                            href="https://www.instagram.com/needs"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"
                         >
                             <Instagram size={20} />
-                            <span className="text-sm font-medium">@needsmilano</span>
+                            <span className="text-sm font-medium">@needs</span>
                         </a>
                         <a
-                            href="https://www.tiktok.com/@needsmilano"
+                            href="https://www.tiktok.com/@needs"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"
@@ -123,7 +123,7 @@ const FollowViralHypeSection = () => {
                     {/* Carousel Container */}
                     <div
                         ref={scrollContainerRef}
-                        className="flex gap-4 overflow-x-auto scroll-smooth px-12 no-scrollbar"
+                        className="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar"
                     >
                         {carouselImages.map((item, index) => (
                             <motion.div

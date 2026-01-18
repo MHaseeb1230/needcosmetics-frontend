@@ -11,6 +11,7 @@ import OurBrandSection from '../components/OurBrandSection';
 import TopCategoriesSection from '../components/TopCategoriesSection';
 import ShopSkinCareSection from '../components/ShopSkinCareSection';
 import IngredientsGlossarySection from '../components/IngredientsGlossarySection';
+import MeetOurIconsSection from '../components/MeetOurIconsSection';
 import WhatsNewSection from '../components/WhatsNewSection';
 import CreateStyleSection from '../components/CreateStyleSection';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -38,7 +39,7 @@ const heroImages = [
     hero7,
     // hero5,
     // hero3,
-    hero4,
+    // hero4,
    
 ];
 
@@ -258,6 +259,9 @@ const Home = () => {
 
             {/* Ingredients Glossary Section */}
             <IngredientsGlossarySection />
+
+            {/* Meet Our Icons Section */}
+            <MeetOurIconsSection />
 
             {/* What's new Section */}
             <WhatsNewSection />
