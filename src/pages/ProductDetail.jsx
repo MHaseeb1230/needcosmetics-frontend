@@ -284,12 +284,21 @@ const ProductDetail = () => {
                                     </h2>
                                     {product.keyIngredients && product.keyIngredients.length > 0 ? (
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            {product.keyIngredients.map((ingredient, index) => (
-                                                <div key={index} className="flex items-start gap-3 p-4 bg-pink-light rounded-lg">
-                                                    <span className="text-primary font-bold">•</span>
-                                                    <p className="text-sm text-secondary font-medium">{ingredient}</p>
-                                                </div>
-                                            ))}
+                                            {product.keyIngredients.map((ingredient, index) => {
+                                                const ingredientName = typeof ingredient === 'string' ? ingredient : ingredient.name;
+                                                const ingredientBenefit = typeof ingredient === 'object' && ingredient.benefit ? ingredient.benefit : null;
+                                                return (
+                                                    <div key={index} className="flex items-start gap-3 p-4 bg-pink-light rounded-lg">
+                                                        <span className="text-primary font-bold">•</span>
+                                                        <div className="flex-1">
+                                                            <p className="text-sm text-secondary font-medium mb-1">{ingredientName}</p>
+                                                            {ingredientBenefit && (
+                                                                <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">{ingredientBenefit}</p>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
                                         </div>
                                     ) : (
                                         <p className="text-[var(--color-text-secondary)]">No ingredient information available.</p>

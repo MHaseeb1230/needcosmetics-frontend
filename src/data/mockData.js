@@ -67,19 +67,58 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Octocrylene",
-                "Ethylhexyl Salicylate",
-                "Phenylbenzimidazole Sulfonic Acid",
-                "Polysilicone-11",
-                "Cyclohexasiloxane",
-                "Niacinamide",
-                "Cetyl Phosphate",
-                "Arachidyl Glucoside",
-                "Hyaluronic Acid (Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer)",
-                "3-O-Ethyl Ascorbic Acid",
-                "Taraxacum Officinale (Dandelion) Leaf Extract",
-                "Stephania Tetrandra Extract",
-                "Saururus Chinensis Leaf/Root Extract"
+                {
+                    "name": "Octocrylene",
+                    "benefit": "A chemical sunscreen agent that absorbs UVB and short UVA rays, protecting the skin from sun damage."
+                },
+                {
+                    "name": "Ethylhexyl Salicylate",
+                    "benefit": "A UVB filter that helps protect the skin from the harmful effects of sun exposure."
+                },
+                {
+                    "name": "Phenylbenzimidazole Sulfonic Acid",
+                    "benefit": "A water-soluble UVA/UVB filter that helps protect the skin from sunburn."
+                },
+                {
+                    "name": "Polysilicone-11",
+                    "benefit": "A silicone-based film-former that creates a smooth, matte finish on the skin."
+                },
+                {
+                    "name": "Cyclohexasiloxane",
+                    "benefit": "A silicone used to improve texture and provide a smooth feel."
+                },
+                {
+                    "name": "Niacinamide",
+                    "benefit": "A form of Vitamin B3 that brightens skin, improves elasticity, and enhances skin barrier function."
+                },
+                {
+                    "name": "Cetyl Phosphate",
+                    "benefit": "An emulsifying agent that helps stabilize oil-in-water emulsions."
+                },
+                {
+                    "name": "Arachidyl Glucoside",
+                    "benefit": "An emulsifier that helps mix oil and water components evenly."
+                },
+                {
+                    "name": "Hyaluronic Acid (Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer)",
+                    "benefit": "A thickening and stabilizing polymer that gives formulations a smooth texture."
+                },
+                {
+                    "name": "3-O-Ethyl Ascorbic Acid",
+                    "benefit": "A stable form of Vitamin C that brightens skin and provides antioxidant benefits."
+                },
+                {
+                    "name": "Taraxacum Officinale (Dandelion) Leaf Extract",
+                    "benefit": "Offers antioxidant properties and helps soothe and calm the skin."
+                },
+                {
+                    "name": "Stephania Tetrandra Extract",
+                    "benefit": "Known for its soothing and anti-inflammatory effects."
+                },
+                {
+                    "name": "Saururus Chinensis Leaf/Root Extract",
+                    "benefit": "Provides brightening and antioxidant benefits for the skin."
+                }
             ],
             "swatches": [
                 "#FFB6C1",
@@ -170,15 +209,82 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Hyaluronic Acid",
-                "Sodium Hyaluronate",
-                "Niacinamide (Vitamin B3)",
-                "Glutathione",
-                "Centella Asiatica Extract",
-                "Camellia Sinensis (Green Tea)",
-                "Helianthus Annuus (Sunflower) Seed Oil Unsaponifiables",
-                "Glycolic Acid",
-                "Allantion"
+                {
+                    "name": "Niacinamide",
+                    "benefit": "Brightening and anti-inflammatory; improves skin tone and texture."
+                },
+                {
+                    "name": "Allantoin",
+                    "benefit": "Soothing agent that promotes healing and calms irritation."
+                },
+                {
+                    "name": "Citrus Aurantium Bergamia (Bergamot) Fruit Oil",
+                    "benefit": "Provides a refreshing scent and has antiseptic properties."
+                },
+                {
+                    "name": "Pelargonium Graveolens Flower Oil",
+                    "benefit": "Balances sebum and offers a pleasant fragrance."
+                },
+                {
+                    "name": "Ribes Nigrum (Black Currant) Seed Oil",
+                    "benefit": "Rich in fatty acids, providing nourishment and hydration."
+                },
+                {
+                    "name": "Helianthus Annuus (Sunflower) Seed Oil Unsaponifiables",
+                    "benefit": "Nourishing oil fraction that supports barrier repair."
+                },
+                {
+                    "name": "Hydrolyzed Hyaluronic Acid",
+                    "benefit": "Smaller molecules penetrate deeply for intense hydration."
+                },
+                {
+                    "name": "Helianthus Annuus (Sunflower) Seed Oil",
+                    "benefit": "Emollient that moisturizes and nourishes the skin."
+                },
+                {
+                    "name": "Centella Asiatica Extract",
+                    "benefit": "Soothing and healing; promotes skin regeneration."
+                },
+                {
+                    "name": "Cardiospermum Halicacabum Flower/Leaf Extract",
+                    "benefit": "Calming and anti-inflammatory properties."
+                },
+                {
+                    "name": "Scutellaria Baicalensis Root Extract",
+                    "benefit": "Antioxidant with soothing and brightening effects."
+                },
+                {
+                    "name": "Polygonum Cuspidatum Root Extract",
+                    "benefit": "Antioxidant and skin conditioner."
+                },
+                {
+                    "name": "Citrus Unshiu Peel Extract",
+                    "benefit": "Brightening agent that enhances skin radiance."
+                },
+                {
+                    "name": "Tocopherol (Vitamin E)",
+                    "benefit": "Antioxidant that protects and nourishes the skin."
+                },
+                {
+                    "name": "Sodium Acetylated Hyaluronate",
+                    "benefit": "Enhanced hydration properties for long-lasting moisture."
+                },
+                {
+                    "name": "Rosmarinus Officinalis (Rosemary) Leaf Extract",
+                    "benefit": "Antioxidant and antimicrobial; revitalizes skin."
+                },
+                {
+                    "name": "Glycyrrhiza Glabra (Licorice) Root Extract",
+                    "benefit": "Brightening and soothing; reduces redness and pigmentation."
+                },
+                {
+                    "name": "Camellia Sinensis (Green Tea) Leaf Extract",
+                    "benefit": "Antioxidant-rich; protects and soothes the skin."
+                },
+                {
+                    "name": "Chamomilla Recutita (Matricaria) Flower Extract",
+                    "benefit": "Calming and soothing; reduces redness and irritation."
+                }
             ],
             "swatches": ["#E0F7FA", "#B2EBF2", "#80DEEA", "#4DD0E1", "#26C6DA"],
             "volume": "200ml",
@@ -277,18 +383,54 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Bifida Ferment Lysate",
-                "Acetyl Hexapeptide-8",
-                "Niacinamide (Vitamin B3)",
-                "Sodium Hyaluronate (Hyaluronic Acid)",
-                "3-O-Ethyl Ascorbic Acid (Stable Vitamin C)",
-                "Phytonadione (Vitamin K)",
-                "Tocopherol (Vitamin E)",
-                "Panthenol (Vitamin B5)",
-                "Peanut Acid",
-                "Zinc PCA",
-                "Cholecalciferol (Vitamin D3)",
-                "Rosa Rugosa Flower Oil"
+                {
+                    "name": "Bifida Ferment Lysate",
+                    "benefit": "A probiotic ingredient known for its soothing and repairing properties."
+                },
+                {
+                    "name": "Acetyl Hexapeptide-8",
+                    "benefit": "Known as \"Botox in a jar,\" it helps reduce the appearance of wrinkles by relaxing facial muscles."
+                },
+                {
+                    "name": "Niacinamide (Vitamin B3)",
+                    "benefit": "Improves skin elasticity and texture while evening out skin tone."
+                },
+                {
+                    "name": "Sodium Hyaluronate (Hyaluronic Acid)",
+                    "benefit": "Provides deep hydration and plumps the skin."
+                },
+                {
+                    "name": "3-O-Ethyl Ascorbic Acid (Stable Vitamin C)",
+                    "benefit": "An antioxidant that brightens skin and supports collagen production."
+                },
+                {
+                    "name": "Phytonadione (Vitamin K)",
+                    "benefit": "Helps reduce dark circles and bruising."
+                },
+                {
+                    "name": "Tocopherol (Vitamin E)",
+                    "benefit": "An antioxidant that protects against free radical damage."
+                },
+                {
+                    "name": "Panthenol (Vitamin B5)",
+                    "benefit": "Moisturizes and aids in skin repair."
+                },
+                {
+                    "name": "Peanut Acid",
+                    "benefit": "Can provide emollient properties."
+                },
+                {
+                    "name": "Zinc PCA",
+                    "benefit": "Regulates sebum production and has antibacterial properties."
+                },
+                {
+                    "name": "Cholecalciferol (Vitamin D3)",
+                    "benefit": "Supports healthy skin barrier function."
+                },
+                {
+                    "name": "Rosa Rugosa Flower Oil",
+                    "benefit": "Provides a pleasant scent and has potential calming properties."
+                }
             ],
             "swatches": ["#FFF9E6", "#FFF3CD", "#FFECB5", "#FFE69C", "#FFD700"],
             "volume": "30ml",
@@ -327,23 +469,74 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Salicylic Acid",
-                "Betaine",
-                "Sodium Lactate",
-                "Lactobionic Acid",
-                "Pentylene Glycol",
-                "Portulaca Oleracea Extract",
-                "Sesame Amino Acids",
-                "Salix Alba (Willow) Bark Extract",
-                "Camellia Sinensis Leaf Extract",
-                "Xanthan Gum",
-                "Allantoin",
-                "Dipotassium Glycyrrhizate",
-                "Zinc PCA",
-                "Asiaticoside",
-                "Centella Asiatica Extract",
-                "Madecassoside",
-                "Sodium Hyaluronate (Hyaluronic Acid)"
+                {
+                    "name": "Salicylic Acid",
+                    "benefit": "A beta hydroxy acid (BHA) that exfoliates the skin, unclogs pores, and reduces acne."
+                },
+                {
+                    "name": "Betaine",
+                    "benefit": "A natural moisturizer that helps maintain skin's moisture balance."
+                },
+                {
+                    "name": "Sodium Lactate",
+                    "benefit": "A humectant that provides moisture and helps with the skin's pH balance."
+                },
+                {
+                    "name": "Lactobionic Acid",
+                    "benefit": "A polyhydroxy acid (PHA) that gently exfoliates while providing anti-aging and antioxidant benefits."
+                },
+                {
+                    "name": "Pentylene Glycol",
+                    "benefit": "A moisturizing agent with antimicrobial properties that also enhances the absorption of other ingredients."
+                },
+                {
+                    "name": "Portulaca Oleracea Extract",
+                    "benefit": "Offers soothing and anti-inflammatory benefits; rich in antioxidants."
+                },
+                {
+                    "name": "Sesame Amino Acids",
+                    "benefit": "Provides conditioning and nourishing benefits to the skin."
+                },
+                {
+                    "name": "Salix Alba (Willow) Bark Extract",
+                    "benefit": "Contains salicin, which can help with exfoliation and has anti-inflammatory properties."
+                },
+                {
+                    "name": "Camellia Sinensis Leaf Extract",
+                    "benefit": "Rich in antioxidants, it offers soothing and anti-aging properties."
+                },
+                {
+                    "name": "Xanthan Gum",
+                    "benefit": "A natural thickener that helps stabilize formulations and improve texture."
+                },
+                {
+                    "name": "Allantoin",
+                    "benefit": "Known for its skin-soothing, anti-irritating, and healing properties."
+                },
+                {
+                    "name": "Dipotassium Glycyrrhizate",
+                    "benefit": "Derived from licorice root, this ingredient soothes irritation and reduces inflammation."
+                },
+                {
+                    "name": "Zinc PCA",
+                    "benefit": "Helps control excess oil production and acts as an antibacterial agent."
+                },
+                {
+                    "name": "Asiaticoside",
+                    "benefit": "A compound found in Centella Asiatica that aids in skin healing and collagen formation."
+                },
+                {
+                    "name": "Centella Asiatica Extract",
+                    "benefit": "Renowned for its healing, soothing, and anti-inflammatory properties."
+                },
+                {
+                    "name": "Madecassoside",
+                    "benefit": "Another active from Centella Asiatica, it helps calm inflammation and promotes skin repair."
+                },
+                {
+                    "name": "Sodium Hyaluronate (Hyaluronic Acid)",
+                    "benefit": "A powerful humectant that hydrates the skin by drawing moisture from the environment."
+                }
             ],
             "swatches": ["#E8F5E9", "#C8E6C9", "#A5D6A7", "#81C784", "#66BB6A"],
             "volume": "30ml",
@@ -382,13 +575,34 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Bifida Ferment Lysate",
-                "Acetyl Hexapeptide-8",
-                "Alpha-Arbutin",
-                "Sodium Hyaluronate (Hyaluronic Acid)",
-                "3-O-Ethyl Ascorbic Acid",
-                "Glutathione",
-                "Rosa Rugosa Flower Oil"
+                {
+                    "name": "Bifida Ferment Lysate",
+                    "benefit": "A probiotic ingredient that strengthens the skin barrier, improves skin resilience, and reduces sensitivity."
+                },
+                {
+                    "name": "Acetyl Hexapeptide-8",
+                    "benefit": "Anti-Aging Peptide, Skin Firming."
+                },
+                {
+                    "name": "Alpha-Arbutin",
+                    "benefit": "A skin-brightening agent that reduces the appearance of dark spots and pigmentation."
+                },
+                {
+                    "name": "Sodium Hyaluronate (Hyaluronic Acid)",
+                    "benefit": "Hydrating and Plumping Agent."
+                },
+                {
+                    "name": "3-O-Ethyl Ascorbic Acid",
+                    "benefit": "Stable Vitamin C Derivative, Brightening."
+                },
+                {
+                    "name": "Glutathione",
+                    "benefit": "A powerful antioxidant that helps brighten the skin and fight free radicals."
+                },
+                {
+                    "name": "Rosa Rugosa Flower Oil",
+                    "benefit": "Natural oil with aromatic properties, offering moisturizing and soothing benefits."
+                }
             ],
             "swatches": ["#FFF8E1", "#FFECB3", "#FFE082", "#FFD54F", "#FFCA28"],
             "volume": "30ml",
@@ -479,23 +693,74 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Niacinamide",
-                "3-O-Ethyl Ascorbic Acid",
-                "Dimethicone Phenyl Vinyl Dimethicone Crosspolymer",
-                "Butyrospermum Parkii (Shea Butter)",
-                "Portulaca Oleracea Extract",
-                "Simmondsia (Jojoba) Seed Oil",
-                "Piper Methysticum Root Extract",
-                "Helianthus Annuus (Sunflower) Seed Oil",
-                "Tocopherol (Vitamin E)",
-                "Beta-Carotene",
-                "Panthenol",
-                "Hydroxyacetophenone",
-                "Sodium Hyaluronate (Hyaluronic Acid)",
-                "Sophora Angustifolia Root Extract",
-                "Salvia Miltiorrhiza Root Extract",
-                "Thymus Vulgaris (Thyme) Leaf Extract",
-                "Coptis Chinensis Root Extract"
+                {
+                    "name": "Niacinamide",
+                    "benefit": "Improves skin elasticity, reduces redness and blotchiness, and enhances the skin barrier."
+                },
+                {
+                    "name": "3-O-Ethyl Ascorbic Acid",
+                    "benefit": "A stable form of Vitamin C that brightens skin and boosts collagen production."
+                },
+                {
+                    "name": "Dimethicone Phenyl Vinyl Dimethicone Crosspolymer",
+                    "benefit": "Provides a silky texture, acts as a barrier to lock in moisture."
+                },
+                {
+                    "name": "Butyrospermum Parkii (Shea Butter)",
+                    "benefit": "Hydrates and nourishes the skin with its rich fatty acids."
+                },
+                {
+                    "name": "Portulaca Oleracea Extract",
+                    "benefit": "Known for its soothing and anti-inflammatory properties."
+                },
+                {
+                    "name": "Simmondsia (Jojoba) Seed Oil",
+                    "benefit": "Moisturizes and balances sebum production without clogging pores."
+                },
+                {
+                    "name": "Piper Methysticum Root Extract",
+                    "benefit": "Provides calming and soothing effects on the skin."
+                },
+                {
+                    "name": "Helianthus Annuus (Sunflower) Seed Oil",
+                    "benefit": "Rich in vitamins and fatty acids, it nourishes and protects the skin."
+                },
+                {
+                    "name": "Tocopherol (Vitamin E)",
+                    "benefit": "An antioxidant that protects against free radicals and supports skin health."
+                },
+                {
+                    "name": "Beta-Carotene",
+                    "benefit": "An antioxidant that can enhance skin tone and protect from environmental damage."
+                },
+                {
+                    "name": "Panthenol",
+                    "benefit": "Also known as Vitamin B5; hydrates and soothes the skin, aiding in repair."
+                },
+                {
+                    "name": "Hydroxyacetophenone",
+                    "benefit": "Provides antioxidant benefits and acts as a stabilizer."
+                },
+                {
+                    "name": "Sodium Hyaluronate (Hyaluronic Acid)",
+                    "benefit": "Delivers deep hydration and plumps the skin."
+                },
+                {
+                    "name": "Sophora Angustifolia Root Extract",
+                    "benefit": "Offers brightening and anti-inflammatory properties."
+                },
+                {
+                    "name": "Salvia Miltiorrhiza Root Extract",
+                    "benefit": "Provides antioxidant and anti-inflammatory benefits."
+                },
+                {
+                    "name": "Thymus Vulgaris (Thyme) Leaf Extract",
+                    "benefit": "Known for its antimicrobial and antioxidant properties."
+                },
+                {
+                    "name": "Coptis Chinensis Root Extract",
+                    "benefit": "Offers antibacterial and anti-inflammatory effects."
+                }
             ],
             "swatches": ["#FFF3E0", "#FFE0B2", "#FFCC80", "#FFB74D", "#FFA726"],
             "volume": "50ml",
@@ -534,14 +799,38 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Aloe Barbadensis Leaf Water",
-                "Sodium Cocoyl Glutamate",
-                "Menthol",
-                "Sodium Polyglutamate",
-                "Jojoba Esters",
-                "Allantoin",
-                "Panthenol (Pro-Vitamin B5)",
-                "Sodium Hyaluronate (Hyaluronic Acid)"
+                {
+                    "name": "Aloe Barbadensis Leaf Water",
+                    "benefit": "Offers soothing and moisturizing properties, helping to calm irritated skin."
+                },
+                {
+                    "name": "Sodium Cocoyl Glutamate",
+                    "benefit": "A gentle cleanser derived from coconut oil and glutamic acid, ideal for sensitive skin."
+                },
+                {
+                    "name": "Menthol",
+                    "benefit": "Provides a cooling sensation on the skin, offering a refreshing feeling."
+                },
+                {
+                    "name": "Sodium Polyglutamate",
+                    "benefit": "A powerful humectant that retains moisture and improves skin elasticity."
+                },
+                {
+                    "name": "Jojoba Esters",
+                    "benefit": "Provide emollient properties, mimicking skin's natural oils to enhance smoothness and moisture."
+                },
+                {
+                    "name": "Allantoin",
+                    "benefit": "Known for its soothing and skin-protecting properties."
+                },
+                {
+                    "name": "Panthenol (Pro-Vitamin B5)",
+                    "benefit": "Provides moisturizing, soothing, and healing properties."
+                },
+                {
+                    "name": "Sodium Hyaluronate (Hyaluronic Acid)",
+                    "benefit": "A potent humectant that hydrates the skin by attracting and retaining moisture."
+                }
             ],
             "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
             "volume": "100ml",
@@ -580,29 +869,98 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Methylpropanediol",
-                "Niacinamide",
-                "1,2-Hexanediol",
-                "Hydroxyacetophenone",
-                "Hexylene Glycol",
-                "Glycine",
-                "Betaine",
-                "Serine",
-                "Glutamic Acid",
-                "Allantoin",
-                "Adenosine",
-                "Aspartic Acid",
-                "Citrus Aurantium Bergamia (Bergamot) Fruit Oil",
-                "Ribes Nigrum (Black Currant) Seed Oil",
-                "Hyaluronic Acid (Sodium Hyaluronate)",
-                "Helianthus Annuus (Sunflower) Seed Oil",
-                "Centella Asiatica Extract",
-                "Cardiospermum Halicacabum Flower/Leaf Extract",
-                "Scutellaria Baicalensis Root Extract",
-                "Citrus Unshiu Peel Extract",
-                "Glycyrrhiza Glabra (Licorice) Root Extract",
-                "Camellia Sinensis Leaf Extract",
-                "Chamomilla Recutita (Matricaria) Flower Extract"
+                {
+                    "name": "Methylpropanediol",
+                    "benefit": "Enhances the absorption of ingredients and improves skin feel."
+                },
+                {
+                    "name": "Niacinamide",
+                    "benefit": "Boosts skin brightness, reduces inflammation, and helps improve skin barrier function."
+                },
+                {
+                    "name": "1,2-Hexanediol",
+                    "benefit": "Works as a humectant and solvent, also acts as a preservative-boosting agent."
+                },
+                {
+                    "name": "Hydroxyacetophenone",
+                    "benefit": "Antioxidant properties and can also function as a soothing agent."
+                },
+                {
+                    "name": "Hexylene Glycol",
+                    "benefit": "Functions as a solvent and viscosity agent, also has moisturizing benefits."
+                },
+                {
+                    "name": "Glycine",
+                    "benefit": "An amino acid that helps condition the skin."
+                },
+                {
+                    "name": "Betaine",
+                    "benefit": "Protects cells from environmental stress and controls moisture balance."
+                },
+                {
+                    "name": "Serine",
+                    "benefit": "An amino acid that helps promote skin's natural moisturizing factors."
+                },
+                {
+                    "name": "Glutamic Acid",
+                    "benefit": "Helps maintain skin pH balance and hydration."
+                },
+                {
+                    "name": "Allantoin",
+                    "benefit": "Soothes irritated skin and stimulates cell regeneration."
+                },
+                {
+                    "name": "Adenosine",
+                    "benefit": "Provides anti-wrinkle benefits by energizing the skin's cellular functions."
+                },
+                {
+                    "name": "Aspartic Acid",
+                    "benefit": "Essential amino acids that help build skin protein and enhance skin resilience."
+                },
+                {
+                    "name": "Citrus Aurantium Bergamia (Bergamot) Fruit Oil",
+                    "benefit": "Provides fragrance and has antibacterial properties."
+                },
+                {
+                    "name": "Ribes Nigrum (Black Currant) Seed Oil",
+                    "benefit": "Rich in antioxidants and gamma-linolenic acid which help nourish and soothe skin."
+                },
+                {
+                    "name": "Hyaluronic Acid (Sodium Hyaluronate)",
+                    "benefit": "A trio of hyaluronic acids that deeply hydrate, lock in moisture, and plump the skin for a smooth and supple appearance."
+                },
+                {
+                    "name": "Helianthus Annuus (Sunflower) Seed Oil",
+                    "benefit": "Nourishes and softens the skin, providing essential fatty acids to maintain a healthy barrier."
+                },
+                {
+                    "name": "Centella Asiatica Extract",
+                    "benefit": "Promotes collagen production and reduces inflammation."
+                },
+                {
+                    "name": "Cardiospermum Halicacabum Flower/Leaf Extract",
+                    "benefit": "Anti-inflammatory properties help calm sensitive skin."
+                },
+                {
+                    "name": "Scutellaria Baicalensis Root Extract",
+                    "benefit": "These botanical extracts provide various benefits such as antioxidant protection, skin-soothing, and brightening effects."
+                },
+                {
+                    "name": "Citrus Unshiu Peel Extract",
+                    "benefit": "These botanical extracts provide various benefits such as antioxidant protection, skin-soothing, and brightening effects."
+                },
+                {
+                    "name": "Glycyrrhiza Glabra (Licorice) Root Extract",
+                    "benefit": "These botanical extracts provide various benefits such as antioxidant protection, skin-soothing, and brightening effects."
+                },
+                {
+                    "name": "Camellia Sinensis Leaf Extract",
+                    "benefit": "Provides antioxidant benefits and skin-soothing properties."
+                },
+                {
+                    "name": "Chamomilla Recutita (Matricaria) Flower Extract",
+                    "benefit": "Known for its soothing, calming, and anti-inflammatory properties."
+                }
             ],
             "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
             "volume": "100ml",
@@ -641,22 +999,70 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Aloe Barbadensis Leaf Water",
-                "Sodium Cocoyl Glycinate",
-                "Sodium Cocoyl Glutamate",
-                "Butylene Glycol",
-                "Avocado Oil PEG-8 Esters",
-                "Avocado Oil PEG-11 Esters",
-                "Persea Gratissima (Avocado) Fruit Extract",
-                "Salicylic Acid",
-                "Sodium Polyglutamate",
-                "Niacinamide",
-                "Allantoin",
-                "Camellia Sinensis Leaf Extract",
-                "Panthenol (Vitamin B5)",
-                "Glycolic Acid",
-                "Punica Granatum",
-                "Sodium Hyaluronate"
+                {
+                    "name": "Aloe Barbadensis Leaf Water",
+                    "benefit": "Offers soothing and moisturizing properties, helping to calm irritated skin."
+                },
+                {
+                    "name": "Sodium Cocoyl Glycinate",
+                    "benefit": "A mild surfactant that cleanses the skin without stripping its natural oils."
+                },
+                {
+                    "name": "Sodium Cocoyl Glutamate",
+                    "benefit": "A gentle cleanser derived from coconut oil and glutamic acid, ideal for sensitive skin."
+                },
+                {
+                    "name": "Butylene Glycol",
+                    "benefit": "A humectant that helps keep skin hydrated and enhances the absorption of other ingredients."
+                },
+                {
+                    "name": "Avocado Oil PEG-8 Esters",
+                    "benefit": "Emollients that provide moisturization and improve skin texture."
+                },
+                {
+                    "name": "Avocado Oil PEG-11 Esters",
+                    "benefit": "Similar to PEG-8 esters, these offer emollient properties for skin softening."
+                },
+                {
+                    "name": "Persea Gratissima (Avocado) Fruit Extract",
+                    "benefit": "Rich in fatty acids and vitamins, it nourishes and hydrates the skin."
+                },
+                {
+                    "name": "Salicylic Acid",
+                    "benefit": "A beta-hydroxy acid (BHA) that exfoliates the skin and helps unclog pores, reducing acne."
+                },
+                {
+                    "name": "Sodium Polyglutamate",
+                    "benefit": "A powerful humectant that retains moisture and improves skin elasticity. A moisturizing ingredient that helps to lock in hydration enhancing skin softness and smoothness."
+                },
+                {
+                    "name": "Niacinamide",
+                    "benefit": "A form of Vitamin B3 that brightens skin, improves elasticity, and enhances barrier function."
+                },
+                {
+                    "name": "Allantoin",
+                    "benefit": "Known for its soothing and skin-protecting properties."
+                },
+                {
+                    "name": "Camellia Sinensis Leaf Extract",
+                    "benefit": "Rich in antioxidants, this extract helps soothe and protect the skin."
+                },
+                {
+                    "name": "Panthenol (Vitamin B5)",
+                    "benefit": "Provides moisturizing, soothing, and healing properties."
+                },
+                {
+                    "name": "Glycolic Acid",
+                    "benefit": "An alpha hydroxy acid (AHA) that exfoliates the skin, improving texture and tone."
+                },
+                {
+                    "name": "Punica Granatum",
+                    "benefit": "Offers antioxidant benefits and supports skin health."
+                },
+                {
+                    "name": "Sodium Hyaluronate",
+                    "benefit": "A potent humectant that hydrates the skin by attracting and retaining moisture."
+                }
             ],
             "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
             "volume": "100ml",
@@ -695,19 +1101,58 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Sodium Cocoyl Glycinate",
-                "Lauryl Glucoside",
-                "PEG-150 Pentaerythrityl Tetrastearate",
-                "Ascorbic Acid (Vitamin C)",
-                "Butylene Glycol",
-                "Phenoxyethanol",
-                "Sodium Polyglutamate",
-                "Honey",
-                "Touhi Ekisu (Japanese Cedar Extract)",
-                "1,2-Hexanediol",
-                "Panthenol (Pro-Vitamin B5)",
-                "Panax Ginseng Root Extract",
-                "Sodium Hyaluronate (Hyaluronic Acid)"
+                {
+                    "name": "Sodium Cocoyl Glycinate",
+                    "benefit": "A mild surfactant that helps in cleansing and foaming."
+                },
+                {
+                    "name": "Lauryl Glucoside",
+                    "benefit": "A gentle surfactant derived from glucose and coconut oil, used for cleansing."
+                },
+                {
+                    "name": "PEG-150 Pentaerythrityl Tetrastearate",
+                    "benefit": "A thickening agent that helps stabilize emulsions."
+                },
+                {
+                    "name": "Ascorbic Acid (Vitamin C)",
+                    "benefit": "An antioxidant that brightens the skin and fights free radicals."
+                },
+                {
+                    "name": "Butylene Glycol",
+                    "benefit": "A humectant that adds moisture and can improve the texture of the product."
+                },
+                {
+                    "name": "Phenoxyethanol",
+                    "benefit": "A preservative used to prevent microbial growth."
+                },
+                {
+                    "name": "Sodium Polyglutamate",
+                    "benefit": "Hydrates and improves skin elasticity."
+                },
+                {
+                    "name": "Honey",
+                    "benefit": "Moisturizes, soothes, and has antibacterial properties."
+                },
+                {
+                    "name": "Touhi Ekisu (Japanese Cedar Extract)",
+                    "benefit": "Known for its soothing and antioxidant properties."
+                },
+                {
+                    "name": "1,2-Hexanediol",
+                    "benefit": "Acts as a humectant and emollient."
+                },
+                {
+                    "name": "Panthenol (Pro-Vitamin B5)",
+                    "benefit": "Moisturizes and aids in skin repair."
+                },
+                {
+                    "name": "Panax Ginseng Root Extract",
+                    "benefit": "Has antioxidant and revitalizing properties."
+                },
+                {
+                    "name": "Sodium Hyaluronate (Hyaluronic Acid)",
+                    "benefit": "Provides intense hydration and plumps the skin."
+                }
             ],
             "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
             "volume": "100ml",
