@@ -10,7 +10,10 @@ const ProductCard = ({ product }) => {
     // Generate rating and reviews if not present (using product ID as seed for consistency)
     const seed = product.id || 0;
     const stableRating = product.rating || (4 + (seed % 10) / 10).toFixed(1); // Between 4.0-4.9
-    const stableReviews = product.reviews || (20 + (seed % 900)); // Between 20-920
+    // Handle reviews - can be an array or a number
+    const stableReviews = Array.isArray(product.reviews) 
+        ? product.reviews.length 
+        : (product.reviews || (20 + (seed % 900))); // Between 20-920
     const rating = stableRating;
     const reviews = stableReviews;
     const numShades = product.swatches?.length || 0;
