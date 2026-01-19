@@ -97,7 +97,8 @@ const ProductDetail = () => {
         { id: 'description', label: 'DESCRIPTION' },
         { id: 'results', label: 'RESULTS' },
         { id: 'advice', label: 'ADVICE' },
-        { id: 'ingredients', label: 'INGREDIENTS' }
+        { id: 'ingredients', label: 'INGREDIENTS' },
+        { id: 'reviews', label: 'REVIEWS' }
     ];
 
     return (
@@ -137,29 +138,86 @@ const ProductDetail = () => {
 
                     {/* Right - Product Info & Purchase */}
                     <div className="lg:col-span-4 order-3 bg-white rounded-2xl p-6 lg:p-8 h-fit sticky top-4">
-                        {/* Shade Selector */}
-                        {product.swatches && product.swatches.length > 0 && (
-                            <div className="mb-6 pb-6 border-b border-[var(--color-border)]">
-                                {/* <div className="flex justify-between items-center mb-4"> */}
-                                    {/* <p className="text-sm font-semibold">01 Warm Rose</p> */}
-                                 { /*  <button className="text-xs text-[var(--color-text-secondary)] hover:text-primary">
-                                        All Shades ({product.swatches.length})
-                                    </button>*/}
-                                {/* </div> */}
-                                {/* <div className="flex gap-2">
-                                    {product.swatches.map((swatch, idx) => (
-                                        <button
-                                            key={idx}
-                                            onClick={() => setSelectedSwatch(swatch)}
-                                            className={`w-10 h-10 rounded-full border-2 transition-all ${
-                                                selectedSwatch === swatch ? 'border-secondary scale-110' : 'border-[var(--color-border)]'
-                                            }`}
-                                            style={{ backgroundColor: swatch }}
-                                        />
-                                    ))}
-                                </div> */}
+                        {/* Reviews Section */}
+                        <div className="mb-6 pb-6 border-b border-[var(--color-border)]">
+                            <div className="flex items-center justify-between mb-4">
+                                <h3 className="text-lg font-bold text-secondary">Customer Reviews</h3>
+                                <span className="text-sm text-[var(--color-text-secondary)]">
+                                    {product.reviews?.length || 1} Review{product.reviews?.length !== 1 ? 's' : ''}
+                                </span>
                             </div>
-                        )}
+                            
+                            {/* Dummy review or actual reviews */}
+                            {(() => {
+                                const reviewsToShow = product.reviews && product.reviews.length > 0 
+                                    ? product.reviews 
+                                    : [{
+                                        name: "Customer",
+                                        rating: 5,
+                                        comment: "Great product! Highly satisfied with the quality and results. Would definitely recommend to others.",
+                                        date: "Recently",
+                                        verified: false
+                                    }];
+                                
+                                const averageRating = product.reviews && product.reviews.length > 0
+                                    ? (product.reviews.reduce((sum, review) => sum + review.rating, 0) / product.reviews.length).toFixed(1)
+                                    : "5.0";
+                                
+                                return (
+                                    <>
+                                        {/* Average Rating */}
+                                        <div className="mb-4">
+                                            <div className="flex items-center gap-2 mb-2">
+                                                <div className="flex items-center">
+                                                    {[...Array(5)].map((_, i) => (
+                                                        <span key={i} className="text-yellow-400 text-lg">★</span>
+                                                    ))}
+                                                </div>
+                                                <span className="text-sm font-semibold">
+                                                    {averageRating}
+                                                </span>
+                                            </div>
+                                        </div>
+                                        
+                                        {/* Recent Reviews */}
+                                        {/* <div className="space-y-4 max-h-64 overflow-y-auto">
+                                            {reviewsToShow.slice(0, 2).map((review, idx) => (
+                                                <div key={idx} className="border-b border-[var(--color-border)] pb-3 last:border-0">
+                                                    <div className="flex items-center gap-2 mb-2">
+                                                        <div className="flex items-center">
+                                                            {[...Array(5)].map((_, i) => (
+                                                                <span 
+                                                                    key={i} 
+                                                                    className={`text-sm ${
+                                                                        i < review.rating ? 'text-yellow-400' : 'text-gray-300'
+                                                                    }`}
+                                                                >
+                                                                    ★
+                                                                </span>
+                                                            ))}
+                                                        </div>
+                                                        <span className="text-xs text-[var(--color-text-secondary)]">
+                                                            {review.date}
+                                                        </span>
+                                                    </div>
+                                                    <p className="text-sm font-semibold mb-1">{review.name}</p>
+                                                    <p className="text-xs text-[var(--color-text-secondary)] leading-relaxed">
+                                                        {review.comment}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div> */}
+                                    </>
+                                );
+                            })()}
+                            
+                            <button 
+                                onClick={() => setActiveTab('reviews')}
+                                className="text-xs text-secondary hover:text-secondary pointer underline mt-3"
+                            >
+                                View All Reviews
+                            </button>
+                        </div>
 
                         {/* Price */}
                         <div className="mb-6">
@@ -332,6 +390,89 @@ const ProductDetail = () => {
                                     )}
                                 </div>
                             )}
+
+                            {activeTab === 'reviews' && (
+                                <div className="space-y-6">
+                                    {(() => {
+                                        const reviewsToShow = product.reviews && product.reviews.length > 0 
+                                            ? product.reviews 
+                                            : [{
+                                                name: "Customer",
+                                                rating: 5,
+                                                comment: "Great product! Highly satisfied with the quality and results. Would definitely recommend to others.",
+                                                date: "Recently",
+                                                verified: false
+                                            }];
+                                        
+                                        const averageRating = product.reviews && product.reviews.length > 0
+                                            ? (product.reviews.reduce((sum, review) => sum + review.rating, 0) / product.reviews.length).toFixed(1)
+                                            : "5.0";
+                                        
+                                        const reviewCount = product.reviews?.length || 1;
+                                        
+                                        return (
+                                            <>
+                                                <div className="flex items-center justify-between mb-6">
+                                                    <h2 className="text-2xl font-bold uppercase tracking-wider text-secondary">
+                                                        Customer Reviews
+                                                    </h2>
+                                                    <div className="flex items-center gap-3">
+                                                        <div className="flex items-center gap-1">
+                                                            {[...Array(5)].map((_, i) => (
+                                                                <span key={i} className="text-yellow-400 text-xl">★</span>
+                                                            ))}
+                                                        </div>
+                                                        <span className="text-lg font-semibold">
+                                                            {averageRating}
+                                                        </span>
+                                                        <span className="text-sm text-[var(--color-text-secondary)]">
+                                                            ({reviewCount} review{reviewCount !== 1 ? 's' : ''})
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div className="space-y-6">
+                                                    {reviewsToShow.map((review, idx) => (
+                                                        <div key={idx} className="border-b border-[var(--color-border)] pb-6 last:border-0">
+                                                            <div className="flex items-start justify-between mb-3">
+                                                                <div>
+                                                                    <p className="text-base font-semibold mb-1">{review.name}</p>
+                                                                    <div className="flex items-center gap-2">
+                                                                        <div className="flex items-center">
+                                                                            {[...Array(5)].map((_, i) => (
+                                                                                <span 
+                                                                                    key={i} 
+                                                                                    className={`text-base ${
+                                                                                        i < review.rating ? 'text-yellow-400' : 'text-gray-300'
+                                                                                    }`}
+                                                                                >
+                                                                                    ★
+                                                                                </span>
+                                                                            ))}
+                                                                        </div>
+                                                                        <span className="text-xs text-[var(--color-text-secondary)]">
+                                                                            {review.date}
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <p className="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+                                                                {review.comment}
+                                                            </p>
+                                                            {review.verified && (
+                                                                <div className="mt-2 flex items-center gap-1 text-xs text-green-600">
+                                                                    <ShieldCheck size={14} />
+                                                                    <span>Verified Purchase</span>
+                                                                </div>
+                                                            )}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </>
+                                        );
+                                    })()}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -352,7 +493,7 @@ const ProductDetail = () => {
                        )}
                        <div className="flex flex-col items-center text-center gap-2 md:gap-3">
                            <MapPin size={24} className="text-secondary md:w-8 md:h-8" />
-                           <p className="text-[10px] md:text-sm font-semibold uppercase tracking-wider text-secondary">MADE IN ITALY</p>
+                           <p className="text-[10px] md:text-sm font-semibold uppercase tracking-wider text-secondary">MADE IN USA</p>
                        </div>
                        <div className="flex flex-col items-center text-center gap-2 md:gap-3">
                            <Calendar size={24} className="text-secondary md:w-8 md:h-8" />

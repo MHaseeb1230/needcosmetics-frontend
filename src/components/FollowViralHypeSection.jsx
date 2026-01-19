@@ -74,8 +74,8 @@ const FollowViralHypeSection = () => {
                         <h2 className="text-3xl md:text-4xl font-light uppercase tracking-wide text-gray-900">
                             Follow the viral hype
                         </h2>
-                        <span className="text-2xl">⭐</span>
-                        <span className="text-2xl">🌸</span>
+                        {/* <span className="text-2xl">⭐</span>
+                        <span className="text-2xl">🌸</span> */}
                     </div>
 
                     {/* Social Media Links */}

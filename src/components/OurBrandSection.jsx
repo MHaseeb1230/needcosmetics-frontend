@@ -67,7 +67,7 @@ const OurBrandSection = () => {
                             <RotateCcw size={32} className="text-secondary" strokeWidth={1.5} />
                         </div>
                         <h4 className="text-xs md:text-sm font-bold uppercase tracking-widest text-secondary">
-                            EASY EXCHANGE UP TO 7 DAYS AFTER ORDER DELIVERY
+                            EASY EXCHANGE UP TO 3 DAYS AFTER ORDER DELIVERY
                         </h4>
                     </div>
                 </div>

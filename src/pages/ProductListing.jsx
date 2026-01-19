@@ -16,8 +16,9 @@ const ProductListing = () => {
     const categoryMappings = {
         'creams': { category: 'skincare', subcategory: null, nameFilter: 'cream' }, // Creams - filter by name containing "cream"
         'serums': { category: 'skincare', subcategory: 'serum' }, // Serums
-        'sunscreens': { category: 'skincare', subcategory: 'suncare', nameFilter: 'sunscreen' }, // SunScreens
+        'sunscreens': { category: 'skincare', subcategory: 'suncare' }, // SunScreens - filter by subcategory only
         'suncare': { category: 'skincare', subcategory: 'suncare' }, // Lotions (general suncare)
+        'toner': { category: 'skincare', subcategory: 'toner' }, // Toners
         'face-wash': { category: 'skincare', subcategory: 'cleansing', nameFilter: 'face wash' }, // Face Wash
         // Fallback for other categories
         'makeup': { category: 'makeup', subcategory: null },
@@ -57,9 +58,9 @@ const ProductListing = () => {
                 // Special filter for name-based filters (Creams, SunScreens)
                 if (mapping?.nameFilter) {
                     fetchedProducts = fetchedProducts.filter(p => 
-                        p.name?.toLowerCase().includes(mapping.nameFilter) ||
-                        p.subcategory?.toLowerCase().includes(mapping.nameFilter) ||
-                        p.description?.toLowerCase().includes(mapping.nameFilter)
+                        p.name?.toLowerCase().includes(mapping.nameFilter.toLowerCase()) ||
+                        p.subcategory?.toLowerCase().includes(mapping.nameFilter.toLowerCase()) ||
+                        p.description?.toLowerCase().includes(mapping.nameFilter.toLowerCase())
                     );
                 }
                 
@@ -89,15 +90,16 @@ const ProductListing = () => {
                     );
                 }
                 
-                // Special filter for name-based filters (Creams, SunScreens)
+                // Special filter for name-based filters (Creams, Face Wash)
                 if (mapping?.nameFilter) {
                     filteredProducts = filteredProducts.filter(p => 
-                        p.name?.toLowerCase().includes(mapping.nameFilter) ||
-                        p.subcategory?.toLowerCase().includes(mapping.nameFilter) ||
-                        p.description?.toLowerCase().includes(mapping.nameFilter)
+                        p.name?.toLowerCase().includes(mapping.nameFilter.toLowerCase()) ||
+                        p.subcategory?.toLowerCase().includes(mapping.nameFilter.toLowerCase()) ||
+                        p.description?.toLowerCase().includes(mapping.nameFilter.toLowerCase())
                     );
                 }
                 
+                console.log('Filtered products for', slug, ':', filteredProducts.length, filteredProducts);
                 setProducts(filteredProducts);
             } finally {
                 setLoading(false);
@@ -118,6 +120,7 @@ const ProductListing = () => {
             'serums': 'Serums',
             'sunscreens': 'Sunscreens',
             'suncare': 'Lotions',
+            'toner': 'Toners',
             'face-wash': 'Face Wash'
         };
         return titleMap[slug] || category?.name || slug?.charAt(0).toUpperCase() + slug?.slice(1);

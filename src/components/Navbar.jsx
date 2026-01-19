@@ -376,7 +376,7 @@ const Navbar = () => {
                         )} */}
                     </div>
 
-                    <Link to="/category/suncare" className=" transition-colors">Lotions</Link>
+                    <Link to="/category/toner" className=" transition-colors">Toners</Link>
                     {/* <Link to="/category/fragrances" className=" transition-colors">Fragrances</Link> */}
                     
                     {/* <div 

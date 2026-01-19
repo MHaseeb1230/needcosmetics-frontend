@@ -128,7 +128,30 @@ const mockData = {
             ],
             "spf": "SPF 60+++",
             "volume": "50ml",
-            "slug": "needs-sunkiss-sunscreen-50ml"
+            "slug": "needs-sunkiss-sunscreen-50ml",
+            "reviews": [
+                {
+                    "name": "Sarah Ahmed",
+                    "rating": 5,
+                    "comment": "Amazing sunscreen! Doesn't leave a white cast and feels so lightweight. Perfect for daily use. Highly recommend!",
+                    "date": "2 days ago",
+                    "verified": true
+                },
+                {
+                    "name": "Ali Khan",
+                    "rating": 4,
+                    "comment": "Great protection and non-greasy formula. Works well under makeup. Only wish it was a bit more affordable.",
+                    "date": "1 week ago",
+                    "verified": true
+                },
+                {
+                    "name": "Fatima Sheikh",
+                    "rating": 5,
+                    "comment": "Best sunscreen I've tried! My skin feels protected and looks brighter. Will definitely repurchase.",
+                    "date": "2 weeks ago",
+                    "verified": true
+                }
+            ]
         },
         // {
         //     "id": 2,
@@ -641,20 +664,62 @@ const mockData = {
                 }
             ],
             "keyIngredients": [
-                "Butyrospermum Parkii (Shea Butter)",
-                "Simmondsia Jojoba Butter",
-                "Simmondsia Chinensis (Jojoba) Seed Oil",
-                "Isononyl Isononanoate",
-                "Squalane",
-                "Alumina Magnesium",
-                "Stearic Acid",
-                "Tocopherol (Vitamin E)",
-                "Silybum Marianum (Milk Thistle) Extract",
-                "Vaccinium Angustifolium (Blueberry) Fruit Extract",
-                "Allantoin",
-                "Hyaluronic Acid Sodium Hyaluronate",
-                "Retinol",
-                "Glutathione"
+                {
+                    "name": "Butyrospermum Parkii (Shea Butter)",
+                    "benefit": "Moisturizes and soothes the skin, rich in fatty acids and vitamins."
+                },
+                {
+                    "name": "Simmondsia Jojoba Butter",
+                    "benefit": "Enhances skin's barrier repair properties and ability to heal from damage."
+                },
+                {
+                    "name": "Simmondsia Chinensis (Jojoba) Seed Oil",
+                    "benefit": "Mimics natural skin oils, moisturizing and restoring the skin barrier."
+                },
+                {
+                    "name": "Isononyl Isononanoate",
+                    "benefit": "Emollient that softens skin and provides a smooth, non-greasy feel."
+                },
+                {
+                    "name": "Squalane",
+                    "benefit": "Moisturizer that mimics skin's natural oils, improving elasticity and moisture balance."
+                },
+                {
+                    "name": "Alumina Magnesium",
+                    "benefit": "Used as an abrasive, absorbent and anti-caking agent."
+                },
+                {
+                    "name": "Stearic Acid",
+                    "benefit": "Acts as an emulsifier and surfactant, also provides a protective barrier."
+                },
+                {
+                    "name": "Tocopherol (Vitamin E)",
+                    "benefit": "Antioxidant that protects the skin from free radical damage."
+                },
+                {
+                    "name": "Silybum Marianum (Milk Thistle) Extract",
+                    "benefit": "Antioxidant and anti-inflammatory that protects the skin from environmental stressors."
+                },
+                {
+                    "name": "Vaccinium Angustifolium (Blueberry) Fruit Extract",
+                    "benefit": "Rich in antioxidants, helps protect skin from signs of aging and damage."
+                },
+                {
+                    "name": "Allantoin",
+                    "benefit": "Soothes and protects the skin, promotes healing and regeneration."
+                },
+                {
+                    "name": "Hyaluronic Acid Sodium Hyaluronate",
+                    "benefit": "Helps retain moisture, creating a plumping effect on the skin."
+                },
+                {
+                    "name": "Retinol",
+                    "benefit": "A form of Vitamin A that accelerates cell renewal and improves skin tone and texture."
+                },
+                {
+                    "name": "Glutathione",
+                    "benefit": "A powerful antioxidant that can lighten skin by converting melanin to a lighter color and deactivating the enzyme tyrosinase."
+                }
             ],
             "swatches": ["#F3E5F5", "#E1BEE7", "#CE93D8", "#BA68C8", "#AB47BC"],
             "volume": "50ml",
