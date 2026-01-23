@@ -234,13 +234,13 @@ const Home = () => {
             </section>
 
             {/* Needs Most Loved Section */}
-            <ProductSlider 
+                <ProductSlider 
                 title="POPULAR & TRENDING" 
-                products={mostLovedProducts}
-                variant="card"
-                showViewAll={true}
-                viewAllLink="/category/makeup"
-            />
+                    products={mostLovedProducts}
+                    variant="card"
+                    showViewAll={true}
+                    viewAllLink="/category/makeup"
+                />
 
             {/* Create Your Style Section */}
             <CreateStyleSection />

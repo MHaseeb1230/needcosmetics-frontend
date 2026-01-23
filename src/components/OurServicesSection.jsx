@@ -61,7 +61,7 @@ const OurServicesSection = () => {
                                 <img
                                     src={service.image}
                                     alt={service.title}
-                                    className="w-60 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    className="w-72 object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
 

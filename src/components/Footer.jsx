@@ -52,9 +52,9 @@ const Footer = () => {
                         <div>
                             <h3 className="text-sm font-bold mb-6 uppercase tracking-widest text-secondary">ABOUT NEEDS</h3>
                             <ul className="text-sm text-secondary flex flex-col gap-3">
-                                <li><Link to="/about" className="hover:text-primary transition-colors">Our Brand</Link></li>
-                                <li><Link to="/press" className="hover:text-primary transition-colors">Press Releases</Link></li>
-                                <li><Link to="/stores" className="hover:text-primary transition-colors">Store Locations</Link></li>
+                                <li><Link to="/about/our-brand" className="hover:text-primary transition-colors">Our Brand</Link></li>
+                                <li><Link to="/about/our-impact" className="hover:text-primary transition-colors">Our Impact</Link></li>
+                                <li><Link to="/about/our-leaders" className="hover:text-primary transition-colors">Our Leaders</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -64,19 +64,19 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row items-center gap-12">
                     <h3 className="text-sm font-bold uppercase tracking-widest text-secondary">FOLLOW US ON</h3>
                     <div className="flex gap-8">
-                        <a 
-                            href="https://instagram.com/needsmilano" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
+                        <a
+                            href="https://instagram.com/needsmilano"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-10 h-10 bg-secondary text-white flex items-center justify-center hover:bg-primary hover:text-secondary transition-colors"
                             aria-label="Instagram"
                         >
                             <Instagram size={20} />
                         </a>
-                        <a 
-                            href="https://facebook.com/needsmilano" 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
+                        <a
+                            href="https://facebook.com/needsmilano"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="w-10 h-10 bg-secondary text-white flex items-center justify-center hover:bg-primary hover:text-secondary transition-colors"
                             aria-label="Facebook"
                         >

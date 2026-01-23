@@ -19,7 +19,7 @@ const ProductListing = () => {
         'sunscreens': { category: 'skincare', subcategory: 'suncare' }, // SunScreens - filter by subcategory only
         'suncare': { category: 'skincare', subcategory: 'suncare' }, // Lotions (general suncare)
         'toner': { category: 'skincare', subcategory: 'toner' }, // Toners
-        'face-wash': { category: 'skincare', subcategory: 'cleansing', nameFilter: 'face wash' }, // Face Wash
+        'face-wash': { category: 'skincare', subcategory: 'cleansing' }, // Face Wash
         // Fallback for other categories
         'makeup': { category: 'makeup', subcategory: null },
         'skincare': { category: 'skincare', subcategory: null },
@@ -37,33 +37,33 @@ const ProductListing = () => {
             try {
                 setLoading(true);
                 const mapping = categoryMappings[slug];
-                
+
                 // Try to fetch from backend
-                const response = await productService.getProducts({ 
+                const response = await productService.getProducts({
                     category: mapping?.category || slug,
-                    limit: 100 
+                    limit: 100
                 });
-                
+
                 let fetchedProducts = response.success ? response.data.products : [];
-                
+
                 // Apply subcategory filter if needed
                 if (mapping?.subcategory) {
-                    fetchedProducts = fetchedProducts.filter(p => 
+                    fetchedProducts = fetchedProducts.filter(p =>
                         p.subcategory?.slug === mapping.subcategory ||
                         p.subcategory?.name?.toLowerCase() === mapping.subcategory.toLowerCase() ||
                         p.subcategory === mapping.subcategory
                     );
                 }
-                
+
                 // Special filter for name-based filters (Creams, SunScreens)
                 if (mapping?.nameFilter) {
-                    fetchedProducts = fetchedProducts.filter(p => 
+                    fetchedProducts = fetchedProducts.filter(p =>
                         p.name?.toLowerCase().includes(mapping.nameFilter.toLowerCase()) ||
                         p.subcategory?.toLowerCase().includes(mapping.nameFilter.toLowerCase()) ||
                         p.description?.toLowerCase().includes(mapping.nameFilter.toLowerCase())
                     );
                 }
-                
+
                 if (fetchedProducts.length > 0) {
                     setProducts(fetchedProducts);
                 } else {
@@ -75,44 +75,44 @@ const ProductListing = () => {
                 // Use mockData as fallback
                 const mapping = categoryMappings[slug];
                 let filteredProducts = mockData.products;
-                
+
                 // Filter by category
                 if (mapping?.category) {
                     filteredProducts = filteredProducts.filter(p => p.category === mapping.category);
                 } else {
                     filteredProducts = filteredProducts.filter(p => p.category === slug);
                 }
-                
+
                 // Filter by subcategory if specified
                 if (mapping?.subcategory) {
-                    filteredProducts = filteredProducts.filter(p => 
+                    filteredProducts = filteredProducts.filter(p =>
                         p.subcategory === mapping.subcategory
                     );
                 }
-                
+
                 // Special filter for name-based filters (Creams, Face Wash)
                 if (mapping?.nameFilter) {
-                    filteredProducts = filteredProducts.filter(p => 
+                    filteredProducts = filteredProducts.filter(p =>
                         p.name?.toLowerCase().includes(mapping.nameFilter.toLowerCase()) ||
                         p.subcategory?.toLowerCase().includes(mapping.nameFilter.toLowerCase()) ||
                         p.description?.toLowerCase().includes(mapping.nameFilter.toLowerCase())
                     );
                 }
-                
+
                 console.log('Filtered products for', slug, ':', filteredProducts.length, filteredProducts);
                 setProducts(filteredProducts);
             } finally {
                 setLoading(false);
             }
         };
-        
+
         if (slug) {
             fetchProducts();
         }
     }, [slug]);
 
     const category = mockData.categories.find(c => c.id === slug || c.slug === slug);
-    
+
     // Determine category title based on slug
     const getCategoryTitle = () => {
         const titleMap = {
@@ -125,7 +125,7 @@ const ProductListing = () => {
         };
         return titleMap[slug] || category?.name || slug?.charAt(0).toUpperCase() + slug?.slice(1);
     };
-    
+
     const categoryTitle = getCategoryTitle();
 
     const filteredProducts = useMemo(() => {

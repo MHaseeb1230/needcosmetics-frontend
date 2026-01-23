@@ -1,6 +1,7 @@
 // Import product images
 import sunkiss from '../assets/NEEDS/01_sunkiss.jpg';
 import cleanser from '../assets/NEEDS/01_spray.jpg';
+import toner from '../assets/NEEDS/01_cleanser.jpg';
 import hyaluronicSerum from '../assets/NEEDS/01_spray.jpg';
 import vitaminCSerum from '../assets/NEEDS/02_orange.jpg';
 import acneSerum from '../assets/NEEDS/02_green.jpg';
@@ -153,52 +154,52 @@ const mockData = {
                 }
             ]
         },
-        // {
-        //     "id": 2,
-        //     "name": "Need's Rice And Coconut Facial Cleanser 200ml",
-        //     "price": 2990,
-        //     "originalPrice": 3490,
-        //     "discount": 14,
-        //     "category": "skincare",
-        //     "subcategory": "cleansing",
-        //     "image": toner,
-        //     "description": "Need's Rice And Coconut Facial Cleanser effectively brightens the skin and reduces dark spots with dual whitening technology. Enriched with hydrating and soothing ingredients for balanced, radiant skin.",
-        //     "features": [
-        //         {
-        //             "title": "Dual Whitening Technology",
-        //             "description": "Powered by Alpha-Arbutin and Glutathione, this cleanser effectively brightens the skin and reduces the appearance of dark spots and pigmentation."
-        //         },
-        //         {
-        //             "title": "Hydrating & Soothing Formula",
-        //             "description": "Deeply hydrate and calm the skin, leaving it soft and balanced."
-        //         },
-        //         {
-        //             "title": "Vitamin-Infused Radiance",
-        //             "description": "Enhanced Brightening, anti-inflammatory properties, and improved skin texture."
-        //         },
-        //         {
-        //             "title": "Antioxidant Protection",
-        //             "description": "Shields the skin from environmental damage and promotes a youthful glow."
-        //         },
-        //         {
-        //             "title": "Gentle Exfoliation with Microbeads",
-        //             "description": "Infused with jojoba esters and colored microbeads, it provides gentle exfoliation to remove dead skin cells for a smoother complexion without irritation."
-        //         }
-        //     ],
-        //     "keyIngredients": [
-        //         "Alpha-Arbutin",
-        //         "Glutathione",
-        //         "Rice Extract",
-        //         "Panthenol (pro-vitamin Bs)",
-        //         "Niacinamide (Vitamin B3)",
-        //         "Jojoba Esters",
-        //         "Coconut Extract",
-        //         "Vaccinium Angustifolium (Blueberry Fruit Extracts)"
-        //     ],
-        //     "swatches": ["#FFF5E1", "#FFE4C4", "#F5DEB3", "#DEB887", "#D2B48C"],
-        //     "volume": "200ml",
-        //     "slug": "needs-rice-and-coconut-facial-cleanser-200ml"
-        // },
+        {
+            "id": 2,
+            "name": "Need's Rice And Coconut Facial Cleanser 200ml",
+            "price": 2990,
+            "originalPrice": 3490,
+            "discount": 14,
+            "category": "skincare",
+            "subcategory": "cleansing",
+            "image": toner,
+            "description": "Need's Rice And Coconut Facial Cleanser effectively brightens the skin and reduces dark spots with dual whitening technology. Enriched with hydrating and soothing ingredients for balanced, radiant skin.",
+            "features": [
+                {
+                    "title": "Dual Whitening Technology",
+                    "description": "Powered by Alpha-Arbutin and Glutathione, this cleanser effectively brightens the skin and reduces the appearance of dark spots and pigmentation."
+                },
+                {
+                    "title": "Hydrating & Soothing Formula",
+                    "description": "Deeply hydrate and calm the skin, leaving it soft and balanced."
+                },
+                {
+                    "title": "Vitamin-Infused Radiance",
+                    "description": "Enhanced Brightening, anti-inflammatory properties, and improved skin texture."
+                },
+                {
+                    "title": "Antioxidant Protection",
+                    "description": "Shields the skin from environmental damage and promotes a youthful glow."
+                },
+                {
+                    "title": "Gentle Exfoliation with Microbeads",
+                    "description": "Infused with jojoba esters and colored microbeads, it provides gentle exfoliation to remove dead skin cells for a smoother complexion without irritation."
+                }
+            ],
+            "keyIngredients": [
+                "Alpha-Arbutin",
+                "Glutathione",
+                "Rice Extract",
+                "Panthenol (pro-vitamin Bs)",
+                "Niacinamide (Vitamin B3)",
+                "Jojoba Esters",
+                "Coconut Extract",
+                "Vaccinium Angustifolium (Blueberry Fruit Extracts)"
+            ],
+            "swatches": ["#FFF5E1", "#FFE4C4", "#F5DEB3", "#DEB887", "#D2B48C"],
+            "volume": "200ml",
+            "slug": "needs-rice-and-coconut-facial-cleanser-200ml"
+        },
         {
             "id": 3,
             "name": "Need's Hydrating Glass Skin Toner 200ml",
@@ -834,8 +835,8 @@ const mockData = {
         {
             "id": 10,
             "name": "Men's Facial Cleanser",
-            "price": 3490,
-            "originalPrice": 3990,
+            "price": 1490,
+            "originalPrice": 1990,
             "discount": 13,
             "category": "skincare",
             "subcategory": "cleansing",
@@ -904,8 +905,8 @@ const mockData = {
         {
             "id": 11,
             "name": "Hyaluronic Face Wash Cleanser",
-            "price": 3490,
-            "originalPrice": 3990,
+            "price": 1490,
+            "originalPrice": 1990,
             "discount": 13,
             "category": "skincare",
             "subcategory": "cleansing",
@@ -1034,8 +1035,8 @@ const mockData = {
         {
             "id": 12,
             "name": "Acne Solution Face Wash Cleanser",
-            "price": 3490,
-            "originalPrice": 3990,
+            "price": 1490,
+            "originalPrice": 1990,
             "discount": 13,
             "category": "skincare",
             "subcategory": "cleansing",
@@ -1132,12 +1133,12 @@ const mockData = {
             "swatches": ["#808080", "#4682B4", "#90EE90", "#FFA500"],
             "volume": "100ml",
             "slug": "acne-solution-face-wash-cleanser-100ml"
-        },  
+        },
         {
             "id": 13,
             "name": "Vitamin C Face Wash Cleanser",
-            "price": 3490,
-            "originalPrice": 3990,
+            "price": 1490,
+            "originalPrice": 1990,
             "discount": 13,
             "category": "skincare",
             "subcategory": "cleansing",
