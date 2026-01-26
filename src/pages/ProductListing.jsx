@@ -46,6 +46,19 @@ const ProductListing = () => {
 
                 let fetchedProducts = response.success ? response.data.products : [];
 
+                // Force "Rice and Coconut" into toner category
+                fetchedProducts = fetchedProducts.map(p => {
+                    if (p.name?.toLowerCase().includes('rice and coconut')) {
+                        return {
+                            ...p,
+                            subcategory: p.subcategory && typeof p.subcategory === 'object'
+                                ? { ...p.subcategory, name: 'toner', slug: 'toner' }
+                                : 'toner'
+                        };
+                    }
+                    return p;
+                });
+
                 // Apply subcategory filter if needed
                 if (mapping?.subcategory) {
                     fetchedProducts = fetchedProducts.filter(p =>

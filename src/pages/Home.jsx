@@ -40,7 +40,7 @@ const heroImages = [
     // hero5,
     // hero3,
     // hero4,
-   
+
 ];
 
 const Home = () => {
@@ -55,31 +55,37 @@ const Home = () => {
         const fetchProducts = async () => {
             try {
                 setLoading(true);
-                
+
                 // Fetch all products
                 const productsResponse = await productService.getProducts({ limit: 50 });
                 const allProducts = productsResponse.success ? productsResponse.data.products : [];
-                
+
                 // Fetch categories
                 const categoriesResponse = await productService.getCategories();
                 const cats = categoriesResponse.success ? (categoriesResponse.data || []) : [];
-                
+
                 setCategories(cats);
-                
+
                 // Flash sale products (discount >= 50%)
                 setFlashSaleProducts(allProducts.filter(p => p.discount >= 50));
-                
+
                 // Most loved products - sorted by subcategory order: sunscreen, toner, cleanser (Rice And Coconut), cream, serum
                 // Define subcategory order
                 const subcategoryOrder = ['suncare', 'toner', 'cleansing', 'moisturizer', 'serum'];
-                
+
                 const sortProductsBySubcategory = (products) => {
                     return products.sort((a, b) => {
                         const getSubcategoryPriority = (product) => {
                             // Check if subcategory matches order
-                            const subcategory = (product.subcategory || '').toLowerCase();
+                            // Handle both object format (from backend) and string format (from mockData)
+                            const subcategoryValue = product.subcategory 
+                                ? (typeof product.subcategory === 'string' 
+                                    ? product.subcategory 
+                                    : (product.subcategory.slug || product.subcategory.name || ''))
+                                : '';
+                            const subcategory = subcategoryValue.toLowerCase();
                             const name = (product.name || '').toLowerCase();
-                            
+
                             // Check for sunscreen first (can be in subcategory or name)
                             if (subcategory.includes('suncare') || name.includes('sunscreen') || name.includes('sun screen')) {
                                 return 0;
@@ -90,11 +96,11 @@ const Home = () => {
                             }
                             // Check for cleanser/cleansing (Rice And Coconut should be 3rd, right after toner)
                             if (subcategory.includes('cleansing') || name.includes('cleanser') || name.includes('cleansing')) {
-                                // Special priority for Rice And Coconut Facial Cleanser - should be first cleanser
+                                // Special priority for Rice And Coconut Facial Cleanser - should be treated as toner (priority 1)
                                 if (name.includes('rice') && name.includes('coconut')) {
-                                    return 2; // 3rd position (after suncare=0, toner=1)
+                                    return 1; // 2nd position (after suncare=0, with toner=1)
                                 }
-                                return 2; // Other cleansers also at priority 2
+                                return 2; // Other cleansers at priority 2
                             }
                             // Check for cream/moisturizer
                             if (subcategory.includes('moisturizer') || name.includes('cream') || name.includes('moisturizer')) {
@@ -107,30 +113,30 @@ const Home = () => {
                             // Everything else goes after
                             return 5;
                         };
-                        
+
                         const priorityA = getSubcategoryPriority(a);
                         const priorityB = getSubcategoryPriority(b);
-                        
+
                         if (priorityA !== priorityB) {
                             return priorityA - priorityB;
                         }
-                        
+
                         // If same priority (both cleansers), prioritize Rice And Coconut first
                         if (priorityA === 2) {
                             const nameA = (a.name || '').toLowerCase();
                             const nameB = (b.name || '').toLowerCase();
                             const hasRiceCoconutA = nameA.includes('rice') && nameA.includes('coconut');
                             const hasRiceCoconutB = nameB.includes('rice') && nameB.includes('coconut');
-                            
+
                             if (hasRiceCoconutA && !hasRiceCoconutB) return -1;
                             if (!hasRiceCoconutA && hasRiceCoconutB) return 1;
                         }
-                        
+
                         // If same priority, maintain original order
                         return 0;
                     });
                 };
-                
+
                 if (allProducts.length > 0) {
                     const sortedProducts = sortProductsBySubcategory([...allProducts]);
                     setMostLovedProducts(sortedProducts.slice(0, 18));
@@ -139,7 +145,7 @@ const Home = () => {
                     const mockProducts = sortProductsBySubcategory([...mockData.products]);
                     setMostLovedProducts(mockProducts.slice(0, 18));
                 }
-                
+
             } catch (error) {
                 console.error('Error fetching products:', error);
                 // Use mockData as fallback when backend fails
@@ -147,9 +153,15 @@ const Home = () => {
                 const sortProductsBySubcategory = (products) => {
                     return products.sort((a, b) => {
                         const getSubcategoryPriority = (product) => {
-                            const subcategory = (product.subcategory || '').toLowerCase();
+                            // Handle both object format (from backend) and string format (from mockData)
+                            const subcategoryValue = product.subcategory 
+                                ? (typeof product.subcategory === 'string' 
+                                    ? product.subcategory 
+                                    : (product.subcategory.slug || product.subcategory.name || ''))
+                                : '';
+                            const subcategory = subcategoryValue.toLowerCase();
                             const name = (product.name || '').toLowerCase();
-                            
+
                             if (subcategory.includes('suncare') || name.includes('sunscreen') || name.includes('sun screen')) {
                                 return 0;
                             }
@@ -160,7 +172,7 @@ const Home = () => {
                             if (subcategory.includes('cleansing') || name.includes('cleanser') || name.includes('cleansing')) {
                                 // Special priority for Rice And Coconut Facial Cleanser
                                 if (name.includes('rice') && name.includes('coconut')) {
-                                    return 2; // 3rd position
+                                    return 1; // Treated as toner
                                 }
                                 return 2; // Other cleansers also at priority 2
                             }
@@ -172,36 +184,36 @@ const Home = () => {
                             }
                             return 5;
                         };
-                        
+
                         const priorityA = getSubcategoryPriority(a);
                         const priorityB = getSubcategoryPriority(b);
-                        
+
                         if (priorityA !== priorityB) {
                             return priorityA - priorityB;
                         }
-                        
+
                         // If same priority (both cleansers), prioritize Rice And Coconut first
                         if (priorityA === 2) {
                             const nameA = (a.name || '').toLowerCase();
                             const nameB = (b.name || '').toLowerCase();
                             const hasRiceCoconutA = nameA.includes('rice') && nameA.includes('coconut');
                             const hasRiceCoconutB = nameB.includes('rice') && nameB.includes('coconut');
-                            
+
                             if (hasRiceCoconutA && !hasRiceCoconutB) return -1;
                             if (!hasRiceCoconutA && hasRiceCoconutB) return 1;
                         }
-                        
+
                         return 0;
                     });
                 };
-                
+
                 const mockProducts = sortProductsBySubcategory([...mockData.products]);
                 setMostLovedProducts(mockProducts.slice(0, 18));
             } finally {
                 setLoading(false);
             }
         };
-        
+
         fetchProducts();
     }, []);
 
@@ -242,14 +254,14 @@ const Home = () => {
                         transition={{ duration: 0.7 }}
                         className="absolute inset-0 w-full"
                     >
-                        <img 
-                            src={heroImages[currentSlide]} 
+                        <img
+                            src={heroImages[currentSlide]}
                             alt={`Hero ${currentSlide + 1}`}
                             className="w-full h-full object-cover object-center"
                         />
                     </motion.div>
                 </AnimatePresence>
-                
+
                 {/* Navigation Arrows */}
                 <button
                     onClick={prevSlide}
@@ -266,13 +278,13 @@ const Home = () => {
             </section>
 
             {/* Needs Most Loved Section */}
-                <ProductSlider 
-                title="POPULAR & TRENDING" 
-                    products={mostLovedProducts}
-                    variant="card"
-                    showViewAll={true}
-                    viewAllLink="/category/makeup"
-                />
+            <ProductSlider
+                title="POPULAR & TRENDING"
+                products={mostLovedProducts}
+                variant="card"
+                showViewAll={true}
+                viewAllLink="/category/makeup"
+            />
 
             {/* Create Your Style Section */}
             <CreateStyleSection />
@@ -309,8 +321,8 @@ const Home = () => {
 
             {/* Flash Sale */}
             {flashSaleProducts.length > 0 && (
-                <ProductSlider 
-                    title="Flash Sale" 
+                <ProductSlider
+                    title="Flash Sale"
                     products={flashSaleProducts}
                 />
             )}
@@ -320,8 +332,8 @@ const Home = () => {
                 <TopCategoriesSection />
 
                 </div> */}
-                <ShopSkinCareSection />
-           
+            <ShopSkinCareSection />
+
 
             {/* Our Brand Section - Above Footer */}
             <OurBrandSection />

@@ -2,10 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { API_BASE_URL } from '../config/api';
 
 const SkinCareProductCard = ({ product }) => {
     const { addToCart } = useCart();
     const discount = product.originalPrice ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : 0;
+
+    // Helper function to format image URL
+    const getImageUrl = (url) => {
+        if (!url) return '';
+        // If it's already a full URL (http/https) or data URI, return as is
+        if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('/src/assets') || url.startsWith('/images/')) {
+            return url;
+        }
+        // If it's a relative path from backend, prepend the backend base URL
+        const baseUrl = API_BASE_URL.replace('/api', '');
+        return `${baseUrl}${url.startsWith('/') ? '' : '/'}${url}`;
+    };
 
     return (
         <div className="w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1rem)] md:w-[calc(25%-1.125rem)] lg:w-[calc(20%-1.25rem)] flex-shrink-0 flex flex-col">
@@ -13,9 +26,17 @@ const SkinCareProductCard = ({ product }) => {
             <div className="relative aspect-square overflow-hidden bg-primary mb-4">
                 <Link to={`/product/${product.slug || product.id}`}>
                     <img
-                        src={product.image}
+                        src={getImageUrl(product.image)}
                         alt={product.name}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        onError={(e) => {
+                            // Prevent infinite loop - if already set to fallback, don't change again
+                            if (!e.target.dataset.fallbackSet) {
+                                e.target.dataset.fallbackSet = 'true';
+                                // Use a simple data URI instead of external placeholder
+                                e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f3f4f6" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="16" fill="%239ca3af"%3ENo Image%3C/text%3E%3C/svg%3E';
+                            }
+                        }}
                     />
                 </Link>
 

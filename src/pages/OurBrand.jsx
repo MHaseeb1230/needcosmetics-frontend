@@ -15,121 +15,115 @@ const OurBrand = () => {
                 </div>
             </section>
 
-            <section className="py-12 md:py-16 lg:py-20">
+            <section className="py-12 md:py-16 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4">
-                    {/* Art Beauty Joy Section */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                                Art · Beauty · Joy
-                            </h2>
-                            <div className="space-y-6 text-base md:text-lg text-gray-700 leading-relaxed">
-                                <p>
-                                    Need's Organics is a brand built for self-expression.
-                                </p>
-                                <p>
-                                    We capture global trends and infuse them with our own distinctive style drawn from our Italian perspective before sharing them with our audience across the world. We encourage people to embrace the things that make them unique and use our products to feel joyful and confident, experimenting with colour, texture and technique to bring their own individuality to life.
-                                </p>
-                                <p>
-                                    Our products are all designed in Milano, with 99% of products produced in Europe to the highest quality standards. This consistent pursuit of excellence paired with a wide range of 1,200 products in a vast array of shades makes us the Italy’s leading beauty brand, with a prestigious reputation across Europe.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="relative group">
-                            <div className="absolute -inset-4 bg-pink-100 rounded-3xl transform rotate-2 group-hover:rotate-1 transition-transform"></div>
-                            <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5]">
-                                <img
-                                    src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&h=1000&fit=crop"
-                                    alt="Art Beauty Joy"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Mission Section */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
-                        <div className="order-2 lg:order-1 relative group">
-                            <div className="absolute -inset-4 bg-purple-100 rounded-3xl transform -rotate-2 group-hover:-rotate-1 transition-transform"></div>
-                            <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5]">
-                                <img
-                                    src="https://images.unsplash.com/photo-1596462502278-27bfad450216?w=800&h=1000&fit=crop"
-                                    alt="Our Mission"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-                        </div>
-                        <div className="order-1 lg:order-2">
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                                Our Mission
-                            </h2>
-                            <div className="space-y-6 text-base md:text-lg text-gray-700 leading-relaxed">
-                                <p className="font-medium text-pink-600">
-                                    We believe in the power of art, colour and craft to transform our customers’ daily lives.
-                                </p>
-                                <p>
-                                    We are committed to delivering the Italian Art of Beauty to people across the globe by creating, designing, and innovating high-quality beauty products that will help them express their personality.
-                                </p>
-                                <p>
-                                    This commitment extends to the sales experience through the expertise and passion of our highly trained Beauty Advisors, who provide a personalised service that will relate to each customer’s own needs.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Colour Section */}
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
-                                Need's Organics is Colour
-                            </h2>
-                            <p className="text-base md:text-lg text-gray-700 leading-relaxed">
-                                We bring the largest colour assortment in the world of beauty to the lives of our customers encouraging them to experiment with products and shades that ignite creativity, confidence and self expression. To ensure we continuously push boundaries and stay inspired, we partner with global icons in fashion and the arts, sharing inspiration and offering our own Italian touch to their collaborations.
-                            </p>
-                        </div>
-                        <div className="relative group">
-                            <div className="absolute -inset-4 bg-blue-100 rounded-3xl transform rotate-1 group-hover:rotate-0 transition-transform"></div>
-                            <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5]">
-                                <img
-                                    src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&h=1000&fit=crop"
-                                    alt="Need's Organics is Colour"
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Quality Section */}
-                    <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-[3rem] p-12 md:p-16 lg:p-20 text-center shadow-inner">
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-10">
-                            Need's Organics Cares about Quality
+                    <div className="text-center mb-16">
+                        <h2 className="text-5xl md:text-6xl font-light tracking-tight text-gray-900 mb-6 font-serif">
+                            Nature · Beauty · Joy
                         </h2>
-                        <div className="max-w-4xl mx-auto">
-                            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-12">
-                                At Need's Organics, your health and wellbeing is our utmost priority. We ensure that all our products are crafted with the highest standards of quality and safety, leaving no room for compromise. This means:
+                        <h3 className="text-sm md:text-base font-bold tracking-[0.2em] text-gray-800 mb-8 uppercase">
+                            Need’s Organic is a USA-based brand dedicated to natural self-care and conscious living.
+                        </h3>
+                        <div className="max-w-4xl mx-auto space-y-4 text-sm md:text-[15px] font-medium text-gray-700 leading-relaxed">
+                            <p>
+                                We create products that combine carefully selected natural ingredients with modern formulations to support healthy, radiant lifestyles.
                             </p>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                <div className="p-8 bg-white/60 backdrop-blur-sm rounded-2xl shadow-sm border border-white hover:shadow-md transition-shadow">
-                                    <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <span className="text-pink-600 font-bold">1</span>
-                                    </div>
-                                    <h3 className="font-bold text-gray-900 mb-3 uppercase tracking-wide">Safe Ingredients</h3>
-                                    <p className="text-sm text-gray-600 leading-relaxed">We use only safe ingredients, rigorously avoiding questionable materials like sulfates, parabens, and microbeads.</p>
-                                </div>
-                                <div className="p-8 bg-white/60 backdrop-blur-sm rounded-2xl shadow-sm border border-white hover:shadow-md transition-shadow">
-                                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <span className="text-purple-600 font-bold">2</span>
-                                    </div>
-                                    <h3 className="font-bold text-gray-900 mb-3 uppercase tracking-wide">Rigorous Testing</h3>
-                                    <p className="text-sm text-gray-600 leading-relaxed">Exceeding 20,000 tests annually to ensure every product meets our strict safety and performance standards.</p>
-                                </div>
-                                <div className="p-8 bg-white/60 backdrop-blur-sm rounded-2xl shadow-sm border border-white hover:shadow-md transition-shadow">
-                                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <span className="text-blue-600 font-bold">3</span>
-                                    </div>
-                                    <h3 className="font-bold text-gray-900 mb-3 uppercase tracking-wide">Optimal Efficacy</h3>
-                                    <p className="text-sm text-gray-600 leading-relaxed">Perfectly balanced formulations that guarantee capacity to nourish and deliver real results for your skin.</p>
-                                </div>
+                            <p>
+                                Our mission is to make everyday routines feel pure, joyful, and effective. Each product is developed with high quality and safety standards, designed to be gentle on you and mindful of the environment.
+                            </p>
+                            <p>
+                                Need’s Organic stands for clean beauty, trusted care, and confidence inspired by nature.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-3 d-flex items-center justify-center h-auto">
+                        <div className="rounded-2xl overflow-hidden">
+                            <img src="/images/brand/brand1.png" alt="Model 1" className="item-center" />
+                        </div>
+                        <div className="rounded-2xl overflow-hidden">
+                            <img src="/images/brand/brand2.png" alt="Makeup 1" className="" />
+                        </div>
+                        <div className="rounded-2xl overflow-hidden">
+                            <img src="/images/brand/brand3.png" alt="Model 2" className="" />
+                        </div>
+                        <div className="rounded-2xl overflow-hidden">
+                            <img src="/images/brand/brand4.png" alt="Products" className="" />
+                        </div>
+                        <div className="rounded-2xl overflow-hidden">
+                            <img src="/images/brand/brand5.png" alt="Model 3" className="" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="py-20 lg:py-32 bg-white">
+                <div className="max-w-7xl mx-auto px-4">
+                    {/* Section 1: Our Mission (Text Left, Image Right) */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+                        <div className="space-y-8">
+                            <div className="space-y-4">
+                                <h4 className="text-sm font-bold tracking-[0.2em] text-gray-500 uppercase font-serif">
+                                    Our Mission
+                                </h4>
+                                <h2 className="text-3xl md:text-5xl  text-gray-900 leading-tight font-serif">
+                                    We believe in the power of art, colour and craft to transform our customers' daily lives.
+                                </h2>
+                            </div>
+                            <div className="space-y-6 text-gray-600 text-sm md:text-base leading-relaxed">
+                                <p>
+                                    We are committed to delivering the <span className="font-bold">Italian Art of Beauty</span> to people across the globe by creating, designing, and innovating high-quality beauty products that will help them express their personality.
+                                </p>
+                                <p>
+                                    This commitment extends to the sales experience through the expertise and passion of our highly trained Beauty Advisors, who provide a <span className="font-bold">personalised service</span> that will relate to each customer's own needs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex gap-4 h-auto">
+                            <div className="flex-1 overflow-hidden relative">
+                                <img
+                                    src="/images/brand/brand6.png"
+                                    alt="Mission Large"
+                                    className="w-full h-full object-cover"
+                                />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Section 2: Quality (Image Left, Text Right) */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div className="flex gap-4 h-auto order-2 lg:order-1">
+                            <div className="flex-1  overflow-hidden relative">
+                                <img
+                                    src="/images/brand/brand7.png"
+                                    alt="Quality Large"
+                                    className="w-full h-full object-cover"
+                                />
+
+                            </div>
+
+                        </div>
+
+                        <div className="space-y-8 order-1 lg:order-2">
+                            <h2 className="text-3xl md:text-5xl font-light text-gray-900 leading-tight font-serif">
+                                Needs Organic Cares about quality
+                            </h2>
+                            <div className="space-y-6 text-gray-600 text-xs md:text-sm leading-relaxed">
+                                <p>
+                                    At <span className="font-bold uppercase">Needs Organic</span>, your health and wellbeing is our utmost priority. We ensure that all our products are crafted with the highest standards of quality and safety, leaving no room for compromise. This means these 3 following things:
+                                </p>
+                                <p>
+                                    <span className="font-bold">We use only safe ingredients,</span> rigorously avoiding any questionable or suspect raw materials. We avoid dubious substances such as preservatives, cyclic silicones, sulphates, parabens, microbeads, GMOs, potentially carcinogenic ingredients and endocrine disruptors, among others.
+                                </p>
+                                <p>
+                                    <span className="font-bold">We subject our products to rigorous clinical testing.</span> (Exceeding 20,000 as for 2022).
+                                </p>
+                                <p>
+                                    <span className="font-bold">We incorporate ingredients in the appropriate percentages</span> to ensure optimal efficacy, thereby guaranteeing their capacity to nourish, perform, and deliver positive benefits to your skin.
+                                </p>
                             </div>
                         </div>
                     </div>

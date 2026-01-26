@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 import productService from '../services/productService';
 import SkinCareProductCard from './SkinCareProductCard';
 import mockData from '../data/mockData';
@@ -54,6 +54,12 @@ const ShopSkinCareSection = () => {
         }
     };
 
+    const scrollLeft = () => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+        }
+    };
+
     if (loading) {
         return null;
     }
@@ -67,6 +73,15 @@ const ShopSkinCareSection = () => {
                 
                 {/* Product Carousel */}
                 <div className="relative">
+                    {/* Left Arrow */}
+                    <button
+                        onClick={scrollLeft}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white border border-gray-300 rounded-full p-3 hover:bg-[var(--color-bg-light)] transition-colors shadow-md hidden md:flex items-center justify-center"
+                        aria-label="Previous products"
+                    >
+                        <ChevronLeft size={24} className="text-secondary" />
+                    </button>
+
                     {/* Right Arrow */}
                     <button
                         onClick={scrollRight}

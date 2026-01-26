@@ -2,17 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { Heart, Star } from 'lucide-react';
+import { API_BASE_URL } from '../config/api';
 
 const ProductCard = ({ product }) => {
     const { addToCart } = useCart();
     const discount = product.originalPrice ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : 0;
-    
+
     // Generate rating and reviews if not present (using product ID as seed for consistency)
     const seed = product.id || 0;
     const stableRating = product.rating || (4 + (seed % 10) / 10).toFixed(1); // Between 4.0-4.9
     // Handle reviews - can be an array or a number
-    const stableReviews = Array.isArray(product.reviews) 
-        ? product.reviews.length 
+    const stableReviews = Array.isArray(product.reviews)
+        ? product.reviews.length
         : (product.reviews || (20 + (seed % 900))); // Between 20-920
     const rating = stableRating;
     const reviews = stableReviews;
@@ -24,7 +25,7 @@ const ProductCard = ({ product }) => {
         const fullStars = Math.max(0, Math.min(5, Math.floor(numRating)));
         const hasHalfStar = numRating % 1 >= 0.5;
         const emptyStars = Math.max(0, Math.min(5, 5 - fullStars - (hasHalfStar ? 1 : 0)));
-        
+
         return (
             <div className="flex items-center gap-0.5">
                 {[...Array(Math.max(0, fullStars))].map((_, i) => (
@@ -45,6 +46,15 @@ const ProductCard = ({ product }) => {
         );
     };
 
+    const getImageUrl = (url) => {
+        if (!url) return '';
+        if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('/src/assets') || url.startsWith('/images/')) {
+            return url;
+        }
+        const baseUrl = API_BASE_URL.replace('/api', '');
+        return `${baseUrl}${url.startsWith('/') ? '' : '/'}${url}`;
+    };
+
     return (
         <div className="group relative bg-white">
             {/* Discount Badge */}
@@ -63,9 +73,17 @@ const ProductCard = ({ product }) => {
             <div className="relative aspect-square overflow-hidden">
                 <Link to={`/product/${product.slug || product.id}`}>
                     <img
-                        src={product.image}
+                        src={getImageUrl(product.image)}
                         alt={product.name}
                         className="h-full w-full object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                        onError={(e) => {
+                            // Prevent infinite loop - if already set to fallback, don't change again
+                            if (!e.target.dataset.fallbackSet) {
+                                e.target.dataset.fallbackSet = 'true';
+                                // Use a simple data URI or empty state instead of external placeholder
+                                e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f3f4f6" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="16" fill="%239ca3af"%3ENo Image%3C/text%3E%3C/svg%3E';
+                            }
+                        }}
                     />
                 </Link>
 
@@ -124,11 +142,10 @@ const ProductCard = ({ product }) => {
                     <button
                         onClick={() => addToCart(product, 1)}
                         disabled={product.isSoldOut}
-                        className={`w-1/2 py-2.5 text-xs font-bold rounded-lg uppercase tracking-wider text-center relative overflow-hidden border-2 transition-all duration-300 ${
-                            product.isSoldOut
+                        className={`w-1/2 py-2.5 text-xs font-bold rounded-lg uppercase tracking-wider text-center relative overflow-hidden border-2 transition-all duration-300 ${product.isSoldOut
                                 ? 'bg-gray-200 text-gray-400 border-gray-300 cursor-not-allowed'
                                 : 'bg-gray-800 text-white border-gray-800 hover:border-transparent hover:shadow-lg hover:shadow-gray-400/50'
-                        }`}
+                            }`}
                         onMouseEnter={(e) => {
                             if (!product.isSoldOut) {
                                 e.currentTarget.querySelector('.button-slide-bg')?.classList.remove('translate-y-full');
@@ -147,7 +164,7 @@ const ProductCard = ({ product }) => {
                             <span className="button-slide-bg absolute inset-0 bg-white transform translate-y-full transition-transform duration-300 ease-in-out z-0"></span>
                         )}
                     </button>
-                    <button 
+                    <button
                         className="w-9 h-9 bg-white border border-gray-300 rounded flex items-center justify-center flex-shrink-0 relative overflow-hidden"
                         aria-label="Add to wishlist"
                         onMouseEnter={(e) => {

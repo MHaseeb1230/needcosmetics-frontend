@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, User, Heart, ShoppingBag, Menu, X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
-import logo from '../assets/logos/Needs Logo.png';
+import logo from '../assets/logos/Needs Black Logo.png';
 import logoMobile from '../assets/logos/Needs Logo.png';
 
 const Navbar = () => {
@@ -123,7 +123,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="sticky top-0 z-50 bg-gray-500 shadow-sm">
+        <nav className="sticky top-0 z-50 shadow-sm bg-white">
             {/* Top Bar */}
             <div className="bg-secondary text-white text-[10px] py-2 px-4 flex justify-between items-center uppercase tracking-wider">
                 <div className="flex items-center gap-4">
@@ -138,7 +138,7 @@ const Navbar = () => {
             </div>
 
             {/* Main Header */}
-            <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div className="container bg-white mx-auto px-4 py-2 flex justify-between items-center">
                 <div className="flex items-center gap-4 flex-1">
                     <button className="lg:hidden" onClick={() => setIsMenuOpen(true)}>
                         <Menu size={24} />
@@ -157,7 +157,7 @@ const Navbar = () => {
                     <Link to="/">
                         <img
                             src={logo}
-                            alt="NEEDS Milano"
+                            alt="NEEDS Cosmetics"
                             className="h-7 w-18"
                         />
                     </Link>
@@ -453,7 +453,7 @@ const Navbar = () => {
                     <div className="p-4 border-b flex justify-between items-center">
                         <img
                             src={logoMobile}
-                            alt="NEEDS Milano"
+                            alt="NEEDS Cosmetics"
                             className="h-8"
                         />
                         <button onClick={() => setIsMenuOpen(false)}>

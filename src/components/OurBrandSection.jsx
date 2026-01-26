@@ -86,7 +86,7 @@ const OurBrandSection = () => {
 
                         {/* Main Heading */}
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-6 leading-tight">
-                            Art · Beauty · Joy
+                            Nature · Beauty · Joy
                         </h2>
 
                         {/* Description */}

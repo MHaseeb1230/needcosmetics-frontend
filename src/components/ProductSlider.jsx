@@ -4,10 +4,21 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import ProductCard from './ProductCard';
+import { API_BASE_URL } from '../config/api';
 
 const ProductSlider = ({ products, title, showViewAll = false, variant = 'default', viewAllLink = '/category/makeup' }) => {
     const scrollRef = useRef(null);
     const { addToCart } = useCart();
+
+    // Helper function to format image URL
+    const getImageUrl = (url) => {
+        if (!url) return '';
+        if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('/src/assets') || url.startsWith('/images/')) {
+            return url;
+        }
+        const baseUrl = API_BASE_URL.replace('/api', '');
+        return `${baseUrl}${url.startsWith('/') ? '' : '/'}${url}`;
+    };
     
     // For card slider variant
     const [productSlideIndex, setProductSlideIndex] = useState(0);
@@ -157,9 +168,16 @@ const ProductSlider = ({ products, title, showViewAll = false, variant = 'defaul
                                         {/* Product Image */}
                                         <Link to={`/product/${product.slug || product.id}`} className="block aspect-square overflow-hidden bg-gray-50">
                                             <img
-                                                src={product.image}
+                                                src={getImageUrl(product.image)}
                                                 alt={product.name}
                                                 className="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-300"
+                                                onError={(e) => {
+                                                    // Prevent infinite loop
+                                                    if (!e.target.dataset.fallbackSet) {
+                                                        e.target.dataset.fallbackSet = 'true';
+                                                        e.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23f3f4f6" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="16" fill="%239ca3af"%3ENo Image%3C/text%3E%3C/svg%3E';
+                                                    }
+                                                }}
                                             />
                                         </Link>
 
