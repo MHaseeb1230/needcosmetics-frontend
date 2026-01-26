@@ -444,6 +444,7 @@ const Navbar = () => {
                     </div> */}
 
                     <Link to="/category/face-wash" className=" transition-colors">Face Wash</Link>
+                    <Link to="/gift-card" className=" transition-colors">Gift Card</Link>
                 </div>
             </div>
 
@@ -468,6 +469,7 @@ const Navbar = () => {
                         <Link to="/category/fragrances" onClick={() => setIsMenuOpen(false)}>Fragrances</Link>
                         <Link to="/category/hair" onClick={() => setIsMenuOpen(false)}>Hair</Link>
                         <Link to="/category/face-wash" className="text-primary" onClick={() => setIsMenuOpen(false)}>Face Wash</Link>
+                        <Link to="/gift-card" onClick={() => setIsMenuOpen(false)}>Gift Card</Link>
                         <hr />
                         <Link to="/login" onClick={() => setIsMenuOpen(false)}>Account</Link>
                         <Link to="/wishlist" onClick={() => setIsMenuOpen(false)}>Wishlist</Link>

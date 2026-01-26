@@ -14,6 +14,7 @@ import IngredientsGlossarySection from '../components/IngredientsGlossarySection
 import MeetOurIconsSection from '../components/MeetOurIconsSection';
 import WhatsNewSection from '../components/WhatsNewSection';
 import CreateStyleSection from '../components/CreateStyleSection';
+import GiftCardSection from '../components/GiftCardSection';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import mockData from '../data/mockData';
@@ -334,6 +335,8 @@ const Home = () => {
                 </div> */}
             <ShopSkinCareSection />
 
+            {/* Gift Card Section */}
+            <GiftCardSection />
 
             {/* Our Brand Section - Above Footer */}
             <OurBrandSection />

@@ -19,6 +19,7 @@ import OurBrand from './pages/OurBrand';
 import Leadership from './pages/Leadership';
 import LeadershipDetail from './pages/LeadershipDetail';
 import Governance from './pages/Governance';
+import GiftCard from './pages/GiftCard';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
               <Route path="/order-success/:orderId" element={<OrderSuccess />} />
               <Route path="/login" element={<Auth />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/gift-card" element={<GiftCard />} />
             </Routes>
           </main>
           <Footer />
