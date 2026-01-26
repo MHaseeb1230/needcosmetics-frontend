@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import cartService from '../services/cartService';
+import productService from '../services/productService';
 
 const CartContext = createContext();
 
@@ -39,11 +40,41 @@ export const CartProvider = ({ children }) => {
             setError(null);
             
             // Get product ID - handle different product structures
-            const productId = product.id || product.productId;
+            let productId = product.id || product.productId;
             
             if (!productId) {
                 console.error('Product object:', product);
                 throw new Error('Product ID is missing. Product object structure: ' + JSON.stringify(product));
+            }
+            
+            // Check if productId is numeric (from mockData) - need to get UUID from backend
+            const isNumericId = typeof productId === 'number' || (typeof productId === 'string' && /^\d+$/.test(productId));
+            
+            if (isNumericId) {
+                // Product is from mockData with numeric ID, need to fetch UUID from backend using slug
+                try {
+                    const slug = product.slug;
+                    if (slug) {
+                        const productResponse = await productService.getProductBySlug(slug);
+                        if (productResponse.success && productResponse.data) {
+                            productId = productResponse.data.id; // Use UUID from backend
+                            console.log('Mapped numeric ID to UUID:', product.id, '->', productId);
+                        } else {
+                            throw new Error('Product not found in backend. Please ensure product is imported to database.');
+                        }
+                    } else {
+                        throw new Error('Product slug is missing. Cannot map to backend product.');
+                    }
+                } catch (fetchError) {
+                    console.error('Error fetching product UUID:', fetchError);
+                    throw new Error('Product not found in backend. Please ensure product is imported to database.');
+                }
+            }
+            
+            // Validate UUID format
+            const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+            if (!uuidRegex.test(productId)) {
+                throw new Error(`Invalid product ID format: ${productId}. Expected UUID format.`);
             }
             
             // Log for debugging

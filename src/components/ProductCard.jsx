@@ -19,14 +19,15 @@ const ProductCard = ({ product }) => {
     const numShades = product.swatches?.length || 0;
 
     const renderStars = (rating) => {
-        const numRating = parseFloat(rating);
-        const fullStars = Math.floor(numRating);
+        // Validate and clamp rating to valid range (0-5)
+        const numRating = Math.max(0, Math.min(5, parseFloat(rating) || 0));
+        const fullStars = Math.max(0, Math.min(5, Math.floor(numRating)));
         const hasHalfStar = numRating % 1 >= 0.5;
-        const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+        const emptyStars = Math.max(0, Math.min(5, 5 - fullStars - (hasHalfStar ? 1 : 0)));
         
         return (
             <div className="flex items-center gap-0.5">
-                {[...Array(fullStars)].map((_, i) => (
+                {[...Array(Math.max(0, fullStars))].map((_, i) => (
                     <Star key={i} size={12} className="fill-black text-black" strokeWidth={0} />
                 ))}
                 {hasHalfStar && (
@@ -37,7 +38,7 @@ const ProductCard = ({ product }) => {
                         </div>
                     </div>
                 )}
-                {[...Array(emptyStars)].map((_, i) => (
+                {[...Array(Math.max(0, emptyStars))].map((_, i) => (
                     <Star key={`empty-${i}`} size={12} className="fill-transparent text-black" strokeWidth={1} />
                 ))}
             </div>

@@ -69,9 +69,9 @@ const Home = () => {
                 // Flash sale products (discount >= 50%)
                 setFlashSaleProducts(allProducts.filter(p => p.discount >= 50));
                 
-                // Most loved products - sorted by subcategory order: sunscreen, toner, cream, cleanser, serum
+                // Most loved products - sorted by subcategory order: sunscreen, toner, cleanser (Rice And Coconut), cream, serum
                 // Define subcategory order
-                const subcategoryOrder = ['suncare', 'toner', 'moisturizer', 'cleansing', 'serum'];
+                const subcategoryOrder = ['suncare', 'toner', 'cleansing', 'moisturizer', 'serum'];
                 
                 const sortProductsBySubcategory = (products) => {
                     return products.sort((a, b) => {
@@ -88,12 +88,16 @@ const Home = () => {
                             if (subcategory.includes('toner') || name.includes('toner')) {
                                 return 1;
                             }
+                            // Check for cleanser/cleansing (Rice And Coconut should be 3rd, right after toner)
+                            if (subcategory.includes('cleansing') || name.includes('cleanser') || name.includes('cleansing')) {
+                                // Special priority for Rice And Coconut Facial Cleanser - should be first cleanser
+                                if (name.includes('rice') && name.includes('coconut')) {
+                                    return 2; // 3rd position (after suncare=0, toner=1)
+                                }
+                                return 2; // Other cleansers also at priority 2
+                            }
                             // Check for cream/moisturizer
                             if (subcategory.includes('moisturizer') || name.includes('cream') || name.includes('moisturizer')) {
-                                return 2;
-                            }
-                            // Check for cleanser/cleansing
-                            if (subcategory.includes('cleansing') || name.includes('cleanser') || name.includes('cleansing')) {
                                 return 3;
                             }
                             // Check for serum
@@ -109,6 +113,17 @@ const Home = () => {
                         
                         if (priorityA !== priorityB) {
                             return priorityA - priorityB;
+                        }
+                        
+                        // If same priority (both cleansers), prioritize Rice And Coconut first
+                        if (priorityA === 2) {
+                            const nameA = (a.name || '').toLowerCase();
+                            const nameB = (b.name || '').toLowerCase();
+                            const hasRiceCoconutA = nameA.includes('rice') && nameA.includes('coconut');
+                            const hasRiceCoconutB = nameB.includes('rice') && nameB.includes('coconut');
+                            
+                            if (hasRiceCoconutA && !hasRiceCoconutB) return -1;
+                            if (!hasRiceCoconutA && hasRiceCoconutB) return 1;
                         }
                         
                         // If same priority, maintain original order
@@ -141,10 +156,15 @@ const Home = () => {
                             if (subcategory.includes('toner') || name.includes('toner')) {
                                 return 1;
                             }
-                            if (subcategory.includes('moisturizer') || name.includes('cream') || name.includes('moisturizer')) {
-                                return 2;
-                            }
+                            // Cleanser comes after toner (3rd position)
                             if (subcategory.includes('cleansing') || name.includes('cleanser') || name.includes('cleansing')) {
+                                // Special priority for Rice And Coconut Facial Cleanser
+                                if (name.includes('rice') && name.includes('coconut')) {
+                                    return 2; // 3rd position
+                                }
+                                return 2; // Other cleansers also at priority 2
+                            }
+                            if (subcategory.includes('moisturizer') || name.includes('cream') || name.includes('moisturizer')) {
                                 return 3;
                             }
                             if (subcategory.includes('serum') || name.includes('serum')) {
@@ -159,6 +179,18 @@ const Home = () => {
                         if (priorityA !== priorityB) {
                             return priorityA - priorityB;
                         }
+                        
+                        // If same priority (both cleansers), prioritize Rice And Coconut first
+                        if (priorityA === 2) {
+                            const nameA = (a.name || '').toLowerCase();
+                            const nameB = (b.name || '').toLowerCase();
+                            const hasRiceCoconutA = nameA.includes('rice') && nameA.includes('coconut');
+                            const hasRiceCoconutB = nameB.includes('rice') && nameB.includes('coconut');
+                            
+                            if (hasRiceCoconutA && !hasRiceCoconutB) return -1;
+                            if (!hasRiceCoconutA && hasRiceCoconutB) return 1;
+                        }
+                        
                         return 0;
                     });
                 };
