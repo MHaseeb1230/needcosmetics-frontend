@@ -309,7 +309,7 @@ const Home = () => {
             <MeetOurIconsSection />
 
             {/* What's new Section */}
-            <WhatsNewSection />
+            {/* <WhatsNewSection /> */}
 
             {/* Follow the viral hype Section */}
             <FollowViralHypeSection />
