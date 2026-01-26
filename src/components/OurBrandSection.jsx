@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Truck, ShieldCheck, RotateCcw } from 'lucide-react';
 
 const OurBrandSection = () => {
@@ -9,16 +10,19 @@ const OurBrandSection = () => {
             badge: 'OUR BRAND',
             image: '/images/artbeauty.png',
             description: "Need's Organics is a brand built for self-expression. We capture global trends and infuse them with our own distinctive style drawn from our Italian perspective before sharing them with our audience across the world. We encourage people to embrace the things that make them unique and use our products to feel joyful and confident, experimenting with colour, texture and technique to bring their own individuality to life.",
+            link: '/about/our-brand',
         },
         impact: {
             badge: 'OUR IMPACT',
             image: '/images/our-impact/impact2.jpeg',
             description: 'NEEDS is committed to making a positive impact. We believe in sustainable beauty practices, ethical sourcing, and creating products that not only enhance your beauty but also contribute to a better world for everyone.',
+            link: '/about/our-impact',
         },
         animals: {
             badge: 'ANIMALS',
             image: '/images/animal.webp',
             description: 'NEEDS is proud to be cruelty-free. We are committed to never testing on animals and ensuring that all our products are developed with respect for all living beings, creating beauty that is kind and compassionate.',
+            link: '/about/animals',
         },
     };
 
@@ -95,9 +99,13 @@ const OurBrandSection = () => {
                         </p>
 
                         {/* Read More Link */}
-                        <button className="text-sm md:text-base text-gray-900 underline underline-offset-4 hover:text-gray-700 transition-colors text-left">
+                        <Link 
+                            to={currentData.link}
+                            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                            className="text-sm md:text-base text-gray-900 underline underline-offset-4 hover:text-gray-700 transition-colors text-left inline-block"
+                        >
                             Read More
-                        </button>
+                        </Link>
                     </div>
                 </div>
 

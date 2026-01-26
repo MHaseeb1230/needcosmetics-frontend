@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AboutTabs from '../components/AboutTabs';
 
 const OurBrand = () => {
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
+
     return (
         <div className="bg-white min-h-screen">
             <section className="border-b border-gray-200">

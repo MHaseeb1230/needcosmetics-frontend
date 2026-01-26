@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import AboutTabs from '../components/AboutTabs';
 
 const OurImpact = () => {
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
+
     return (
         <div className="bg-white min-h-screen">
             {/* Main Heading with Tabs */}
