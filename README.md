@@ -1,6 +1,6 @@
-# Kiko Cosmetics Clone
+# Needs Organic
 
-A high-fidelity, frontend-only ecommerce web application inspired by `https://kikocosmetics.pk/`, built with React JS and Tailwind CSS.
+A high-fidelity, frontend-only ecommerce web application inspired by `https://needsorganic.com/`, built with React JS and Tailwind CSS.
 
 ## Features
 

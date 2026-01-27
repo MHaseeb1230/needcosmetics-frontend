@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Filter } from 'lucide-react';
 
-// Expanded ingredients list based on KIKO website
+// Expanded ingredients list based on Needs Organic website
 const INGREDIENTS = [
     {
         id: 'hyalu-rose',

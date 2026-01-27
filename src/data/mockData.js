@@ -21,17 +21,17 @@ const mockData = {
         {
             "id": "makeup",
             "name": "Make Up",
-            "image": "https://kikocosmetics.pk/cdn/shop/files/MAKE_UP_CATEGORY.jpg?v=1710412345"
+            "image": null
         },
         {
             "id": "skincare",
             "name": "Skin Care",
-            "image": "https://kikocosmetics.pk/cdn/shop/files/SKIN_CARE_CATEGORY.jpg?v=1710412345"
+            "image": null
         },
         {
             "id": "accessories",
             "name": "Accessories",
-            "image": "https://kikocosmetics.pk/cdn/shop/files/ACCESSORIES_CATEGORY.jpg?v=1710412345"
+            "image": null
         }
     ],
     "products": [
@@ -1224,216 +1224,6 @@ const mockData = {
             "volume": "100ml",
             "slug": "vitamin-c-face-wash-cleanser-100ml"
         },
-        // {
-        //     "id": 11,
-        //     "name": "Smart Fusion Lip Pencil",
-        //     "price": 1715,
-        //     "originalPrice": 2450,
-        //     "discount": 30,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/SMART_FUSION_LIP_PENCIL_01.jpg?v=1710412345",
-        //     "swatches": ["#C97064", "#B5495B", "#8B3A62", "#6B3340", "#A8516E"]
-        // },
-        // {
-        //     "id": 11,
-        //     "name": "Unlimited Lip Stylo",
-        //     "price": 4680,
-        //     "originalPrice": 5850,
-        //     "discount": 20,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/UNLIMITED_LIP_STYLO_01.jpg?v=1710412345",
-        //     "swatches": ["#E6B8B7", "#D4A5A5", "#C48B8B", "#A97272", "#8F5E5E"]
-        // },
-        // {
-        //     "id": 12,
-        //     "name": "Gossamer Emotion Creamy Lipstick",
-        //     "price": 4680,
-        //     "originalPrice": 5850,
-        //     "discount": 20,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/GOSSAMER_EMOTION_LIPSTICK_01.jpg?v=1710412345",
-        //     "swatches": ["#DC143C", "#C71585", "#8B008B", "#B22222", "#CD5C5C"]
-        // },
-        // {
-        //     "id": 13,
-        //     "name": "Jelly Stylo",
-        //     "price": 4193,
-        //     "originalPrice": 5990,
-        //     "discount": 30,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/JELLY_STYLO_01.jpg?v=1710412345",
-        //     "swatches": ["#FFB6C1", "#FF69B4", "#FF1493", "#DB7093", "#FFC0CB"]
-        // },
-        // {
-        //     "id": 14,
-        //     "name": "Long Lasting Colour Lip Marker",
-        //     "price": 4680,
-        //     "originalPrice": 5850,
-        //     "discount": 20,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/LIP_MARKER_01.jpg?v=1710412345",
-        //     "swatches": ["#E74C3C", "#C0392B", "#922B21", "#641E16", "#A93226"]
-        // },
-        // {
-        //     "id": 15,
-        //     "name": "Lasting Matte Veil - 2023",
-        //     "price": 4968,
-        //     "originalPrice": 6210,
-        //     "discount": 20,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/LASTING_MATTE_VEIL_01.jpg?v=1710412345",
-        //     "swatches": ["#D2691E", "#A0522D", "#8B4513", "#654321", "#806517"]
-        // },
-        // {
-        //     "id": 16,
-        //     "name": "Velvet Passion Matte Lipstick",
-        //     "price": 4680,
-        //     "originalPrice": 5850,
-        //     "discount": 20,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/VELVET_PASSION_LIPSTICK_01.jpg?v=1710412345",
-        //     "swatches": ["#8B0000", "#A52A2A", "#B22222", "#DC143C", "#800020"]
-        // },
-        // {
-        //     "id": 17,
-        //     "name": "Lip Volume Tutu Rose New 2019",
-        //     "price": 3528,
-        //     "originalPrice": 4410,
-        //     "discount": 20,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/LIP_VOLUME_TUTU_01.jpg?v=1710412345",
-        //     "swatches": ["#FFC0CB", "#FFB6C1", "#FF69B4", "#FF1493", "#C71585"]
-        // },
-        // {
-        //     "id": 18,
-        //     "name": "Smart Fusion Creamy Lip Crayon",
-        //     "price": 1905,
-        //     "originalPrice": 3810,
-        //     "discount": 50,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/SMART_FUSION_CRAYON_01.jpg?v=1710412345",
-        //     "swatches": ["#DDA0DD", "#DA70D6", "#BA55D3", "#9370DB", "#8B008B"]
-        // },
-        // {
-        //     "id": 19,
-        //     "name": "Hydra Shiny Lip Stylo",
-        //     "price": 3850,
-        //     "originalPrice": 5500,
-        //     "discount": 30,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/HYDRA_SHINY_LIP_STYLO_01.jpg?v=1710412345",
-        //     "swatches": ["#F08080", "#FA8072", "#E9967A", "#CD853F", "#BC8F8F"]
-        // },
-        // {
-        //     "id": 20,
-        //     "name": "Smart Fusion Matte Lip Crayon",
-        //     "price": 1905,
-        //     "originalPrice": 3810,
-        //     "discount": 50,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/SMART_FUSION_MATTE_CRAYON_01.jpg?v=1710412345",
-        //     "swatches": ["#C04000", "#B7410E", "#CC5500", "#D2691E", "#A0522D"]
-        // },
-        // {
-        //     "id": 21,
-        //     "name": "Lip Scrub New 2019",
-        //     "price": 2248,
-        //     "originalPrice": 2810,
-        //     "discount": 20,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/LIP_SCRUB_01.jpg?v=1710412345",
-        //     "swatches": ["#FFF0F5", "#FFE4E1", "#FFB6C1", "#FFC0CB", "#FFD4DB"]
-        // },
-        // {
-        //     "id": 22,
-        //     "name": "Metal Liquid Lip Colour",
-        //     "price": 4347,
-        //     "originalPrice": 6210,
-        //     "discount": 30,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/METAL_LIQUID_LIP_01.jpg?v=1710412345",
-        //     "swatches": ["#C0C0C0", "#B87333", "#E5AA70", "#CD7F32", "#9C7C38"]
-        // },
-        // {
-        //     "id": 23,
-        //     "name": "Lip Balm New 2019",
-        //     "price": 2248,
-        //     "originalPrice": 2810,
-        //     "discount": 20,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/LIP_BALM_01.jpg?v=1710412345",
-        //     "swatches": ["#FFE4E1", "#FADADD", "#FFB6C1", "#FFE4B5", "#F5DEB3"]
-        // },
-        // {
-        //     "id": 24,
-        //     "name": "Instant Colour Matte Liquid Lip Colour",
-        //     "price": 4095,
-        //     "originalPrice": 5850,
-        //     "discount": 30,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/INSTANT_COLOUR_MATTE_01.jpg?v=1710412345",
-        //     "swatches": ["#8B4513", "#A0522D", "#CD853F", "#D2691E", "#B8860B"]
-        // },
-        // {
-        //     "id": 25,
-        //     "name": "Lip Volume Trasparente New 2019",
-        //     "price": 3528,
-        //     "originalPrice": 4410,
-        //     "discount": 20,
-        //     "category": "makeup",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/LIP_VOLUME_TRASPARENTE_01.jpg?v=1710412345",
-        //     "swatches": ["#FFFFFF", "#FFFAFA", "#FFF5EE", "#FFE4E1", "#FFEFD5"]
-        // },
-        // {
-        //     "id": 26,
-        //     "name": "Smart Drops Glow Glowing Booster",
-        //     "price": 3157,
-        //     "originalPrice": 4510,
-        //     "discount": 30,
-        //     "category": "skincare",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/SMART_DROPS_GLOW_01.jpg?v=1710412345",
-        //     "swatches": ["#FFE4B5", "#FFEAA7", "#FFDAB9", "#F0E68C", "#EEE8AA"]
-        // },
-        // {
-        //     "id": 27,
-        //     "name": "New Hydra Pro Glow",
-        //     "price": 9288,
-        //     "originalPrice": 11610,
-        //     "discount": 20,
-        //     "category": "skincare",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/HYDRA_PRO_GLOW_01.jpg?v=1710412345",
-        //     "swatches": ["#E0F2F1", "#B2DFDB", "#80CBC4", "#4DB6AC", "#26A69A"]
-        // },
-        // {
-        //     "id": 28,
-        //     "name": "Intensive Hand Cream",
-        //     "price": 3159,
-        //     "originalPrice": 3510,
-        //     "discount": 10,
-        //     "category": "skincare",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/INTENSIVE_HAND_CREAM_01.jpg?v=1710412345",
-        //     "swatches": ["#F3E5F5", "#E1BEE7", "#CE93D8", "#BA68C8", "#AB47BC"]
-        // },
-        // {
-        //     "id": 29,
-        //     "name": "Smart Radiance Cream 3In1",
-        //     "price": 5887,
-        //     "originalPrice": 8410,
-        //     "discount": 30,
-        //     "category": "skincare",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/SMART_RADIANCE_CREAM_01.jpg?v=1710412345",
-        //     "swatches": ["#FFF9E6", "#FFECB3", "#FFE082", "#FFD54F", "#FFCA28"]
-        // },
-        // {
-        //     "id": 30,
-        //     "name": "Smart Hydra Shot Stick",
-        //     "price": 2975,
-        //     "originalPrice": 4250,
-        //     "discount": 30,
-        //     "category": "skincare",
-        //     "image": "https://kikocosmetics.pk/cdn/shop/files/SMART_HYDRA_SHOT_01.jpg?v=1710412345",
-        //     "swatches": ["#E3F2FD", "#BBDEFB", "#90CAF9", "#64B5F6", "#42A5F5"]
-        // }
     ]
 };
 

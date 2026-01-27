@@ -39,7 +39,7 @@ const Profile = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
                                 <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 block mb-2">Full Name</label>
-                                <p className="text-sm font-bold">NEEDS Milano User</p>
+                                <p className="text-sm font-bold">NEEDS Organic User</p>
                             </div>
                             <div>
                                 <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 block mb-2">Email Address</label>
