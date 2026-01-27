@@ -72,15 +72,17 @@ const OurBrand = () => {
                                     Our Mission
                                 </h4>
                                 <h2 className="text-3xl md:text-5xl  text-gray-900 leading-tight font-serif">
-                                    We believe in the power of art, colour and craft to transform our customers' daily lives.
+                                    We believe in the power of Nature, colour and craft to transform our customers' daily lives.
                                 </h2>
                             </div>
                             <div className="space-y-6 text-gray-600 text-sm md:text-base leading-relaxed">
                                 <p>
-                                    We are committed to delivering the <span className="font-bold">Italian Art of Beauty</span> to people across the globe by creating, designing, and innovating high-quality beauty products that will help them express their personality.
+                                Our mission is to promote natural beauty and everyday wellness through clean, effective personal care products. We create high-quality formulas with carefully selected ingredients to help people feel confident, healthy, and connected to nature.
+                                    {/* We are committed to delivering the <span className="font-bold">Italian Art of Beauty</span> to people across the globe by creating, designing, and innovating high-quality beauty products that will help them express their personality. */}
                                 </p>
                                 <p>
-                                    This commitment extends to the sales experience through the expertise and passion of our highly trained Beauty Advisors, who provide a <span className="font-bold">personalised service</span> that will relate to each customer's own needs.
+                                We are committed to offering a caring, personalized experience that supports each individual’s unique self-care journey.
+                                {/* We believe in the power of Nature, colour and craft to transform our customers' daily lives. */}
                                 </p>
                             </div>
                         </div>
@@ -113,21 +115,19 @@ const OurBrand = () => {
 
                         <div className="space-y-8 order-1 lg:order-2">
                             <h2 className="text-3xl md:text-5xl font-light text-gray-900 leading-tight font-serif">
-                                Needs Organic Cares about quality
+                            Need’s Organic is Nature
                             </h2>
                             <div className="space-y-6 text-gray-600 text-xs md:text-sm leading-relaxed">
                                 <p>
-                                    At <span className="font-bold uppercase">Needs Organic</span>, your health and wellbeing is our utmost priority. We ensure that all our products are crafted with the highest standards of quality and safety, leaving no room for compromise. This means these 3 following things:
+                                We bring the power of natural ingredients and gentle formulations into everyday self-care, encouraging people to explore products that nurture their skin, uplift their senses, and inspire confidence in their natural beauty.
+
+                                {/* Our products are made with carefully selected, high-quality ingredients that are safe for your skin and body. We use only natural and organic ingredients, and we never test on animals. */}
                                 </p>
                                 <p>
-                                    <span className="font-bold">We use only safe ingredients,</span> rigorously avoiding any questionable or suspect raw materials. We avoid dubious substances such as preservatives, cyclic silicones, sulphates, parabens, microbeads, GMOs, potentially carcinogenic ingredients and endocrine disruptors, among others.
+                                To stay innovative and inspired, we follow global wellness trends and collaborate with experts who share our passion for clean, effective, and mindful personal care — always guided by our commitment to quality, purity, and sustainability
+                                    {/* <span className="font-bold">We use only safe ingredients,</span> rigorously avoiding any questionable or suspect raw materials. We avoid dubious substances such as preservatives, cyclic silicones, sulphates, parabens, microbeads, GMOs, potentially carcinogenic ingredients and endocrine disruptors, among others. */}
                                 </p>
-                                <p>
-                                    <span className="font-bold">We subject our products to rigorous clinical testing.</span> (Exceeding 20,000 as for 2022).
-                                </p>
-                                <p>
-                                    <span className="font-bold">We incorporate ingredients in the appropriate percentages</span> to ensure optimal efficacy, thereby guaranteeing their capacity to nourish, perform, and deliver positive benefits to your skin.
-                                </p>
+                               
                             </div>
                         </div>
                     </div>

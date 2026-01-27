@@ -336,7 +336,7 @@ const Home = () => {
             <ShopSkinCareSection />
 
             {/* Gift Card Section */}
-            <GiftCardSection />
+            {/* <GiftCardSection /> */}
 
             {/* Our Brand Section - Above Footer */}
             <OurBrandSection />
