@@ -26,7 +26,7 @@ const Animals = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
                         {/* Left Side - Text Content */}
                         <div className="text-left">
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-gray-700 mb-6 leading-tight">
+                            <h2 className="text-3xl md:text-4xl mb-6 font-light uppercase tracking-wide text-gray-900">
                                 NEEDS CARES for ANIMALS
                             </h2>
                             <p className="text-base md:text-lg text-gray-700 mb-12 leading-relaxed">

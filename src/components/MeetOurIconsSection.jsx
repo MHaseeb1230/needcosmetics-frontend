@@ -11,7 +11,7 @@ const MeetOurIconsSection = () => {
     const products = [
         {
             id: 1,
-            title: "3D Hydra Lipgloss",
+            title: "3D Hydra Skin toner",
             description: "A new frontier of radiance and comfort for your lips. A simply iconic and beautiful product that hydrates lips for up to 8h*, enveloping them in pure shine.",
             image: "/images/iconic/Meet our iconic (1).png",
             thumbnail: "/images/iconic/Meet our iconic (1).png",
@@ -19,7 +19,7 @@ const MeetOurIconsSection = () => {
         },
         {
             id: 2,
-            title: "3D Hydra Lipgloss",
+            title: "3D Hydra Skin toner",
             description: "A new frontier of radiance and comfort for your lips. A simply iconic and beautiful product that hydrates lips for up to 8h*, enveloping them in pure shine.",
             image: "/images/iconic/Meet our iconic (2).png",
             thumbnail: "/images/iconic/Meet our iconic (2).png",
@@ -27,7 +27,7 @@ const MeetOurIconsSection = () => {
         },
         {
             id: 3,
-            title: "3D Hydra Lipgloss",
+            title: "3D Hydra Skin toner",
             description: "A new frontier of radiance and comfort for your lips. A simply iconic and beautiful product that hydrates lips for up to 8h*, enveloping them in pure shine.",
             image: "/images/iconic/Meet our iconic (3).png",
             thumbnail: "/images/iconic/Meet our iconic (3).png",

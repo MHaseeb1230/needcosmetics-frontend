@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import cartService from '../services/cartService';
 import productService from '../services/productService';
 
@@ -82,9 +83,17 @@ export const CartProvider = ({ children }) => {
             
             await cartService.addToCart(productId, quantity);
             await fetchCart(); // Refresh cart after adding
+            toast.success(`${product.name || 'Product'} added to bag!`, {
+                position: "top-right",
+                autoClose: 3000,
+            });
         } catch (err) {
             console.error('Error adding to cart:', err);
             setError(err.message || 'Failed to add item to cart');
+            toast.error(err.message || 'Failed to add item to cart', {
+                position: "top-right",
+                autoClose: 3000,
+            });
             throw err;
         }
     };
@@ -95,9 +104,17 @@ export const CartProvider = ({ children }) => {
             setError(null);
             await cartService.removeFromCart(itemId);
             await fetchCart(); // Refresh cart after removing
+            toast.success('Item removed from bag', {
+                position: "top-right",
+                autoClose: 3000,
+            });
         } catch (err) {
             console.error('Error removing from cart:', err);
             setError(err.message || 'Failed to remove item from cart');
+            toast.error(err.message || 'Failed to remove item from cart', {
+                position: "top-right",
+                autoClose: 3000,
+            });
             throw err;
         }
     };
@@ -109,9 +126,17 @@ export const CartProvider = ({ children }) => {
             setError(null);
             await cartService.updateCartItem(itemId, quantity);
             await fetchCart(); // Refresh cart after updating
+            toast.success('Cart updated', {
+                position: "top-right",
+                autoClose: 2000,
+            });
         } catch (err) {
             console.error('Error updating cart:', err);
             setError(err.message || 'Failed to update cart item');
+            toast.error(err.message || 'Failed to update cart item', {
+                position: "top-right",
+                autoClose: 3000,
+            });
             throw err;
         }
     };
@@ -122,9 +147,17 @@ export const CartProvider = ({ children }) => {
             setError(null);
             await cartService.clearCart();
             setCart([]);
+            toast.success('Cart cleared', {
+                position: "top-right",
+                autoClose: 3000,
+            });
         } catch (err) {
             console.error('Error clearing cart:', err);
             setError(err.message || 'Failed to clear cart');
+            toast.error(err.message || 'Failed to clear cart', {
+                position: "top-right",
+                autoClose: 3000,
+            });
             throw err;
         }
     };

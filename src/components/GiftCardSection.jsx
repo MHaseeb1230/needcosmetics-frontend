@@ -1,9 +1,36 @@
 import React from 'react';
-import { Heart } from 'lucide-react';
+import { Heart, Star } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 const GiftCardSection = () => {
     const { addToCart } = useCart();
+
+    // Helper function to render stars (same as ProductCard)
+    const renderStars = (rating) => {
+        const numRating = Math.max(0, Math.min(5, parseFloat(rating) || 0));
+        const fullStars = Math.max(0, Math.min(5, Math.floor(numRating)));
+        const hasHalfStar = numRating % 1 >= 0.5;
+        const emptyStars = Math.max(0, Math.min(5, 5 - fullStars - (hasHalfStar ? 1 : 0)));
+
+        return (
+            <div className="flex items-center gap-0.5">
+                {[...Array(Math.max(0, fullStars))].map((_, i) => (
+                    <Star key={i} size={12} className="fill-black text-black" strokeWidth={0} />
+                ))}
+                {hasHalfStar && (
+                    <div className="relative w-3 h-3">
+                        <Star size={12} className="absolute fill-transparent text-black" strokeWidth={1} />
+                        <div className="absolute inset-0 overflow-hidden" style={{ width: '50%' }}>
+                            <Star size={12} className="fill-black text-black" strokeWidth={0} />
+                        </div>
+                    </div>
+                )}
+                {[...Array(Math.max(0, emptyStars))].map((_, i) => (
+                    <Star key={`empty-${i}`} size={12} className="fill-transparent text-black" strokeWidth={1} />
+                ))}
+            </div>
+        );
+    };
 
     // Gift set products data
     const giftSet1 = {
@@ -14,6 +41,8 @@ const GiftCardSection = () => {
         originalPrice: 12499,
         image: '/images/gift/Gift-1.png',
         description: "This beautifully curated organic gift set is designed to nourish and revive your skin using pure, plant-based ingredients.",
+        rating: 4.5,
+        reviews: 128,
     };
 
     const giftSet2 = {
@@ -24,6 +53,8 @@ const GiftCardSection = () => {
         originalPrice: 13499,
         image: '/images/gift/Gift-2.png',
         description: "This premium organic beauty gift set is thoughtfully crafted to protect, hydrate, and restore skin balance.",
+        rating: 4.7,
+        reviews: 95,
     };
     return (
         <section className="py-12 md:py-16 bg-white">
@@ -44,16 +75,27 @@ const GiftCardSection = () => {
                                     className="w-full h-auto object-contain"
                                 />
                             </div>
-                            <div className="text-center lg:text-left space-y-4">
+                            <div className="text-center space-y-4">
+                                {/* Star Rating with Review Count */}
+                                <div className="flex items-center justify-center gap-2">
+                                    {renderStars(giftSet1.rating)}
+                                    <span className="text-xs text-gray-600">
+                                        ({giftSet1.reviews})
+                                    </span>
+                                </div>
+
+                                {/* Price */}
                                 <div>
-                                    <p className="text-lg md:text-xl mb-4">
-                                        <span className="line-through text-gray-500 mr-2">Cut price: 12,499</span>
-                                        <span className="font-bold text-secondary">Now: 11,499</span>
+                                    <p className="text-lg md:text-xl mb-2">
+                                        <span className="font-bold text-secondary">PKR {giftSet1.price.toLocaleString()}</span>
+                                        {giftSet1.originalPrice && giftSet1.originalPrice > giftSet1.price && (
+                                            <span className="line-through text-gray-500 ml-2">PKR {giftSet1.originalPrice.toLocaleString()}</span>
+                                        )}
                                     </p>
                                 </div>
                                 
                                 {/* Action Buttons */}
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center justify-center gap-2 max-w-md mx-auto">
                                     <button
                                         onClick={() => addToCart(giftSet1, 1)}
                                         className="flex-1 py-2.5 rounded-lg text-[10px] font-bold uppercase tracking-widest text-center relative overflow-hidden border-2 transition-all duration-300 bg-[#1C1B1B] text-white border-[#1C1B1B] hover:border-transparent hover:shadow-lg hover:shadow-gray-400/50"
@@ -99,16 +141,16 @@ const GiftCardSection = () => {
 
                         {/* Right Column - Text Content */}
                         <div className="space-y-6">
-                            <h3 className="text-2xl md:text-3xl font-serif text-secondary">
+                            <h3 className="text-3xl md:text-4xl font-light uppercase tracking-wide text-gray-900">
                                 A Touch of Nature, A Glow to Remember
                             </h3>
-                            <p className="text-base md:text-lg text-gray-700 leading-relaxed font-serif">
+                            <p className="text-base md:text-lg text-gray-700 leading-relaxed">
                                 This beautifully curated organic gift set is designed to nourish and revive your skin using <strong>pure, plant-based ingredients</strong>. Each product works gently to enhance your natural beauty, making it an ideal gift for someone who values elegance, care, and authenticity in their skincare routine.
                             </p>
                             <ul className="space-y-3 text-base md:text-lg text-gray-700">
                                 <li className="flex items-start">
                                     <span className="mr-3 text-secondary">•</span>
-                                    <span>100% Organic & Chemical-Free</span>
+                                    <span>100% Organic & No harmfull for skin</span>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-3 text-secondary">•</span>
@@ -181,10 +223,10 @@ const GiftCardSection = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
                         {/* Left Column - Text Content */}
                         <div className="space-y-6 order-2 lg:order-1">
-                            <h3 className="text-2xl md:text-3xl font-serif text-secondary">
+                            <h3 className="text-3xl md:text-4xl font-light uppercase tracking-wide text-gray-900">
                                 Because Your Skin Deserves the Purest Care
                             </h3>
-                            <p className="text-base md:text-lg text-gray-700 leading-relaxed font-serif">
+                            <p className="text-base md:text-lg text-gray-700 leading-relaxed">
                                 This premium organic beauty gift set is thoughtfully crafted to protect, hydrate, and restore skin balance. Free from harsh chemicals, it supports long-term skin health while delivering visible softness and radiance. A perfect blend of <strong>luxury, care, and conscious beauty</strong>—now available at a special gift price.
                             </p>
                             <ul className="space-y-3 text-base md:text-lg text-gray-700">
@@ -205,16 +247,27 @@ const GiftCardSection = () => {
                                     <span>Ideal for Gifting or Personal Use</span>
                                 </li>
                             </ul>
-                            <div className="pt-4 space-y-4">
+                            <div className="pt-4 space-y-4 text-center">
+                                {/* Star Rating with Review Count */}
+                                <div className="flex items-center justify-center gap-2">
+                                    {renderStars(giftSet2.rating)}
+                                    <span className="text-xs text-gray-600">
+                                        ({giftSet2.reviews})
+                                    </span>
+                                </div>
+
+                                {/* Price */}
                                 <div>
-                                    <p className="text-lg md:text-xl mb-4">
-                                        <span className="line-through text-gray-500 mr-2">Cutprice: 13,499</span>
-                                        <span className="font-bold text-secondary">Now: 12,499</span>
+                                    <p className="text-lg md:text-xl mb-2">
+                                        <span className="font-bold text-secondary">PKR {giftSet2.price.toLocaleString()}</span>
+                                        {giftSet2.originalPrice && giftSet2.originalPrice > giftSet2.price && (
+                                            <span className="line-through text-gray-500 ml-2">PKR {giftSet2.originalPrice.toLocaleString()}</span>
+                                        )}
                                     </p>
                                 </div>
                                 
                                 {/* Action Buttons */}
-                                <div className="flex items-center gap-2">
+                                <div className="flex items-center justify-center gap-2 max-w-md mx-auto">
                                     <button
                                         onClick={() => addToCart(giftSet2, 1)}
                                         className="flex-1 py-2.5 rounded-lg text-[10px] font-bold uppercase tracking-widest text-center relative overflow-hidden border-2 transition-all duration-300 bg-[#1C1B1B] text-white border-[#1C1B1B] hover:border-transparent hover:shadow-lg hover:shadow-gray-400/50"

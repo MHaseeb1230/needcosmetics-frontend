@@ -22,7 +22,7 @@ const OurBrand = () => {
             <section className="py-12 md:py-16 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-16">
-                        <h2 className="text-5xl md:text-6xl font-light tracking-tight text-gray-900 mb-6 font-serif">
+                        <h2 className="text-3xl md:text-5xl mb-6 font-light uppercase tracking-wide text-gray-900">
                             Nature · Beauty · Joy
                         </h2>
                         <h3 className="text-sm md:text-base font-bold tracking-[0.2em] text-gray-800 mb-8 uppercase">
@@ -68,10 +68,10 @@ const OurBrand = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
                         <div className="space-y-8">
                             <div className="space-y-4">
-                                <h4 className="text-sm font-bold tracking-[0.2em] text-gray-500 uppercase font-serif">
+                                <h4 className="text-sm font-bold tracking-[0.2em] text-gray-500 uppercase">
                                     Our Mission
                                 </h4>
-                                <h2 className="text-3xl md:text-5xl  text-gray-900 leading-tight font-serif">
+                                <h2 className="text-3xl md:text-4xl font-light uppercase tracking-wide text-gray-900">
                                     We believe in the power of Nature, colour and craft to transform our customers' daily lives.
                                 </h2>
                             </div>
@@ -114,7 +114,7 @@ const OurBrand = () => {
                         </div>
 
                         <div className="space-y-8 order-1 lg:order-2">
-                            <h2 className="text-3xl md:text-5xl font-light text-gray-900 leading-tight font-serif">
+                            <h2 className="text-3xl md:text-4xl font-light uppercase tracking-wide text-gray-900">
                             Need’s Organic is Nature
                             </h2>
                             <div className="space-y-6 text-gray-600 text-xs md:text-sm leading-relaxed">

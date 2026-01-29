@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useCart } from '../context/CartContext';
 import orderService from '../services/orderService';
 import { Loader2 } from 'lucide-react';
@@ -80,6 +81,11 @@ const Checkout = () => {
                 // Clear cart after successful order
                 await clearCart();
                 
+                toast.success('Order placed successfully!', {
+                    position: "top-right",
+                    autoClose: 3000,
+                });
+                
                 // Redirect to success page
                 navigate(`/order-success/${response.data.orderId}`, {
                     state: {
@@ -90,7 +96,12 @@ const Checkout = () => {
             }
         } catch (err) {
             console.error('Order creation error:', err);
-            setError(err.message || 'Failed to create order. Please try again.');
+            const errorMessage = err.message || 'Failed to create order. Please try again.';
+            setError(errorMessage);
+            toast.error(errorMessage, {
+                position: "top-right",
+                autoClose: 4000,
+            });
         } finally {
             setLoading(false);
         }

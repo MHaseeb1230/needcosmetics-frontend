@@ -9,16 +9,18 @@ const CartItem = ({ item }) => {
     const handleRemove = async () => {
         try {
             await removeFromCart(item.id);
+            // Toast notification is handled in CartContext
         } catch (error) {
-            alert('Failed to remove item: ' + (error.message || 'Unknown error'));
+            // Error toast is handled in CartContext
         }
     };
 
     const handleQuantityChange = async (newQuantity) => {
         try {
             await updateQuantity(item.id, newQuantity);
+            // Toast notification is handled in CartContext
         } catch (error) {
-            alert('Failed to update quantity: ' + (error.message || 'Unknown error'));
+            // Error toast is handled in CartContext
         }
     };
 

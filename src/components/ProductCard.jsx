@@ -48,11 +48,22 @@ const ProductCard = ({ product }) => {
 
     const getImageUrl = (url) => {
         if (!url) return '';
-        if (url.startsWith('http') || url.startsWith('data:') || url.startsWith('/src/assets') || url.startsWith('/images/')) {
+        // Handle absolute URLs (http/https/data URIs)
+        if (url.startsWith('http') || url.startsWith('data:')) {
             return url;
         }
-        const baseUrl = API_BASE_URL.replace('/api', '');
-        return `${baseUrl}${url.startsWith('/') ? '' : '/'}${url}`;
+        // Handle public folder paths (works in both dev and production)
+        if (url.startsWith('/images/') || url.startsWith('/src/assets/')) {
+            return url;
+        }
+        // For relative paths, try to construct from public folder
+        // In production, images in public folder are served from root
+        if (url.startsWith('/')) {
+            return url;
+        }
+        // Fallback: try to prepend /images/ if it's just a filename
+        // This handles cases where backend might return just the filename
+        return `/images/${url}`;
     };
 
     return (
