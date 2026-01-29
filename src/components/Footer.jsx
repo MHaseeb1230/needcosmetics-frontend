@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Facebook, Youtube } from 'lucide-react';
 import costicareLogo from '../assets/logos/CostiCare Logo.png';
+import halalLogo from '../assets/logos/halal.avif';
+import allSkinTypesLogo from '../assets/logos/allskintypes.jpg';
+import harmfulLogo from '../assets/logos/harmfull.png';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -68,9 +71,33 @@ const Footer = () => {
                                 className="w-full h-auto object-contain"
                             />
                         </div>
+                        {/* Certification Logos */}
+                        <div className="flex flex-wrap gap-3 mt-2">
+                            <div className="w-16 h-16 flex items-center justify-center">
+                                <img
+                                    src={halalLogo}
+                                    alt="Halal Certified"
+                                    className="w-full h-full object-contain"
+                                />
+                            </div>
+                            <div className="w-16 h-16 flex items-center justify-center">
+                                <img
+                                    src={allSkinTypesLogo}
+                                    alt="All Skin Types"
+                                    className="w-full h-full object-contain"
+                                />
+                            </div>
+                            <div className="w-16 h-16 flex items-center justify-center">
+                                <img
+                                    src={harmfulLogo}
+                                    alt="Harmful Free"
+                                    className="w-full h-full object-contain"
+                                />
+                            </div>
+                        </div>
                         <div className="text-[10px] md:text-xs text-secondary/70 space-y-1 font-medium italic">
                             <p>A product of costicare international</p>
-                            <p>Adress : 25 E 2nd Avenue STE550#598</p>
+                            <p>Address : 25 E 2nd Avenue STE550#598</p>
                             <p>Miami Florida USA</p>
                         </div>
                     </div>
